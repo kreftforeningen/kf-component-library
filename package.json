@@ -1,6 +1,5 @@
 {
   "name": "kf-shadcnui",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
   "sideEffects": false,
@@ -11,6 +10,10 @@
   "main": "dist/main.es.js",
   "module": "dist/main.es.js",
   "types": "dist/lib/main.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreftforeningen/kf-shadchnui.git"
+  },
   "scripts": {
     "build": "vite build",
     "dev": "vite --host 0.0.0.0 --port 3003 --clearScreen false",
@@ -22,6 +25,9 @@
     "preset": "@backlogg/jest-presets/browser"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.1.15",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -51,5 +57,11 @@
     "vite": "^6.3.5",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "^4.5.4"
-  }
+  },
+  "author": "Asbjørn Ness",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kreftforeningen/kf-shadcnui/issues"
+  },
+  "homepage": "https://github.com/kreftforeningen/kf-shadcnui#readme"
 }
