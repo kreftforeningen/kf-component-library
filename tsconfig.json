@@ -1,0 +1,14 @@
+{
+  "extends": "./types/react-library.json",
+  "compilerOptions": {
+    "lib": ["dom", "ES2015"], // Add DOM types for browser environment
+    "sourceMap": true, // Generate source maps
+    "types": ["jest", "node"], // Include type definitions
+    "baseUrl": ".", // Base directory for imports
+    "paths": {
+      "@/*": ["./src/*"] // Enable @ imports
+    }
+  },
+  "include": ["src", "lib"],
+  "exclude": ["dist", "build", "node_modules", "**/*.test.ts", "**/*.test.tsx"]
+}
