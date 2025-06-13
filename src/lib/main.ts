@@ -1,5 +1,6 @@
 //src/lib/main.ts
 import "../style.css";
+export { AspectRatio } from "../aspect-ratio";
 export { Button } from "../button";
 export {
   DropdownMenu,

@@ -72,7 +72,7 @@ import {
 import { toast } from "sonner";
 
 import { Textarea } from "./lib/main";
-import { AlertCircleIcon } from "lucide-react";
+import { AlertCircleIcon, ArrowRightIcon } from "lucide-react";
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -150,19 +150,44 @@ function App() {
           />
 
           <h2>Card</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
-              <CardAction>Card Action</CardAction>
-            </CardHeader>
-            <CardContent>
-              <p>Card Content</p>
-            </CardContent>
-            <CardFooter>
-              <p>Card Footer</p>
-            </CardFooter>
-          </Card>
+          <div className="grid grid-cols-2 gap-4">
+            <Card>
+              <CardHeader>
+                <CardDescription>29.05.2020</CardDescription>
+                <CardTitle>– In About Five Minutes I’ll Be There</CardTitle>
+                <CardAction>
+                  <ArrowRightIcon />
+                </CardAction>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  During the first few minutes of the conversation, I’ll be
+                  there. But where will you be?
+                </p>
+              </CardContent>
+              <CardFooter>
+                <p>Card Footer</p>
+              </CardFooter>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardDescription>29.05.2020</CardDescription>
+                <CardTitle>– In About Five Minutes I’ll Be There</CardTitle>
+                <CardAction>
+                  <ArrowRightIcon />
+                </CardAction>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  During the first few minutes of the conversation, I’ll be
+                  there. But where will you be?
+                </p>
+              </CardContent>
+              <CardFooter>
+                <p>Card Footer</p>
+              </CardFooter>
+            </Card>
+          </div>
 
           <h2>Carousel</h2>
           <Carousel>
