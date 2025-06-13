@@ -130,15 +130,15 @@ function App() {
 
           <h2>Button</h2>
           <div className="flex flex-row flex-wrap gap-2">
-            <Button variant="default">Click me</Button>
-            <Button variant="destructive">Click me</Button>
-            <Button variant="outline">Click me</Button>
-            <Button variant="secondary">Click me</Button>
-            <Button variant="ghost">Click me</Button>
+            <Button variant="default">Default</Button>
+            <Button variant="destructive">Destructive</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="ghost">Ghost</Button>
             <Button variant="outline" shape="square">
-              Click me
+              Square
             </Button>
-            <Button variant="link">Click me</Button>
+            <Button variant="link">Link</Button>
           </div>
 
           <h2>Calendar</h2>
