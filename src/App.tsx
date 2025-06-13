@@ -11,6 +11,8 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
+  AspectRatio,
+  Badge,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -151,12 +153,22 @@ function App() {
 
           <h2>Card</h2>
           <div className="grid grid-cols-2 gap-4">
-            <Card>
+            <Card className="pt-0">
+              <AspectRatio
+                ratio={16 / 9}
+                className="rounded-t-md overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/1600/900"
+                  alt="Card Image"
+                  className="object-cover w-full h-full"
+                />
+              </AspectRatio>
               <CardHeader>
                 <CardDescription>29.05.2020</CardDescription>
                 <CardTitle>– In About Five Minutes I’ll Be There</CardTitle>
                 <CardAction>
-                  <ArrowRightIcon />
+                  <Badge>Badge</Badge>
                 </CardAction>
               </CardHeader>
               <CardContent>
@@ -166,7 +178,7 @@ function App() {
                 </p>
               </CardContent>
               <CardFooter>
-                <p>Card Footer</p>
+                <ArrowRightIcon />
               </CardFooter>
             </Card>
             <Card>
@@ -174,7 +186,7 @@ function App() {
                 <CardDescription>29.05.2020</CardDescription>
                 <CardTitle>– In About Five Minutes I’ll Be There</CardTitle>
                 <CardAction>
-                  <ArrowRightIcon />
+                  <Badge>Badge</Badge>
                 </CardAction>
               </CardHeader>
               <CardContent>
@@ -192,9 +204,33 @@ function App() {
           <h2>Carousel</h2>
           <Carousel>
             <CarouselContent>
-              <CarouselItem>...</CarouselItem>
-              <CarouselItem>...</CarouselItem>
-              <CarouselItem>...</CarouselItem>
+              <CarouselItem>
+                <AspectRatio ratio={16 / 9}>
+                  <img
+                    src="https://picsum.photos/1600/900"
+                    alt="Card Image"
+                    className="object-cover w-full h-full"
+                  />
+                </AspectRatio>
+              </CarouselItem>
+              <CarouselItem>
+                <AspectRatio ratio={16 / 9}>
+                  <img
+                    src="https://picsum.photos/1600/900"
+                    alt="Card Image"
+                    className="object-cover w-full h-full"
+                  />
+                </AspectRatio>
+              </CarouselItem>
+              <CarouselItem>
+                <AspectRatio ratio={16 / 9}>
+                  <img
+                    src="https://picsum.photos/1600/900"
+                    alt="Card Image"
+                    className="object-cover w-full h-full"
+                  />
+                </AspectRatio>
+              </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
