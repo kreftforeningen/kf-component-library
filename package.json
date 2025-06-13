@@ -1,6 +1,6 @@
 {
   "name": "kf-shadcnui",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "type": "module",
   "sideEffects": false,
   "files": [
