@@ -79,3 +79,5 @@ export {
 } from "../accordion";
 export { RadioGroup, RadioGroupItem } from "../radio-group";
 export { Switch } from "../switch";
+export { Toaster } from "../sonner";
+export { toast } from "sonner";

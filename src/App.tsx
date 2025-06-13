@@ -64,11 +64,15 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
+  Toaster,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "./lib/main";
+import { toast } from "sonner";
+
 import { Textarea } from "./lib/main";
+import { AlertCircleIcon } from "lucide-react";
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -77,6 +81,7 @@ function App() {
     <>
       <ThemeProvider>
         <main className="container w-2/3 mx-auto my-10">
+          <Toaster position="top-center" richColors closeButton />
           <ModeToggle />
           <h1>kf-shadcnui</h1>
 
@@ -92,6 +97,14 @@ function App() {
 
           <h2>Alert</h2>
           <Alert>
+            <AlertTitle>Heads up!</AlertTitle>
+            <AlertDescription>
+              You can add components and dependencies to your app using the CLI.
+            </AlertDescription>
+          </Alert>
+
+          <Alert variant="destructive" className="my-4">
+            <AlertCircleIcon />
             <AlertTitle>Heads up!</AlertTitle>
             <AlertDescription>
               You can add components and dependencies to your app using the CLI.
@@ -182,10 +195,12 @@ function App() {
             </DropdownMenu>
           </div>
 
-          <h2>Input + Label</h2>
-          <div className="flex flex-row flex-wrap gap-2">
-            <Label>Input</Label>
-            <Input />
+          <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg my-4">
+            <h2>Input + Label</h2>
+            <div className="flex flex-row flex-wrap gap-2">
+              <Label>Input</Label>
+              <Input />
+            </div>
           </div>
 
           <h2>Pagination</h2>
@@ -229,6 +244,18 @@ function App() {
               <SelectItem value="3">Option 3</SelectItem>
             </SelectContent>
           </Select>
+
+          <h2>Sonner</h2>
+          <Button
+            variant="outline"
+            onClick={() =>
+              toast.warning("Event has been created", {
+                description: "Sunday, December 03, 2023 at 9:00 AM",
+              })
+            }
+          >
+            Show Toast
+          </Button>
 
           <h2>Switch</h2>
           <Switch />
