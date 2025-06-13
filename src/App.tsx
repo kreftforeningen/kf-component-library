@@ -282,7 +282,7 @@ function App() {
           </Table>
 
           <h2>Tabs</h2>
-          <Tabs defaultValue="account" className="w-[400px]">
+          <Tabs defaultValue="account">
             <TabsList>
               <TabsTrigger value="account">Account</TabsTrigger>
               <TabsTrigger value="password">Password</TabsTrigger>
