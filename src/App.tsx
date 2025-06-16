@@ -12,6 +12,9 @@ import {
   AlertDescription,
   AlertTitle,
   AspectRatio,
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
   Badge,
   Breadcrumb,
   BreadcrumbItem,
@@ -34,12 +37,64 @@ import {
   CarouselNext,
   CarouselPrevious,
   Checkbox,
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
   Input,
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
   Label,
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
   Pagination,
   PaginationContent,
   PaginationEllipsis,
@@ -47,13 +102,26 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Progress,
   RadioGroup,
   RadioGroupItem,
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+  ScrollArea,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Separator,
+  Sheet,
+  SheetContent,
+  Skeleton,
+  Slider,
   Switch,
   Table,
   TableBody,
@@ -67,6 +135,9 @@ import {
   TabsList,
   TabsTrigger,
   Toaster,
+  Toggle,
+  ToggleGroup,
+  ToggleGroupItem,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -74,10 +145,35 @@ import {
 import { toast } from "sonner";
 
 import { Textarea } from "./lib/main";
-import { AlertCircleIcon, ArrowRightIcon, CheckCircleIcon } from "lucide-react";
+
+import {
+  LuCalendar,
+  LuChevronsUpDown,
+  LuCircleCheck,
+  LuSmile,
+  LuCalculator,
+  LuUser,
+  LuCreditCard,
+  LuSettings,
+  LuArrowRight,
+  LuCircleAlert,
+  LuCircleHelp,
+} from "react-icons/lu";
+import {
+  SheetClose,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./sheet";
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [isCollapsibleOpen, setIsCollapsibleOpen] = React.useState(false);
+  const tags = Array.from({ length: 50 }).map(
+    (_, i, a) => `v1.2.0-beta.${a.length - i}`
+  );
 
   return (
     <>
@@ -118,12 +214,60 @@ function App() {
           </Alert>
 
           <Alert variant="destructive" className="my-4">
-            <AlertCircleIcon />
+            <LuCircleAlert />
             <AlertTitle>Heads up!</AlertTitle>
             <AlertDescription>
               You can add components and dependencies to your app using the CLI.
             </AlertDescription>
           </Alert>
+
+          <h2>Aspect Ratio</h2>
+          <p className="mb-4">Image using aspect ratio set to 21/9.</p>
+          <AspectRatio ratio={21 / 9}>
+            <img
+              src="https://picsum.photos/1600/900"
+              alt="Card Image"
+              className="object-cover w-full h-full rounded-md"
+            />
+          </AspectRatio>
+
+          <h2>Avatar</h2>
+          <div className="flex flex-row flex-wrap items-center gap-12">
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <Avatar className="rounded-lg">
+              <AvatarImage
+                src="https://github.com/evilrabbit.png"
+                alt="@evilrabbit"
+              />
+              <AvatarFallback>ER</AvatarFallback>
+            </Avatar>
+            <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/leerob.png"
+                  alt="@leerob"
+                />
+                <AvatarFallback>LR</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/evilrabbit.png"
+                  alt="@evilrabbit"
+                />
+                <AvatarFallback>ER</AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
 
           <h2>Badge</h2>
           <div className="flex flex-col items-center gap-2">
@@ -138,7 +282,7 @@ function App() {
                 variant="secondary"
                 className="bg-blue-500 text-white dark:bg-blue-600"
               >
-                <CheckCircleIcon />
+                <LuCircleCheck />
                 Verified
               </Badge>
               <Badge className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
@@ -179,6 +323,9 @@ function App() {
           <h2>Button</h2>
           <div className="flex flex-row flex-wrap gap-2">
             <Button variant="default">Default</Button>
+            <Button variant="default" disabled>
+              Default Disabled
+            </Button>
             <Button variant="destructive">Destructive</Button>
             <Button variant="outline">Outline</Button>
             <Button variant="secondary">Secondary</Button>
@@ -224,7 +371,7 @@ function App() {
                 </p>
               </CardContent>
               <CardFooter>
-                <ArrowRightIcon />
+                <LuArrowRight />
               </CardFooter>
             </Card>
             <Card>
@@ -283,7 +430,164 @@ function App() {
           </Carousel>
 
           <h2>Checkbox</h2>
-          <Checkbox />
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-3">
+              <Checkbox id="terms" />
+              <Label htmlFor="terms">Accept terms and conditions</Label>
+            </div>
+            <div className="flex items-start gap-3">
+              <Checkbox id="terms-2" defaultChecked />
+              <div className="grid gap-2">
+                <Label htmlFor="terms-2">Accept terms and conditions</Label>
+                <p className="text-muted-foreground text-sm">
+                  By clicking this checkbox, you agree to the terms and
+                  conditions.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Checkbox id="toggle" disabled />
+              <Label htmlFor="toggle">Enable notifications</Label>
+            </div>
+            <Label className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
+              <Checkbox
+                id="toggle-2"
+                defaultChecked
+                className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700"
+              />
+              <div className="grid gap-1.5 font-normal">
+                <p className="text-sm leading-none font-medium">
+                  Enable notifications
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  You can enable or disable notifications at any time.
+                </p>
+              </div>
+            </Label>
+          </div>
+
+          <h2>Collapsible</h2>
+          <Collapsible
+            open={isCollapsibleOpen}
+            onOpenChange={setIsCollapsibleOpen}
+            className="flex w-[350px] flex-col gap-2"
+          >
+            <div className="flex items-center justify-between gap-4 px-4">
+              <h4 className="text-sm font-semibold">
+                @peduarte starred 3 repositories
+              </h4>
+              <CollapsibleTrigger asChild>
+                <Button variant="ghost" size="icon" className="size-8">
+                  <LuChevronsUpDown />
+                  <span className="sr-only">Toggle</span>
+                </Button>
+              </CollapsibleTrigger>
+            </div>
+            <div className="rounded-md border px-4 py-2 font-mono text-sm">
+              @radix-ui/primitives
+            </div>
+            <CollapsibleContent className="flex flex-col gap-2">
+              <div className="rounded-md border px-4 py-2 font-mono text-sm">
+                @radix-ui/colors
+              </div>
+              <div className="rounded-md border px-4 py-2 font-mono text-sm">
+                @stitches/react
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+
+          <h2>Command</h2>
+          <Command className="rounded-lg border shadow-md md:min-w-[450px]">
+            <CommandInput placeholder="Type a command or search..." />
+            <CommandList>
+              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandGroup heading="Suggestions">
+                <CommandItem>
+                  <LuCalendar />
+                  <span>Calendar</span>
+                </CommandItem>
+                <CommandItem>
+                  <LuSmile />
+                  <span>Search Emoji</span>
+                </CommandItem>
+                <CommandItem disabled>
+                  <LuCalculator />
+                  <span>Calculator</span>
+                </CommandItem>
+              </CommandGroup>
+              <CommandSeparator />
+              <CommandGroup heading="Settings">
+                <CommandItem>
+                  <LuUser />
+                  <span>Profile</span>
+                  <CommandShortcut>⌘P</CommandShortcut>
+                </CommandItem>
+                <CommandItem>
+                  <LuCreditCard />
+                  <span>Billing</span>
+                  <CommandShortcut>⌘B</CommandShortcut>
+                </CommandItem>
+                <CommandItem>
+                  <LuSettings />
+                  <span>Settings</span>
+                  <CommandShortcut>⌘S</CommandShortcut>
+                </CommandItem>
+              </CommandGroup>
+            </CommandList>
+          </Command>
+
+          <h2>ContextMenu</h2>
+          <ContextMenu>
+            <ContextMenuTrigger asChild>
+              <Button variant="outline">Right click to show menu</Button>
+            </ContextMenuTrigger>
+            <ContextMenuContent>
+              <ContextMenuItem>Profile</ContextMenuItem>
+              <ContextMenuItem>Billing</ContextMenuItem>
+              <ContextMenuItem>Team</ContextMenuItem>
+              <ContextMenuItem>Subscription</ContextMenuItem>
+            </ContextMenuContent>
+          </ContextMenu>
+
+          <h2>Dialog</h2>
+          <Dialog>
+            <DialogTrigger>
+              <Button variant="outline">Click to show dialog</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Are you absolutely sure?</DialogTitle>
+                <DialogDescription>
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+
+          <h2>Drawer</h2>
+          <Drawer>
+            <DrawerTrigger asChild>
+              <Button variant="outline">Open Drawer</Button>
+            </DrawerTrigger>
+            <DrawerContent>
+              <div className="mx-auto w-full max-w-sm">
+                <DrawerHeader>
+                  <DrawerTitle>Drawer</DrawerTitle>
+                  <DrawerDescription>Achieve your goals.</DrawerDescription>
+                </DrawerHeader>
+                <div className="p-4 pb-0 text-center">
+                  Some content in this drawer.
+                </div>
+                <DrawerFooter>
+                  <Button>Submit</Button>
+                  <DrawerClose asChild>
+                    <Button variant="outline">Cancel</Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </div>
+            </DrawerContent>
+          </Drawer>
 
           <h2>DropdownMenu</h2>
           <div className="flex flex-row flex-wrap gap-2">
@@ -302,11 +606,200 @@ function App() {
             </DropdownMenu>
           </div>
 
+          <h2>Hover Card</h2>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <Button variant="link">@nextjs</Button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex justify-between gap-4">
+                <Avatar>
+                  <AvatarImage src="https://github.com/vercel.png" />
+                  <AvatarFallback>VC</AvatarFallback>
+                </Avatar>
+                <div className="space-y-1">
+                  <h4 className="text-sm font-semibold">@nextjs</h4>
+                  <p className="text-sm">
+                    The React Framework – created and maintained by @vercel.
+                  </p>
+                  <div className="text-muted-foreground text-xs">
+                    Joined December 2021
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+
           <h2>Input + Label</h2>
           <div className="flex flex-row flex-wrap gap-2">
             <Label>Input</Label>
             <Input />
           </div>
+
+          <h2>Input OTP</h2>
+          <InputOTP maxLength={6}>
+            <InputOTPGroup>
+              <InputOTPSlot index={0} />
+              <InputOTPSlot index={1} />
+              <InputOTPSlot index={2} />
+            </InputOTPGroup>
+            <InputOTPSeparator />
+            <InputOTPGroup>
+              <InputOTPSlot index={3} />
+              <InputOTPSlot index={4} />
+              <InputOTPSlot index={5} />
+            </InputOTPGroup>
+          </InputOTP>
+
+          <h2>Menubar</h2>
+          <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger>File</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>
+                  New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                </MenubarItem>
+                <MenubarItem>
+                  New Window <MenubarShortcut>⌘N</MenubarShortcut>
+                </MenubarItem>
+                <MenubarItem disabled>New Incognito Window</MenubarItem>
+                <MenubarSeparator />
+                <MenubarSub>
+                  <MenubarSubTrigger>Share</MenubarSubTrigger>
+                  <MenubarSubContent>
+                    <MenubarItem>Email link</MenubarItem>
+                    <MenubarItem>Messages</MenubarItem>
+                    <MenubarItem>Notes</MenubarItem>
+                  </MenubarSubContent>
+                </MenubarSub>
+                <MenubarSeparator />
+                <MenubarItem>
+                  Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                </MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Edit</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>
+                  Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                </MenubarItem>
+                <MenubarItem>
+                  Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                </MenubarItem>
+                <MenubarSeparator />
+                <MenubarSub>
+                  <MenubarSubTrigger>Find</MenubarSubTrigger>
+                  <MenubarSubContent>
+                    <MenubarItem>Search the web</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>Find...</MenubarItem>
+                    <MenubarItem>Find Next</MenubarItem>
+                    <MenubarItem>Find Previous</MenubarItem>
+                  </MenubarSubContent>
+                </MenubarSub>
+                <MenubarSeparator />
+                <MenubarItem>Cut</MenubarItem>
+                <MenubarItem>Copy</MenubarItem>
+                <MenubarItem>Paste</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>View</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem className="flex items-center gap-3 mb-2">
+                  <Checkbox id="always-show-bookmarks-bar" />
+                  <Label htmlFor="always-show-bookmarks-bar">
+                    Always Show Bookmarks Bar
+                  </Label>
+                </MenubarItem>
+                <MenubarItem className="flex items-center gap-3">
+                  <Checkbox id="always-show-full-urls" checked />
+                  <Label htmlFor="always-show-full-urls">
+                    Always Show Full URLs
+                  </Label>
+                </MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem inset>
+                  Reload <MenubarShortcut>⌘R</MenubarShortcut>
+                </MenubarItem>
+                <MenubarItem disabled inset>
+                  Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                </MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem inset>Hide Sidebar</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Profiles</MenubarTrigger>
+              <MenubarContent>
+                <RadioGroup value="benoit" className="gap-2">
+                  <MenubarItem className="flex items-center gap-3 ">
+                    <RadioGroupItem value="andy" />
+                    <Label htmlFor="andy">Andy</Label>
+                  </MenubarItem>
+                  <MenubarItem className="flex items-center gap-3">
+                    <RadioGroupItem value="benoit" />
+                    <Label htmlFor="benoit">Benoit</Label>
+                  </MenubarItem>
+                  <MenubarItem className="flex items-center gap-3">
+                    <RadioGroupItem value="Luis" />
+                    <Label htmlFor="Luis">Luis</Label>
+                  </MenubarItem>
+                </RadioGroup>
+                <MenubarSeparator />
+                <MenubarItem inset>Edit...</MenubarItem>
+                <MenubarSeparator />
+                <MenubarItem inset>Add Profile...</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
+
+          <h2>Navigation Menu (Do not use yet)</h2>
+          <NavigationMenu viewport={false}>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <NavigationMenuLink>Link</NavigationMenuLink>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <a href="#">Link</a>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-4">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <a href="#" className="flex-row items-center gap-2">
+                          <LuCircleHelp />
+                          Backlog
+                        </a>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <a href="#" className="flex-row items-center gap-2">
+                          <LuCircleAlert />
+                          To Do
+                        </a>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <a href="#" className="flex-row items-center gap-2">
+                          <LuCircleCheck />
+                          Done
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           <h2>Pagination</h2>
           <Pagination>
@@ -326,6 +819,17 @@ function App() {
             </PaginationContent>
           </Pagination>
 
+          <h2>Popover</h2>
+          <Popover>
+            <PopoverTrigger>
+              <Button variant="outline">Open Popover</Button>
+            </PopoverTrigger>
+            <PopoverContent>Place content for the popover here.</PopoverContent>
+          </Popover>
+
+          <h2>Progress</h2>
+          <Progress value={50} />
+
           <h2>Radio Group</h2>
           <RadioGroup defaultValue="option-one">
             <div className="flex items-center space-x-2">
@@ -338,6 +842,37 @@ function App() {
             </div>
           </RadioGroup>
 
+          <h2>Resizable</h2>
+          <ResizablePanelGroup
+            direction="vertical"
+            className="min-h-[200px] max-w-md rounded-lg border md:min-w-[450px]"
+          >
+            <ResizablePanel defaultSize={25}>
+              <div className="flex h-full items-center justify-center p-6">
+                <span className="font-semibold">Header</span>
+              </div>
+            </ResizablePanel>
+            <ResizableHandle />
+            <ResizablePanel defaultSize={75}>
+              <div className="flex h-full items-center justify-center p-6">
+                <span className="font-semibold">Content</span>
+              </div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
+
+          <h2>Scroll Area</h2>
+          <ScrollArea className="h-72 w-48 rounded-md border">
+            <div className="p-4">
+              <h4 className="mb-4 text-base leading-none m-0">Tags</h4>
+              {tags.map((tag) => (
+                <React.Fragment key={tag}>
+                  <div className="text-sm">{tag}</div>
+                  <Separator className="my-2" />
+                </React.Fragment>
+              ))}
+            </div>
+          </ScrollArea>
+
           <h2>Select</h2>
           <Select>
             <SelectTrigger>
@@ -349,6 +884,53 @@ function App() {
               <SelectItem value="3">Option 3</SelectItem>
             </SelectContent>
           </Select>
+
+          <h2>Separator</h2>
+          <Separator />
+
+          <h2>Sheet</h2>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline">Open</Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Edit profile</SheetTitle>
+                <SheetDescription>
+                  Make changes to your profile here. Click save when you&apos;re
+                  done.
+                </SheetDescription>
+              </SheetHeader>
+              <div className="grid flex-1 auto-rows-min gap-6 px-4">
+                <div className="grid gap-3">
+                  <Label htmlFor="sheet-demo-name">Name</Label>
+                  <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="sheet-demo-username">Username</Label>
+                  <Input id="sheet-demo-username" defaultValue="@peduarte" />
+                </div>
+              </div>
+              <SheetFooter>
+                <Button type="submit">Save changes</Button>
+                <SheetClose asChild>
+                  <Button variant="outline">Close</Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+
+          <h2>Skeleton</h2>
+          <div className="flex items-center space-x-4">
+            <Skeleton className="h-12 w-12 rounded-full" />
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-[250px]" />
+              <Skeleton className="h-4 w-[200px]" />
+            </div>
+          </div>
+
+          <h2>Slider</h2>
+          <Slider defaultValue={[33]} max={100} step={1} />
 
           <h2>Sonner</h2>
           <Button
@@ -404,6 +986,16 @@ function App() {
 
           <h2>Textarea</h2>
           <Textarea />
+
+          <h2>Toggle</h2>
+          <Toggle variant="outline">Toggle</Toggle>
+
+          <h2>Toggle Group</h2>
+          <ToggleGroup type="single" variant="outline">
+            <ToggleGroupItem value="a">A</ToggleGroupItem>
+            <ToggleGroupItem value="b">B</ToggleGroupItem>
+            <ToggleGroupItem value="c">C</ToggleGroupItem>
+          </ToggleGroup>
 
           <h2>Tooltip</h2>
           <Tooltip>

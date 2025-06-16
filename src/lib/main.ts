@@ -112,6 +112,9 @@ export {
   MenubarMenu,
   MenubarSeparator,
   MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
   MenubarTrigger,
 } from "../menubar";
 export {
