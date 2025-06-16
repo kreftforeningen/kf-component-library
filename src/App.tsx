@@ -74,7 +74,7 @@ import {
 import { toast } from "sonner";
 
 import { Textarea } from "./lib/main";
-import { AlertCircleIcon, ArrowRightIcon } from "lucide-react";
+import { AlertCircleIcon, ArrowRightIcon, CheckCircleIcon } from "lucide-react";
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -82,14 +82,26 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        <main className="container w-2/3 mx-auto my-10">
+        <main className="container w-5/6 md:w-2/3 mx-auto my-10">
           <Toaster position="top-center" richColors closeButton />
           <ModeToggle />
           <h1>kf-shadcnui</h1>
 
           <h2>Accordion</h2>
-          <Accordion type="single" collapsible>
+          <Accordion type="single" collapsible defaultValue="item-1">
             <AccordionItem value="item-1">
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It adheres to the WAI-ARIA design pattern.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It adheres to the WAI-ARIA design pattern.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
               <AccordionContent>
                 Yes. It adheres to the WAI-ARIA design pattern.
@@ -112,6 +124,40 @@ function App() {
               You can add components and dependencies to your app using the CLI.
             </AlertDescription>
           </Alert>
+
+          <h2>Badge</h2>
+          <div className="flex flex-col items-center gap-2">
+            <div className="flex w-full flex-wrap gap-2">
+              <Badge>Badge</Badge>
+              <Badge variant="secondary">Secondary</Badge>
+              <Badge variant="destructive">Destructive</Badge>
+              <Badge variant="outline">Outline</Badge>
+            </div>
+            <div className="flex w-full flex-wrap gap-2">
+              <Badge
+                variant="secondary"
+                className="bg-blue-500 text-white dark:bg-blue-600"
+              >
+                <CheckCircleIcon />
+                Verified
+              </Badge>
+              <Badge className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
+                8
+              </Badge>
+              <Badge
+                className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
+                variant="destructive"
+              >
+                99
+              </Badge>
+              <Badge
+                className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
+                variant="outline"
+              >
+                20+
+              </Badge>
+            </div>
+          </div>
 
           <h2>Breadcrumb</h2>
           <Breadcrumb>
@@ -148,11 +194,11 @@ function App() {
             mode="single"
             selected={date}
             onSelect={setDate}
-            className="rounded-lg border"
+            className="rounded-lg bg-grey-100"
           />
 
           <h2>Card</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card className="pt-0">
               <AspectRatio
                 ratio={16 / 9}
@@ -209,7 +255,7 @@ function App() {
                   <img
                     src="https://picsum.photos/1600/900"
                     alt="Card Image"
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full rounded-md"
                   />
                 </AspectRatio>
               </CarouselItem>
@@ -218,7 +264,7 @@ function App() {
                   <img
                     src="https://picsum.photos/1600/900"
                     alt="Card Image"
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full rounded-md"
                   />
                 </AspectRatio>
               </CarouselItem>
@@ -227,7 +273,7 @@ function App() {
                   <img
                     src="https://picsum.photos/1600/900"
                     alt="Card Image"
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full rounded-md"
                   />
                 </AspectRatio>
               </CarouselItem>
@@ -256,12 +302,10 @@ function App() {
             </DropdownMenu>
           </div>
 
-          <div className="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg my-4">
-            <h2>Input + Label</h2>
-            <div className="flex flex-row flex-wrap gap-2">
-              <Label>Input</Label>
-              <Input />
-            </div>
+          <h2>Input + Label</h2>
+          <div className="flex flex-row flex-wrap gap-2">
+            <Label>Input</Label>
+            <Input />
           </div>
 
           <h2>Pagination</h2>
@@ -347,6 +391,7 @@ function App() {
             <TabsList>
               <TabsTrigger value="account">Account</TabsTrigger>
               <TabsTrigger value="password">Password</TabsTrigger>
+              <TabsTrigger value="delete">Delete</TabsTrigger>
             </TabsList>
             <TabsContent value="account">
               Make changes to your account here.
@@ -354,6 +399,7 @@ function App() {
             <TabsContent value="password">
               Change your password here.
             </TabsContent>
+            <TabsContent value="delete">Delete your account here.</TabsContent>
           </Tabs>
 
           <h2>Textarea</h2>
