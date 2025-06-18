@@ -119,6 +119,12 @@ import {
   SelectValue,
   Separator,
   Sheet,
+  SheetClose,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
   SheetContent,
   Skeleton,
   Slider,
@@ -159,14 +165,6 @@ import {
   LuCircleAlert,
   LuCircleHelp,
 } from "react-icons/lu";
-import {
-  SheetClose,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "./sheet";
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());

@@ -1,6 +1,6 @@
 {
   "name": "kf-shadcnui",
-  "version": "1.0.22",
+  "version": "1.0.24",
   "type": "module",
   "sideEffects": false,
   "files": [
@@ -57,8 +57,8 @@
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
-    "kf-tailwind": "^1.0.14",
-    "lucide-react": "^0.515.0",
+    "kf-tailwind": "^1.1.0",
+    "lucide-react": "^0.517.0",
     "next-themes": "^0.4.6",
     "react": "^19.1.0",
     "react-day-picker": "^9.7.0",
@@ -75,7 +75,7 @@
     "@eslint/js": "^9.29.0",
     "@jest/globals": "^30.0.0",
     "@tailwindcss/vite": "^4.1.10",
-    "@types/node": "^24.0.2",
+    "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
@@ -86,7 +86,7 @@
     "jest": "^30.0.0",
     "tailwindcss": "^4.1.10",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.34.0",
+    "typescript-eslint": "^8.34.1",
     "vite": "^6.3.5",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "^4.5.4"

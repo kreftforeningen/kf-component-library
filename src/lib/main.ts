@@ -160,6 +160,8 @@ export {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
+  SheetFooter,
 } from "../sheet";
 export {
   Sidebar,
