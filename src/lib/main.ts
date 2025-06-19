@@ -1,6 +1,11 @@
 //src/lib/main.ts
 import "../style.css";
 export {
+  AccentuatedLink,
+  AccentuatedLinkSubtitle,
+  AccentuatedLinkTitle,
+} from "../accentuated-link";
+export {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -21,6 +26,7 @@ export {
 export { AspectRatio } from "../aspect-ratio";
 export { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 export { Badge } from "../badge";
+export { Banner } from "../banner";
 export {
   Breadcrumb,
   BreadcrumbItem,
@@ -79,6 +85,17 @@ export {
   DialogTrigger,
 } from "../dialog";
 export {
+  Download,
+  DownloadContent,
+  DownloadImage,
+  DownloadMain,
+  DownloadTitle,
+  DownloadDescription,
+  DownloadFooter,
+  DownloadDownloadUrl,
+  DownloadOrderUrl,
+} from "../download";
+export {
   Drawer,
   DrawerClose,
   DrawerContent,
@@ -96,7 +113,23 @@ export {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../dropdown-menu";
+export {
+  FactBox,
+  FactBoxTitle,
+  FactBoxContent,
+  FactBoxAction,
+  FactBoxDescription,
+} from "../fact-box";
 export { HoverCard, HoverCardContent, HoverCardTrigger } from "../hover-card";
+export {
+  Infographic,
+  InfographicItem,
+  InfographicItemIcon,
+  InfographicItemTitle,
+  InfographicItemTitleNumber,
+  InfographicItemTitleText,
+  InfographicItemDescription,
+} from "../infographic";
 export { Input } from "../input";
 export {
   InputOTP,
@@ -105,6 +138,12 @@ export {
   InputOTPSlot,
 } from "../input-otp";
 export { Label } from "../label";
+export {
+  LinkList,
+  LinkListItem,
+  LinkListTitle,
+  LinkListDescription,
+} from "../link-list";
 export {
   Menubar,
   MenubarContent,
@@ -136,6 +175,17 @@ export {
   PaginationNext,
   PaginationPrevious,
 } from "../pagination";
+export {
+  Person,
+  PersonItem,
+  PersonItemImage,
+  PersonItemContent,
+  PersonItemName,
+  PersonItemTitle,
+  PersonItemEmail,
+  PersonItemPhone,
+  PersonItemDescription,
+} from "../person";
 export { Popover, PopoverContent, PopoverTrigger } from "../popover";
 export { Progress } from "../progress";
 export { RadioGroup, RadioGroupItem } from "../radio-group";
@@ -187,6 +237,12 @@ export {
 } from "../table";
 export { Tabs, TabsContent, TabsList, TabsTrigger } from "../tabs";
 export { Textarea } from "../textarea";
+export {
+  Timeline,
+  TimelineItem,
+  TimelineItemTitle,
+  TimelineItemDescription,
+} from "../timeline";
 export { Toaster } from "../sonner";
 export { toast } from "sonner";
 export { Toggle } from "../toggle";

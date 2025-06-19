@@ -1,6 +1,6 @@
 {
   "name": "kf-shadcnui",
-  "version": "1.0.24",
+  "version": "1.1.3",
   "type": "module",
   "sideEffects": false,
   "files": [
@@ -12,7 +12,7 @@
   "types": "dist/lib/main.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kreftforeningen/kf-shadchnui.git"
+    "url": "git+https://github.com/kreftforeningen/kf-shadcnui.git"
   },
   "scripts": {
     "build": "vite build",
@@ -57,12 +57,9 @@
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
-    "kf-tailwind": "^1.1.0",
     "lucide-react": "^0.517.0",
     "next-themes": "^0.4.6",
-    "react": "^19.1.0",
     "react-day-picker": "^9.7.0",
-    "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-resizable-panels": "^3.0.3",
     "recharts": "^2.15.3",
@@ -84,12 +81,19 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
     "jest": "^30.0.0",
+    "kf-tailwind": "^1.1.0",
     "tailwindcss": "^4.1.10",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^6.3.5",
     "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "^4.5.4"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "kf-tailwind": "^1.1.0",
+    "tailwindcss": "^4.1.10"
   },
   "author": "Asbjørn Ness",
   "license": "MIT",
