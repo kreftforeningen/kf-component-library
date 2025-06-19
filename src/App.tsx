@@ -188,7 +188,7 @@ function App() {
         <main className="container w-5/6 md:w-2/3 mx-auto my-10">
           <Toaster position="top-center" richColors closeButton />
           <ModeToggle />
-          <h1>kf-shadcnui</h1>
+          <h1>kf-component-library</h1>
 
           <h2>Accordion</h2>
           <Accordion type="single" collapsible defaultValue="item-1">

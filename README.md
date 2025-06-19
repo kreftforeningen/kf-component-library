@@ -1,4 +1,4 @@
-# kf-components
+# kf-component-library
 
 A modern, accessible, and customizable React component library built with [Radix UI](https://www.radix-ui.com/), [Tailwind CSS](https://tailwindcss.com/), and [Vite](https://vitejs.dev/).  
 Perfect for building beautiful, production-ready UIs with speed and consistency.
@@ -14,11 +14,11 @@ Perfect for building beautiful, production-ready UIs with speed and consistency.
 ## Installation
 
 ```bash
-pnpm add kf-components
+pnpm add kf-component-library
 # or
-npm install kf-components
+npm install kf-component-library
 # or
-yarn add kf-components
+yarn add kf-component-library
 ```
 
 ## Usage
@@ -33,13 +33,13 @@ import {
   Accordion,
   Alert,
   // ...and more
-} from "kf-components";
+} from "kf-component-library";
 ```
 
 Example:
 
 ```tsx
-import { Button, Card, Badge } from "kf-components";
+import { Button, Card, Badge } from "kf-component-library";
 
 function Example() {
   return (
