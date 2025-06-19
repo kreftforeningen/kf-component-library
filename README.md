@@ -1,4 +1,4 @@
-# kf-shadcnui
+# kf-components
 
 A modern, accessible, and customizable React component library built with [Radix UI](https://www.radix-ui.com/), [Tailwind CSS](https://tailwindcss.com/), and [Vite](https://vitejs.dev/).  
 Perfect for building beautiful, production-ready UIs with speed and consistency.
@@ -14,11 +14,11 @@ Perfect for building beautiful, production-ready UIs with speed and consistency.
 ## Installation
 
 ```bash
-pnpm add kf-shadcnui
+pnpm add kf-components
 # or
-npm install kf-shadcnui
+npm install kf-components
 # or
-yarn add kf-shadcnui
+yarn add kf-components
 ```
 
 ## Usage
@@ -33,13 +33,13 @@ import {
   Accordion,
   Alert,
   // ...and more
-} from "kf-shadcnui";
+} from "kf-components";
 ```
 
 Example:
 
 ```tsx
-import { Button, Card, Badge } from "kf-shadcnui";
+import { Button, Card, Badge } from "kf-components";
 
 function Example() {
   return (

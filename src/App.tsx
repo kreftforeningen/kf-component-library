@@ -147,6 +147,15 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
+  Download,
+  DownloadImage,
+  DownloadFooter,
+  DownloadOrderUrl,
+  DownloadDownloadUrl,
+  DownloadContent,
+  DownloadMain,
+  DownloadDescription,
+  DownloadTitle,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -562,6 +571,30 @@ function App() {
               </DialogHeader>
             </DialogContent>
           </Dialog>
+
+          <h2>Download</h2>
+          <Download>
+            <DownloadContent>
+              <DownloadImage src="https://picsum.photos/200/300" />
+              <DownloadMain>
+                <DownloadTitle>Download</DownloadTitle>
+                <DownloadDescription>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </DownloadDescription>
+              </DownloadMain>
+            </DownloadContent>
+            <DownloadFooter>
+              <DownloadDownloadUrl href="https://www.google.com">
+                Last ned
+              </DownloadDownloadUrl>
+              <DownloadOrderUrl href="https://www.google.com">
+                Bestill
+              </DownloadOrderUrl>
+            </DownloadFooter>
+          </Download>
 
           <h2>Drawer</h2>
           <Drawer>
