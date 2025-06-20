@@ -26,7 +26,14 @@ export {
 export { AspectRatio } from "../aspect-ratio";
 export { Avatar, AvatarFallback, AvatarImage } from "../avatar";
 export { Badge } from "../badge";
-export { Banner } from "../banner";
+export {
+  Banner,
+  BannerImage,
+  BannerContent,
+  BannerTitle,
+  BannerDescription,
+  BannerButtons,
+} from "../banner";
 export {
   Breadcrumb,
   BreadcrumbItem,

@@ -4,6 +4,9 @@ import { ModeToggle } from "./components/mode-toggle";
 import { ThemeProvider } from "./components/theme-provider";
 
 import {
+  AccentuatedLink,
+  AccentuatedLinkTitle,
+  AccentuatedLinkSubtitle,
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -11,10 +14,25 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
+  AlertDialogHeader,
   AspectRatio,
   Avatar,
   AvatarFallback,
   AvatarImage,
+  Banner,
+  BannerButtons,
+  BannerContent,
+  BannerDescription,
+  BannerImage,
+  BannerTitle,
   Badge,
   Breadcrumb,
   BreadcrumbItem,
@@ -156,6 +174,31 @@ import {
   DownloadMain,
   DownloadDescription,
   DownloadTitle,
+  Person,
+  PersonItem,
+  PersonItemPhone,
+  PersonItemContent,
+  PersonItemDescription,
+  PersonItemEmail,
+  PersonItemName,
+  PersonItemTitle,
+  PersonItemImage,
+  FactBox,
+  FactBoxAction,
+  FactBoxContent,
+  FactBoxDescription,
+  FactBoxTitle,
+  Infographic,
+  InfographicItem,
+  InfographicItemDescription,
+  InfographicItemTitleText,
+  InfographicItemTitle,
+  InfographicItemTitleNumber,
+  InfographicItemIcon,
+  LinkList,
+  LinkListItem,
+  LinkListDescription,
+  LinkListTitle,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -175,6 +218,112 @@ import {
   LuCircleHelp,
 } from "react-icons/lu";
 
+const personItems = [
+  {
+    id: 1,
+    firstName: "John",
+    lastName: "Doe",
+    email: "john.long.name.johnson.doe@example.com",
+    phone: "+47 98765432",
+    title: "Software Engineer",
+    image: "https://picsum.photos/300/300",
+    description:
+      "John Doe is a software engineer with a passion for building scalable and efficient systems. He is a quick learner and always looking for new challenges.",
+  },
+  {
+    id: 2,
+    firstName: "Jane",
+    lastName: "Doe",
+    email: "j.doe@example.com",
+    phone: "+47 98765432",
+    title: "Marketing Manager",
+    description:
+      "Jane Doe is a marketing manager with a passion for building scalable and efficient systems. She is a quick learner and always looking for new challenges.",
+  },
+  {
+    id: 3,
+    firstName: "Alfred",
+    lastName: "Hitchcock",
+    email: "a.hitchcock@example.com",
+    phone: "+47 98765432",
+    title: "Product Manager",
+    image: "https://picsum.photos/300/300",
+    description:
+      "Alfred Hitchcock is a product manager with a passion for building scalable and efficient systems. He is a quick learner and always looking for new challenges.",
+  },
+  {
+    id: 4,
+    firstName: "Jane",
+    lastName: "Fonda",
+    email: "j.fonda@example.com",
+    phone: "+47 98765432",
+    title: "Sales Manager",
+    image: "https://picsum.photos/300/300",
+    description:
+      "Jane Fonda is a sales manager with a passion for building scalable and efficient systems. She is a quick learner and always looking for new challenges.",
+  },
+  {
+    id: 5,
+    firstName: "Lars Ola",
+    lastName: "Wayne",
+    email: "lwayne@example.com",
+    phone: "+47 98765432",
+    title: "CEO",
+    description:
+      "Lars Wayne is a CEO with a passion for building scalable and efficient systems. He is a quick learner and always looking for new challenges.",
+  },
+];
+
+const infographicItems = [
+  {
+    id: 1,
+    titleNumber: "3 %",
+    titleText: "Project Kickoff",
+    description: "Initial meeting with the team and stakeholders.",
+    url: "https://www.example.com",
+  },
+  {
+    id: 2,
+    titleNumber: "2",
+    titleText: "Design Phase",
+    description: "UI/UX design and prototyping.",
+    url: "https://www.google.com",
+  },
+];
+
+const linklistItems = [
+  {
+    id: 1,
+    title: "Project Kickoff",
+    content: "Initial meeting with the team and stakeholders.",
+    url: "https://www.example.com",
+  },
+  {
+    id: 2,
+    title: "Design Phase",
+    content: "UI/UX design and prototyping.",
+    url: "https://www.google.com",
+  },
+  {
+    id: 3,
+    title: "Development Start",
+    content: "Begin coding the main features.",
+    url: "https://www.altavista.com",
+  },
+  {
+    id: 4,
+    title: "Testing",
+    content: "QA and bug fixing.",
+    url: "https://www.reddit.com",
+  },
+  {
+    id: 5,
+    title: "Launch",
+    content: "Release the product to users.",
+    url: "https://www.youtube.com",
+  },
+];
+
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   const [isCollapsibleOpen, setIsCollapsibleOpen] = React.useState(false);
@@ -189,6 +338,14 @@ function App() {
           <Toaster position="top-center" richColors closeButton />
           <ModeToggle />
           <h1>kf-component-library</h1>
+
+          <h2>Accentuated Link</h2>
+          <AccentuatedLink href="https://www.google.com">
+            <AccentuatedLinkTitle>Accentuated Link</AccentuatedLinkTitle>
+            <AccentuatedLinkSubtitle>
+              Accentuated Link Subtitle
+            </AccentuatedLinkSubtitle>
+          </AccentuatedLink>
 
           <h2>Accordion</h2>
           <Accordion type="single" collapsible defaultValue="item-1">
@@ -227,6 +384,26 @@ function App() {
               You can add components and dependencies to your app using the CLI.
             </AlertDescription>
           </Alert>
+
+          <h2>Alert Dialog</h2>
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <Button variant="outline">Open Alert Dialog</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction>Continue</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
 
           <h2>Aspect Ratio</h2>
           <p className="mb-4">Image using aspect ratio set to 21/9.</p>
@@ -309,6 +486,35 @@ function App() {
               </Badge>
             </div>
           </div>
+
+          <h2>Banner</h2>
+          <Banner variant="right" color="red">
+            <BannerImage src="https://picsum.photos/800/800" alt="Banner" />
+            <BannerContent>
+              <BannerTitle>Banner</BannerTitle>
+              <BannerDescription>
+                <p className="mb-4">
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text.
+                </p>
+                <p className="mb-4">
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text.
+                </p>
+              </BannerDescription>
+              <BannerButtons>
+                <Button className="bg-red-800">Button</Button>
+                <Button
+                  className="border-red-800 bg-transparent text-red-800"
+                  variant="outline"
+                >
+                  Button
+                </Button>
+              </BannerButtons>
+            </BannerContent>
+          </Banner>
 
           <h2>Breadcrumb</h2>
           <Breadcrumb>
@@ -543,7 +749,7 @@ function App() {
             </CommandList>
           </Command>
 
-          <h2>ContextMenu</h2>
+          <h2>Context Menu</h2>
           <ContextMenu>
             <ContextMenuTrigger asChild>
               <Button variant="outline">Right click to show menu</Button>
@@ -637,6 +843,29 @@ function App() {
             </DropdownMenu>
           </div>
 
+          <h2>Fact Box</h2>
+          <FactBox>
+            <FactBoxContent>
+              <FactBoxTitle>Fact About Cancer</FactBoxTitle>
+              <FactBoxDescription>
+                <p className="mb-4">
+                  Something you should know about cancer. Is that it is a
+                  disease that affects many people. It can be treated and cured
+                  in many cases. But it can also be fatal.
+                </p>
+                <p className="mb-4">
+                  Do you think you have cancer? You probably don't. But you
+                  should still get checked out.
+                </p>
+                <p>
+                  If you do not have cancer, you are lucky. But you should still
+                  get checked out.
+                </p>
+              </FactBoxDescription>
+            </FactBoxContent>
+            <FactBoxAction>Fact Box</FactBoxAction>
+          </FactBox>
+
           <h2>Hover Card</h2>
           <HoverCard>
             <HoverCardTrigger asChild>
@@ -661,6 +890,28 @@ function App() {
             </HoverCardContent>
           </HoverCard>
 
+          <h2>Infographic</h2>
+          <Infographic>
+            {infographicItems.map((item) => (
+              <InfographicItem key={item.id} color="blue">
+                <InfographicItemIcon>
+                  <LuCircleCheck className="w-20 h-20" />
+                </InfographicItemIcon>
+                <InfographicItemTitle>
+                  <InfographicItemTitleNumber>
+                    {item.titleNumber}
+                  </InfographicItemTitleNumber>
+                  <InfographicItemTitleText>
+                    {item.titleText}
+                  </InfographicItemTitleText>
+                </InfographicItemTitle>
+                <InfographicItemDescription>
+                  {item.description}
+                </InfographicItemDescription>
+              </InfographicItem>
+            ))}
+          </Infographic>
+
           <h2>Input + Label</h2>
           <div className="flex flex-row flex-wrap gap-2">
             <Label>Input</Label>
@@ -681,6 +932,16 @@ function App() {
               <InputOTPSlot index={5} />
             </InputOTPGroup>
           </InputOTP>
+
+          <h2>Link List</h2>
+          <LinkList>
+            {linklistItems.map((item) => (
+              <LinkListItem key={item.id} href={item.url}>
+                <LinkListTitle>{item.title}</LinkListTitle>
+                <LinkListDescription>{item.content}</LinkListDescription>
+              </LinkListItem>
+            ))}
+          </LinkList>
 
           <h2>Menubar</h2>
           <Menubar>
@@ -849,6 +1110,36 @@ function App() {
               </PaginationItem>
             </PaginationContent>
           </Pagination>
+
+          <h2>Person</h2>
+          <Person>
+            {personItems.map((item) => (
+              <PersonItem key={item.id}>
+                <PersonItemImage
+                  src={item.image}
+                  alt={`${item.firstName} ${item.lastName}`}
+                  fallback={`${item.firstName.charAt(0)}${item.lastName.charAt(
+                    0
+                  )}`}
+                />
+                <PersonItemContent>
+                  <PersonItemName>
+                    {item.firstName} {item.lastName}
+                  </PersonItemName>
+                  <PersonItemTitle>{item.title}</PersonItemTitle>
+                  <PersonItemEmail href={`mailto:${item.email}`}>
+                    {item.email}
+                  </PersonItemEmail>
+                  <PersonItemPhone href={`tel:${item.phone}`}>
+                    {item.phone}
+                  </PersonItemPhone>
+                  <PersonItemDescription>
+                    {item.description}
+                  </PersonItemDescription>
+                </PersonItemContent>
+              </PersonItem>
+            ))}
+          </Person>
 
           <h2>Popover</h2>
           <Popover>

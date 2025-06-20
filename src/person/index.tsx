@@ -68,7 +68,10 @@ function PersonItemImage({
   return (
     <Avatar
       data-slot="person-item-image"
-      className={cn("w-16 h-16 rounded-full shrink-0 grow-0 ", className)}
+      className={cn(
+        "w-[60px] h-[60px] rounded-full shrink-0 grow-0",
+        className
+      )}
     >
       <AvatarImage {...props} />
       <AvatarFallback className="bg-grey-700 dark:bg-grey-100 text-grey-100 dark:text-grey-700">
