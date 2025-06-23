@@ -199,10 +199,18 @@ import {
   LinkListItem,
   LinkListDescription,
   LinkListTitle,
+  ChartContainer,
+  ChartTooltipContent,
+  ChartTooltip,
+  ChartLegendContent,
+  ChartLegend,
+  Textarea,
 } from "./lib/main";
 import { toast } from "sonner";
 
-import { Textarea } from "./lib/main";
+import type { ChartConfig } from "./lib/main";
+
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import {
   Calendar as CalendarIcon,
@@ -323,6 +331,26 @@ const linklistItems = [
     url: "https://www.youtube.com",
   },
 ];
+
+const chartData = [
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+  { month: "April", desktop: 73, mobile: 190 },
+  { month: "May", desktop: 209, mobile: 130 },
+  { month: "June", desktop: 214, mobile: 140 },
+];
+
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "#2563eb",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "#60a5fa",
+  },
+} satisfies ChartConfig;
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -641,6 +669,26 @@ function App() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
+
+          <h2>Chart</h2>
+          <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+            <BarChart accessibilityLayer data={chartData}>
+              <CartesianGrid vertical={false} />
+              <XAxis
+                dataKey="month"
+                tickLine={false}
+                tickMargin={10}
+                axisLine={false}
+                tickFormatter={(value) =>
+                  typeof value === "string" ? value.slice(0, 3) : value
+                }
+              />
+              <ChartTooltip content={<ChartTooltipContent />} />
+              <ChartLegend content={<ChartLegendContent />} />
+              <Bar dataKey="desktop" fill="var(--chart-1)" radius={4} />
+              <Bar dataKey="mobile" fill="var(--chart-2)" radius={4} />
+            </BarChart>
+          </ChartContainer>
 
           <h2>Checkbox</h2>
           <div className="flex flex-col gap-6">
