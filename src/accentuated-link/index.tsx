@@ -1,4 +1,4 @@
-import { LuExternalLink } from "react-icons/lu";
+import { ExternalLink } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import React, { createContext, useContext } from "react";
@@ -55,7 +55,7 @@ function AccentuatedLinkTitle({
     >
       <div className="text-lg">{children}</div>
       <div className="text-sm flex flex-row items-center gap-2">
-        <LuExternalLink />
+        <ExternalLink />
         <span>{extractDomain(href ?? "")}</span>
       </div>
     </a>

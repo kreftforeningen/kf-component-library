@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Button } from "../button";
 import React, { useState, createContext, useContext } from "react";
-import { LuArrowDown } from "react-icons/lu";
+import { ArrowDown } from "lucide-react";
 
 const factBoxVariants = cva("bg-blue-100 rounded-md dark:bg-blue-950", {
   variants: {
@@ -99,7 +99,7 @@ function FactBoxAction({ className, ...props }: React.ComponentProps<"div">) {
           expanded ? "rotate-180" : ""
         )}
       >
-        <LuArrowDown />
+        <ArrowDown />
       </Button>
     </div>
   );

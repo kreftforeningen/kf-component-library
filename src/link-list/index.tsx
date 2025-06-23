@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { LuArrowRight } from "react-icons/lu";
+import { ArrowRight } from "lucide-react";
 
 const linkListVariants = cva("grid  gap-8", {
   variants: {
@@ -42,7 +42,7 @@ function LinkListTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div className="flex flex-row gap-2 items-center text-blue-800 hover:text-blue-900 hover:underline hover:cursor-pointer dark:text-blue-200 dark:hover:text-blue-300">
       <h3 className={cn("m-0", className)} {...props} />
-      <LuArrowRight />
+      <ArrowRight />
     </div>
   );
 }

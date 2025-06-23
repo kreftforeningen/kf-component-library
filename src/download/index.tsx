@@ -1,4 +1,4 @@
-import { LuDownload, LuShoppingCart } from "react-icons/lu";
+import { Download as DownloadIcon, ShoppingCart } from "lucide-react";
 
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
@@ -134,7 +134,7 @@ function DownloadDownloadUrl({
       href={href}
       {...props}
     >
-      <LuDownload className="shrink-0" />
+      <DownloadIcon className="shrink-0" />
       <span>{children}</span>
     </a>
   );
@@ -157,7 +157,7 @@ function DownloadOrderUrl({
       href={href}
       {...props}
     >
-      <LuShoppingCart className="shrink-0" />
+      <ShoppingCart className="shrink-0" />
       <span>{children}</span>
     </a>
   );

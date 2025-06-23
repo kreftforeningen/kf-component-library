@@ -205,18 +205,18 @@ import { toast } from "sonner";
 import { Textarea } from "./lib/main";
 
 import {
-  LuCalendar,
-  LuChevronsUpDown,
-  LuCircleCheck,
-  LuSmile,
-  LuCalculator,
-  LuUser,
-  LuCreditCard,
-  LuSettings,
-  LuArrowRight,
-  LuCircleAlert,
-  LuCircleHelp,
-} from "react-icons/lu";
+  Calendar as CalendarIcon,
+  ChevronsUpDown,
+  CircleCheck,
+  Smile,
+  Calculator,
+  User,
+  CreditCard,
+  Settings,
+  ArrowRight,
+  CircleAlert,
+  CircleHelp,
+} from "lucide-react";
 
 const personItems = [
   {
@@ -378,7 +378,7 @@ function App() {
           </Alert>
 
           <Alert variant="destructive" className="my-4">
-            <LuCircleAlert />
+            <CircleAlert />
             <AlertTitle>Heads up!</AlertTitle>
             <AlertDescription>
               You can add components and dependencies to your app using the CLI.
@@ -387,7 +387,7 @@ function App() {
 
           <h2>Alert Dialog</h2>
           <AlertDialog>
-            <AlertDialogTrigger>
+            <AlertDialogTrigger asChild>
               <Button variant="outline">Open Alert Dialog</Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
@@ -466,7 +466,7 @@ function App() {
                 variant="secondary"
                 className="bg-blue-500 text-white dark:bg-blue-600"
               >
-                <LuCircleCheck />
+                <CircleCheck />
                 Verified
               </Badge>
               <Badge className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
@@ -584,7 +584,7 @@ function App() {
                 </p>
               </CardContent>
               <CardFooter>
-                <LuArrowRight />
+                <ArrowRight />
               </CardFooter>
             </Card>
             <Card>
@@ -691,7 +691,7 @@ function App() {
               </h4>
               <CollapsibleTrigger asChild>
                 <Button variant="ghost" size="icon" className="size-8">
-                  <LuChevronsUpDown />
+                  <ChevronsUpDown />
                   <span className="sr-only">Toggle</span>
                 </Button>
               </CollapsibleTrigger>
@@ -716,32 +716,32 @@ function App() {
               <CommandEmpty>No results found.</CommandEmpty>
               <CommandGroup heading="Suggestions">
                 <CommandItem>
-                  <LuCalendar />
+                  <CalendarIcon />
                   <span>Calendar</span>
                 </CommandItem>
                 <CommandItem>
-                  <LuSmile />
+                  <Smile />
                   <span>Search Emoji</span>
                 </CommandItem>
                 <CommandItem disabled>
-                  <LuCalculator />
+                  <Calculator />
                   <span>Calculator</span>
                 </CommandItem>
               </CommandGroup>
               <CommandSeparator />
               <CommandGroup heading="Settings">
                 <CommandItem>
-                  <LuUser />
+                  <User />
                   <span>Profile</span>
                   <CommandShortcut>⌘P</CommandShortcut>
                 </CommandItem>
                 <CommandItem>
-                  <LuCreditCard />
+                  <CreditCard />
                   <span>Billing</span>
                   <CommandShortcut>⌘B</CommandShortcut>
                 </CommandItem>
                 <CommandItem>
-                  <LuSettings />
+                  <Settings />
                   <span>Settings</span>
                   <CommandShortcut>⌘S</CommandShortcut>
                 </CommandItem>
@@ -764,7 +764,7 @@ function App() {
 
           <h2>Dialog</h2>
           <Dialog>
-            <DialogTrigger>
+            <DialogTrigger asChild>
               <Button variant="outline">Click to show dialog</Button>
             </DialogTrigger>
             <DialogContent>
@@ -895,7 +895,7 @@ function App() {
             {infographicItems.map((item) => (
               <InfographicItem key={item.id} color="blue">
                 <InfographicItemIcon>
-                  <LuCircleCheck className="w-20 h-20" />
+                  <CircleCheck className="w-20 h-20" />
                 </InfographicItemIcon>
                 <InfographicItemTitle>
                   <InfographicItemTitleNumber>
@@ -1070,19 +1070,19 @@ function App() {
                     <li>
                       <NavigationMenuLink asChild>
                         <a href="#" className="flex-row items-center gap-2">
-                          <LuCircleHelp />
+                          <CircleHelp />
                           Backlog
                         </a>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <a href="#" className="flex-row items-center gap-2">
-                          <LuCircleAlert />
+                          <CircleAlert />
                           To Do
                         </a>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <a href="#" className="flex-row items-center gap-2">
-                          <LuCircleCheck />
+                          <CircleCheck />
                           Done
                         </a>
                       </NavigationMenuLink>
@@ -1143,7 +1143,7 @@ function App() {
 
           <h2>Popover</h2>
           <Popover>
-            <PopoverTrigger>
+            <PopoverTrigger asChild>
               <Button variant="outline">Open Popover</Button>
             </PopoverTrigger>
             <PopoverContent>Place content for the popover here.</PopoverContent>
