@@ -60,6 +60,15 @@ export {
   CarouselNext,
   CarouselPrevious,
 } from "../carousel";
+export {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle,
+} from "../chart";
+export type { ChartConfig } from "../chart";
 export { Checkbox } from "../checkbox";
 export {
   Collapsible,
@@ -260,12 +269,3 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from "../tooltip";
-export {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-  ChartStyle,
-} from "../chart";
-export type { ChartConfig } from "../chart";
