@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const bannerVariants = cva(
-  "flex flex-col sm:flex-row rounded-lg bg-blue-200 min-h-[400px] overflow-hidden",
+  "flex flex-col sm:flex-row rounded-xl bg-blue-200 min-h-[400px] overflow-hidden",
   {
     variants: {
       variant: {

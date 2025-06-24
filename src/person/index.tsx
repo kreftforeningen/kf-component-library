@@ -51,7 +51,7 @@ function PersonItem({
     <article
       data-slot="person-item"
       className={cn(
-        "flex flex-row gap-4 rounded-md p-4 items-center",
+        "flex flex-row gap-4 rounded-xl p-4 items-center",
         personItemVariants({ color }),
         className
       )}

@@ -4,7 +4,7 @@ import { Button } from "../button";
 import React, { useState, createContext, useContext } from "react";
 import { ArrowDown } from "lucide-react";
 
-const factBoxVariants = cva("bg-blue-100 rounded-md dark:bg-blue-950", {
+const factBoxVariants = cva("bg-blue-100 rounded-xl dark:bg-blue-950", {
   variants: {
     variant: {
       default: "",
