@@ -16,7 +16,7 @@ const bannerVariants = cva(
       },
       color: {
         default: "bg-blue-200",
-        red: "bg-red-200",
+        red: "bg-red-200 dark:bg-red-950",
         green: "bg-green-200",
         orange: "bg-orange-200",
         purple: "bg-purple-200",
