@@ -136,6 +136,14 @@ export {
   FactBoxAction,
   FactBoxDescription,
 } from "../fact-box";
+export {
+  HeaderWrapper,
+  HeaderLogo,
+  HeaderNavigation,
+  HeaderButton,
+  HeaderSearch,
+  HeaderMenu,
+} from "../header";
 export { HoverCard, HoverCardContent, HoverCardTrigger } from "../hover-card";
 export {
   Infographic,

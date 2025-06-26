@@ -205,6 +205,12 @@ import {
   ChartLegendContent,
   ChartLegend,
   Textarea,
+  HeaderWrapper,
+  HeaderLogo,
+  HeaderNavigation,
+  HeaderButton,
+  HeaderSearch,
+  HeaderMenu,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -914,6 +920,20 @@ function App() {
             <FactBoxAction>Fact Box</FactBoxAction>
           </FactBox>
 
+          <h2 id="header">Header</h2>
+          {/* </main> */}
+
+          <div className="my-20">
+            <HeaderWrapper>
+              <HeaderLogo src="/assets/logo.svg" />
+              <HeaderNavigation></HeaderNavigation>
+              <HeaderButton>Støtt oss</HeaderButton>
+              <HeaderMenu>Menu</HeaderMenu>
+              <HeaderSearch />
+            </HeaderWrapper>
+          </div>
+
+          {/* <main className="container w-5/6 md:w-2/3 mx-auto my-10"> */}
           <h2>Hover Card</h2>
           <HoverCard>
             <HoverCardTrigger asChild>
