@@ -48,12 +48,9 @@ function DownloadImage({
   );
 }
 
-function DownloadContent({
-  className,
-  ...props
-}: React.ComponentProps<"main">) {
+function DownloadContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <main
+    <div
       data-slot="download-content"
       className={cn("flex flex-row gap-4 p-4 sm:grow", className)}
       {...props}
@@ -61,10 +58,8 @@ function DownloadContent({
   );
 }
 
-function DownloadMain({ className, ...props }: React.ComponentProps<"main">) {
-  return (
-    <main data-slot="download-main" className={cn(className)} {...props} />
-  );
+function DownloadMain({ className, ...props }: React.ComponentProps<"div">) {
+  return <div data-slot="download-main" className={cn(className)} {...props} />;
 }
 
 function DownloadTitle({
