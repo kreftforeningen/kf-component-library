@@ -381,7 +381,9 @@ function App() {
       <ThemeProvider>
         <main className="container w-5/6 md:w-2/3 mx-auto my-10">
           <Toaster position="top-center" richColors closeButton />
-          <ModeToggle />
+          <ModeToggle variant="outline" size="default">
+            Text/Icon
+          </ModeToggle>
           <h1>kf-component-library</h1>
 
           <h2>Accentuated Link</h2>
