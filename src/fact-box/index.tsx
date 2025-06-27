@@ -82,7 +82,15 @@ function FactBoxDescription({
   );
 }
 
-function FactBoxAction({ className, ...props }: React.ComponentProps<"div">) {
+function FactBoxAction({
+  className,
+  expandText,
+  contractText,
+  ...props
+}: React.ComponentProps<"div"> & {
+  expandText?: string;
+  contractText?: string;
+}) {
   const context = useContext(FactBoxContext);
   if (!context) return null;
   const { expanded, toggle } = context;
@@ -100,6 +108,7 @@ function FactBoxAction({ className, ...props }: React.ComponentProps<"div">) {
         )}
       >
         <ArrowDown />
+        <span className="sr-only">{expanded ? expandText : contractText}</span>
       </Button>
     </div>
   );
