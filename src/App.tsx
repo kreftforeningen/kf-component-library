@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import { ModeToggle } from "./components/mode-toggle";
-import { ThemeProvider } from "./components/theme-provider";
+import { ModeToggle } from "./mode-toggle";
+import { ThemeProvider } from "./theme-provider";
 
 import {
   AccentuatedLink,
@@ -214,6 +214,7 @@ import {
   HeaderSearch,
   HeaderMenuList,
   HeaderMenuListItem,
+  HeaderMenuFooter,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -1016,12 +1017,18 @@ function App() {
                       Aktuelt
                     </HeaderMenuListItem>
                   </HeaderMenuList>
+                  <HeaderMenuFooter className="flex flex-row gap-4 items-center justify-start dark">
+                    <ModeToggle
+                      align="start"
+                      variant="outline"
+                      size="default"
+                    ></ModeToggle>
+                  </HeaderMenuFooter>
                 </HeaderMenuContent>
               </HeaderMenu>
             </HeaderWrapper>
           </div>
 
-          {/* <main className="container w-5/6 md:w-2/3 mx-auto my-10"> */}
           <h2>Hover Card</h2>
           <HoverCard>
             <HoverCardTrigger asChild>

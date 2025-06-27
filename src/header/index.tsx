@@ -1,12 +1,12 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@/theme-provider";
 
 import { Button } from "../button";
 import { Input } from "../input";
 
 import { Search as SearchIcon } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "../sheet";
+import { Sheet, SheetContent, SheetFooter, SheetTrigger } from "../sheet";
 
 const headerVariants = cva(
   "flex flex-row flex-stretch gap-2 items-center my-4",
@@ -130,6 +130,17 @@ function HeaderMenuContent({ children }: React.ComponentProps<"div">) {
   );
 }
 
+function HeaderMenuFooter({
+  className,
+  children,
+}: React.ComponentProps<"div">) {
+  return (
+    <SheetFooter className={cn("flex flex-row justify-between", className)}>
+      {children}
+    </SheetFooter>
+  );
+}
+
 function HeaderMenuList({ children }: React.ComponentProps<"ul">) {
   return <ul className="flex flex-col gap-2 py-2">{children}</ul>;
 }
@@ -163,4 +174,5 @@ export {
   HeaderMenuContent,
   HeaderMenuList,
   HeaderMenuListItem,
+  HeaderMenuFooter,
 };
