@@ -95,7 +95,7 @@ function FactBoxAction({ className, ...props }: React.ComponentProps<"div">) {
       <Button
         onClick={toggle}
         className={cn(
-          "transition-all duration-600 w-10 h-10 absolute bottom-0 translate-y-1/2",
+          "transition-all duration-200 w-10 h-10 absolute bottom-0 translate-y-1/2",
           expanded ? "rotate-180" : ""
         )}
       >

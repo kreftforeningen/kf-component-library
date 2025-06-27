@@ -143,6 +143,10 @@ export {
   HeaderButton,
   HeaderSearch,
   HeaderMenu,
+  HeaderMenuTrigger,
+  HeaderMenuContent,
+  HeaderMenuList,
+  HeaderMenuListItem,
 } from "../header";
 export { HoverCard, HoverCardContent, HoverCardTrigger } from "../hover-card";
 export {

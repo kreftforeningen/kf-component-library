@@ -207,10 +207,13 @@ import {
   Textarea,
   HeaderWrapper,
   HeaderLogo,
-  HeaderNavigation,
   HeaderButton,
-  HeaderSearch,
   HeaderMenu,
+  HeaderMenuTrigger,
+  HeaderMenuContent,
+  HeaderSearch,
+  HeaderMenuList,
+  HeaderMenuListItem,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -230,6 +233,13 @@ import {
   ArrowRight,
   CircleAlert,
   CircleHelp,
+  ServerIcon,
+  HeartIcon,
+  MenuIcon,
+  UserIcon,
+  GlobeIcon,
+  ChevronRightIcon,
+  ShoppingBasketIcon,
 } from "lucide-react";
 
 const personItems = [
@@ -375,10 +385,10 @@ function App() {
 
           <h2>Accentuated Link</h2>
           <AccentuatedLink href="https://www.google.com">
-            <AccentuatedLinkTitle>Accentuated Link</AccentuatedLinkTitle>
-            <AccentuatedLinkSubtitle>
-              Accentuated Link Subtitle
-            </AccentuatedLinkSubtitle>
+            <AccentuatedLinkSubtitle>Read more</AccentuatedLinkSubtitle>
+            <AccentuatedLinkTitle>
+              World's Most Used Search Engine
+            </AccentuatedLinkTitle>
           </AccentuatedLink>
 
           <h2>Accordion</h2>
@@ -606,14 +616,14 @@ function App() {
               </AspectRatio>
               <CardHeader>
                 <CardDescription>29.05.2020</CardDescription>
-                <CardTitle>– In About Five Minutes I’ll Be There</CardTitle>
+                <CardTitle>– In About Five Minutes I'll Be There</CardTitle>
                 <CardAction>
                   <Badge>Badge</Badge>
                 </CardAction>
               </CardHeader>
               <CardContent>
                 <p>
-                  During the first few minutes of the conversation, I’ll be
+                  During the first few minutes of the conversation, I'll be
                   there. But where will you be?
                 </p>
               </CardContent>
@@ -624,14 +634,14 @@ function App() {
             <Card>
               <CardHeader>
                 <CardDescription>29.05.2020</CardDescription>
-                <CardTitle>– In About Five Minutes I’ll Be There</CardTitle>
+                <CardTitle>– In About Five Minutes I'll Be There</CardTitle>
                 <CardAction>
                   <Badge>Badge</Badge>
                 </CardAction>
               </CardHeader>
               <CardContent>
                 <p>
-                  During the first few minutes of the conversation, I’ll be
+                  During the first few minutes of the conversation, I'll be
                   there. But where will you be?
                 </p>
               </CardContent>
@@ -921,15 +931,93 @@ function App() {
           </FactBox>
 
           <h2 id="header">Header</h2>
-          {/* </main> */}
-
           <div className="my-20">
             <HeaderWrapper>
-              <HeaderLogo src="/assets/logo.svg" />
-              <HeaderNavigation></HeaderNavigation>
-              <HeaderButton>Støtt oss</HeaderButton>
-              <HeaderMenu>Menu</HeaderMenu>
-              <HeaderSearch />
+              <HeaderLogo
+                src="/assets/logo.svg"
+                darkSrc="/assets/logo-dark.svg"
+                alt="Logo"
+              />
+              <HeaderButton href="#" variant="destructive">
+                Støtt oss <HeartIcon className="hidden sm:block" />
+              </HeaderButton>
+              <HeaderButton
+                href="https://nettbutikk.kreftforeningen.no"
+                className="hidden sm:block"
+                variant="outline"
+              >
+                Nettbutikk <ShoppingBasketIcon />
+              </HeaderButton>
+
+              <HeaderMenu>
+                <HeaderMenuTrigger>
+                  <Button
+                    variant="default"
+                    data-slot="header-button"
+                    className="flex items-center gap-2"
+                  >
+                    <span className="hidden sm:block">Menu</span> <MenuIcon />
+                  </Button>
+                </HeaderMenuTrigger>
+                <HeaderMenuContent>
+                  <HeaderSearch />
+                  <HeaderMenuList>
+                    <HeaderMenuListItem href="https://nettbutikk.kreftforeningen.no">
+                      <ShoppingBasketIcon /> Nettbutikk
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <UserIcon /> Min side
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <GlobeIcon /> English
+                    </HeaderMenuListItem>
+                  </HeaderMenuList>
+                  <HeaderMenuList>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Om kreft
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Råd og rettigheter
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Tilbud og aktiviteter
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Forebygge kreft
+                    </HeaderMenuListItem>
+                  </HeaderMenuList>
+                  <HeaderMenuList>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Støtt kreftsaken
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Engasjer deg
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Kreftforskning
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Om oss
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Kontakt oss
+                    </HeaderMenuListItem>
+                    <HeaderMenuListItem href="#">
+                      <ChevronRightIcon />
+                      Aktuelt
+                    </HeaderMenuListItem>
+                  </HeaderMenuList>
+                </HeaderMenuContent>
+              </HeaderMenu>
             </HeaderWrapper>
           </div>
 
@@ -963,7 +1051,7 @@ function App() {
             {infographicItems.map((item) => (
               <InfographicItem key={item.id} color="blue">
                 <InfographicItemIcon>
-                  <CircleCheck className="w-20 h-20" />
+                  <ServerIcon className="w-10 h-10" strokeWidth={1} />
                 </InfographicItemIcon>
                 <InfographicItemTitle>
                   <InfographicItemTitleNumber>
