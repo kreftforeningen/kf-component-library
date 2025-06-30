@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Separator } from "../separator";
 import { ChevronRight } from "lucide-react";
 
-const footerVariants = cva("my-4 px-6 sm:px-0 bg-grey-800 py-10", {
+const footerVariants = cva("my-4 px-6 bg-grey-800 py-10", {
   variants: {
     variant: {
       default: "",
@@ -79,7 +79,7 @@ function FooterNavigationLink({
 
 function FooterContact({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-center py-10 container mx-auto">
+    <div className="flex flex-col md:flex-row gap-4 md:gap-10 md:items-center py-10 container mx-auto">
       {children}
     </div>
   );
