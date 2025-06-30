@@ -215,6 +215,15 @@ import {
   HeaderMenuList,
   HeaderMenuListItem,
   HeaderMenuFooter,
+  FooterNavigationItem,
+  FooterNavigationLink,
+  FooterSocial,
+  FooterWrapper,
+  FooterNavigation,
+  FooterContact,
+  FooterActions,
+  FooterContactItem,
+  FooterCopyright,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -241,7 +250,19 @@ import {
   GlobeIcon,
   ChevronRightIcon,
   ShoppingBasketIcon,
+  Phone,
+  Map,
+  MessageCircle,
+  Mail,
+  HandCoins,
 } from "lucide-react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaTiktok,
+} from "react-icons/fa";
 
 const personItems = [
   {
@@ -361,11 +382,9 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "#2563eb",
   },
   mobile: {
     label: "Mobile",
-    color: "#60a5fa",
   },
 } satisfies ChartConfig;
 
@@ -704,8 +723,8 @@ function App() {
               />
               <ChartTooltip content={<ChartTooltipContent />} />
               <ChartLegend content={<ChartLegendContent />} />
-              <Bar dataKey="desktop" fill="var(--chart-1)" radius={4} />
-              <Bar dataKey="mobile" fill="var(--chart-2)" radius={4} />
+              <Bar dataKey="desktop" fill="var(--color-blue-600)" radius={4} />
+              <Bar dataKey="mobile" fill="var(--color-red-600)" radius={4} />
             </BarChart>
           </ChartContainer>
 
@@ -933,104 +952,241 @@ function App() {
             <FactBoxAction>Fact Box</FactBoxAction>
           </FactBox>
 
-          <h2 id="header">Header</h2>
-          <div className="my-20">
-            <HeaderWrapper>
-              <HeaderLogo
-                src="/assets/logo.svg"
-                darkSrc="/assets/logo-dark.svg"
-                alt="Logo"
-              />
-              <HeaderButton href="#" variant="destructive">
+          <h2 id="footer">Footer</h2>
+        </main>
+        <FooterWrapper className="dark">
+          <FooterActions>
+            <Button variant="destructive" asChild>
+              <a href="#">
                 Støtt oss <HeartIcon className="hidden sm:block" />
-              </HeaderButton>
-              <HeaderButton
-                href="https://nettbutikk.kreftforeningen.no"
-                className="hidden sm:block"
-                variant="outline"
-              >
-                Nettbutikk <ShoppingBasketIcon />
-              </HeaderButton>
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="#">
+                Nettbutikk <ShoppingBasketIcon className="hidden sm:block" />
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="#">
+                Vipps 2277 <HandCoins className="hidden sm:block" />
+              </a>
+            </Button>
+          </FooterActions>
 
-              <HeaderMenu>
-                <HeaderMenuTrigger>
-                  <Button
-                    variant="default"
-                    data-slot="header-button"
-                    className="flex items-center gap-2"
-                  >
-                    <span className="hidden sm:block">Menu</span> <MenuIcon />
-                  </Button>
-                </HeaderMenuTrigger>
-                <HeaderMenuContent>
-                  <HeaderSearch />
-                  <HeaderMenuList>
-                    <HeaderMenuListItem href="https://nettbutikk.kreftforeningen.no">
-                      <ShoppingBasketIcon /> Nettbutikk
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <UserIcon /> Min side
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <GlobeIcon /> English
-                    </HeaderMenuListItem>
-                  </HeaderMenuList>
-                  <HeaderMenuList>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Om kreft
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Råd og rettigheter
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Tilbud og aktiviteter
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Forebygge kreft
-                    </HeaderMenuListItem>
-                  </HeaderMenuList>
-                  <HeaderMenuList>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Støtt kreftsaken
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Engasjer deg
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Kreftforskning
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Om oss
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Kontakt oss
-                    </HeaderMenuListItem>
-                    <HeaderMenuListItem href="#">
-                      <ChevronRightIcon />
-                      Aktuelt
-                    </HeaderMenuListItem>
-                  </HeaderMenuList>
-                  <HeaderMenuFooter className="flex flex-row gap-4 items-center justify-start dark">
-                    <ModeToggle
-                      align="start"
-                      variant="outline"
-                      size="default"
-                    ></ModeToggle>
-                  </HeaderMenuFooter>
-                </HeaderMenuContent>
-              </HeaderMenu>
-            </HeaderWrapper>
-          </div>
+          <FooterNavigation>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Kontonummer</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">SMS</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">
+                Har vi forsøkt å ringe deg?
+              </FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Nyhetsbrev</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Aktuelt</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Presse</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">
+                Skattefradrag
+              </FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Bli medlem</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Gi en gave</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">
+                Bli frivillig
+              </FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Min side</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Om oss</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">
+                Bestill brosjyrer
+              </FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">Personvern</FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">
+                Informasjonskapsler
+              </FooterNavigationLink>
+            </FooterNavigationItem>
+            <FooterNavigationItem>
+              <FooterNavigationLink href="/">
+                Ledige stillinger
+              </FooterNavigationLink>
+            </FooterNavigationItem>
+          </FooterNavigation>
 
+          <FooterSocial>
+            <Button variant="outline" size="icon" aria-label="Facebook">
+              <FaFacebook />
+            </Button>
+            <Button variant="outline" size="icon" aria-label="Instagram">
+              <FaInstagram />
+            </Button>
+            <Button variant="outline" size="icon" aria-label="Youtube">
+              <FaYoutube />
+            </Button>
+            <Button variant="outline" size="icon" aria-label="Linkedin">
+              <FaLinkedin />
+            </Button>
+            <Button variant="outline" size="icon" aria-label="Tiktok">
+              <FaTiktok />
+            </Button>
+          </FooterSocial>
+
+          <FooterContact>
+            <FooterContactItem href="#" aria-label="Phone">
+              <Phone /> 21 49 49 21
+            </FooterContactItem>
+            <FooterContactItem href="#" aria-label="Email">
+              <Mail />
+              post@kreftforeningen.no
+            </FooterContactItem>
+            <FooterContactItem href="#" aria-label="Chat">
+              <MessageCircle /> Chat med oss
+            </FooterContactItem>
+            <FooterContactItem href="#" aria-label="Map">
+              <Map /> Kontorer og adresser
+            </FooterContactItem>
+          </FooterContact>
+
+          <FooterCopyright>
+            Vi er medlem av{" "}
+            <a href="https://www.innsamlingskontrollen.no/">
+              Innsamlingskontrollen i Norge
+            </a>
+            , <a href="https://oslocancercluster.no/">Oslo Cancer Cluster</a>,{" "}
+            <a href="https://www.norwayhealthtech.com/nb/">
+              Norway Health Tech
+            </a>
+            ,{" "}
+            <a href="https://www.smartcarecluster.no/">
+              Norwegian Smart Care Cluster
+            </a>
+            , <a href="https://www.uicc.org/">UICC </a>og{" "}
+            <a href="https://ncu.nu/">NCU</a>.
+          </FooterCopyright>
+        </FooterWrapper>
+        <main className="container w-5/6 md:w-2/3 mx-auto my-10">
+          <h2 id="header">Header</h2>
+        </main>
+        <div className="my-20">
+          <HeaderWrapper>
+            <HeaderLogo
+              src="/assets/logo.svg"
+              darkSrc="/assets/logo-dark.svg"
+              alt="Logo"
+            />
+            <HeaderButton href="#" variant="destructive">
+              Støtt oss <HeartIcon className="hidden sm:block" />
+            </HeaderButton>
+            <HeaderButton
+              href="https://nettbutikk.kreftforeningen.no"
+              className="hidden sm:block"
+              variant="outline"
+            >
+              Nettbutikk <ShoppingBasketIcon />
+            </HeaderButton>
+
+            <HeaderMenu>
+              <HeaderMenuTrigger>
+                <Button
+                  variant="default"
+                  data-slot="header-button"
+                  className="flex items-center gap-2"
+                >
+                  <span className="hidden sm:block">Menu</span> <MenuIcon />
+                </Button>
+              </HeaderMenuTrigger>
+              <HeaderMenuContent>
+                <HeaderSearch />
+                <HeaderMenuList>
+                  <HeaderMenuListItem href="https://nettbutikk.kreftforeningen.no">
+                    <ShoppingBasketIcon /> Nettbutikk
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <UserIcon /> Min side
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <GlobeIcon /> English
+                  </HeaderMenuListItem>
+                </HeaderMenuList>
+                <HeaderMenuList>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Om kreft
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Råd og rettigheter
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Tilbud og aktiviteter
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Forebygge kreft
+                  </HeaderMenuListItem>
+                </HeaderMenuList>
+                <HeaderMenuList>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Støtt kreftsaken
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Engasjer deg
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Kreftforskning
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Om oss
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Kontakt oss
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Aktuelt
+                  </HeaderMenuListItem>
+                </HeaderMenuList>
+                <HeaderMenuFooter className="flex flex-row gap-4 items-center justify-start dark">
+                  <ModeToggle
+                    align="start"
+                    variant="outline"
+                    size="default"
+                  ></ModeToggle>
+                </HeaderMenuFooter>
+              </HeaderMenuContent>
+            </HeaderMenu>
+          </HeaderWrapper>
+        </div>
+        <main className="container w-5/6 md:w-2/3 mx-auto my-10">
           <h2>Hover Card</h2>
           <HoverCard>
             <HoverCardTrigger asChild>

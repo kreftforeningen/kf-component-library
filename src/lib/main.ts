@@ -149,6 +149,17 @@ export {
   HeaderMenuListItem,
   HeaderMenuFooter,
 } from "../header";
+export {
+  FooterWrapper,
+  FooterSocial,
+  FooterNavigation,
+  FooterNavigationItem,
+  FooterNavigationLink,
+  FooterContact,
+  FooterActions,
+  FooterContactItem,
+  FooterCopyright,
+} from "../footer";
 export { ModeToggle } from "../mode-toggle";
 export { ThemeProvider, useTheme } from "../theme-provider";
 export { HoverCard, HoverCardContent, HoverCardTrigger } from "../hover-card";
