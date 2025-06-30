@@ -9,7 +9,7 @@ import { Search as SearchIcon } from "lucide-react";
 import { Sheet, SheetContent, SheetFooter, SheetTrigger } from "../sheet";
 
 const headerVariants = cva(
-  "flex flex-row flex-stretch gap-2 items-center my-4",
+  "flex flex-row flex-stretch gap-2 items-center my-4 container mx-auto",
   {
     variants: {
       variant: {
