@@ -1,8 +1,9 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Separator } from "../separator";
+import { ChevronRight } from "lucide-react";
 
-const footerVariants = cva("my-4 bg-grey-800 dark:bg-grey-100 py-10", {
+const footerVariants = cva("my-4 px-6 sm:px-0 bg-grey-800 py-10", {
   variants: {
     variant: {
       default: "",
@@ -48,7 +49,7 @@ function FooterSocial({ children }: { children?: React.ReactNode }) {
 
 function FooterNavigation({ children }: { children?: React.ReactNode }) {
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 items-center container mx-auto py-10">
+    <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 items-center container mx-auto py-10">
       {children}
     </ul>
   );
@@ -68,8 +69,9 @@ function FooterNavigationLink({
   return (
     <a
       href={href}
-      className=" dark:text-blue-200 dark:hover:text-blue-100 text-blue-800 hover:text-blue-900 hover:underline"
+      className=" dark:text-blue-200 dark:hover:text-blue-100 text-blue-800 hover:text-blue-900 hover:underline flex flex-row items-center"
     >
+      <ChevronRight className="w-4 h-4" />
       {children}
     </a>
   );
@@ -77,7 +79,7 @@ function FooterNavigationLink({
 
 function FooterContact({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="flex flex-row gap-10 items-center py-10 container mx-auto">
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 sm:items-center py-10 container mx-auto">
       {children}
     </div>
   );
