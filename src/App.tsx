@@ -553,7 +553,7 @@ function App() {
             </div>
           </div>
 
-          <h2>Banner</h2>
+          <h2 id="banner">Banner</h2>
           <Banner variant="right" color="red">
             <BannerImage src="https://picsum.photos/800/800" alt="Banner" />
             <BannerContent>
