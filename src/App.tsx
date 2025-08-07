@@ -215,6 +215,7 @@ import {
   HeaderMenuList,
   HeaderMenuListItem,
   HeaderMenuFooter,
+  HeaderTitle,
   FooterNavigationItem,
   FooterNavigationLink,
   FooterSocial,
@@ -255,6 +256,8 @@ import {
   MessageCircle,
   Mail,
   HandCoins,
+  Cog,
+  ExternalLink,
 } from "lucide-react";
 import {
   FaFacebook,
@@ -1091,6 +1094,9 @@ function App() {
           <h2 id="header">Header</h2>
         </main>
         <div className="my-20">
+          <h3 className="container w-5/6 md:w-2/3 mx-auto my-10">
+            Header for Web
+          </h3>
           <HeaderWrapper>
             <HeaderLogo
               src="/assets/logo.svg"
@@ -1186,6 +1192,82 @@ function App() {
             </HeaderMenu>
           </HeaderWrapper>
         </div>
+        <div className="my-20">
+          <h3 className="container w-5/6 md:w-2/3 mx-auto my-10">
+            Header for App
+          </h3>
+          <HeaderWrapper>
+            <HeaderTitle>App Title by Kreftforeningen</HeaderTitle>
+
+            <HeaderButton
+              href="https://nettbutikk.kreftforeningen.no"
+              className="hidden sm:block"
+              variant="outline"
+            >
+              Kreftforeningen.no <ExternalLink />
+            </HeaderButton>
+
+            <HeaderMenu>
+              <HeaderMenuTrigger>
+                <Button
+                  variant="default"
+                  data-slot="header-button"
+                  className="flex items-center gap-2"
+                >
+                  <span className="hidden sm:block">Menu</span> <MenuIcon />
+                </Button>
+              </HeaderMenuTrigger>
+              <HeaderMenuContent>
+                <HeaderSearch />
+                <HeaderMenuList>
+                  <HeaderMenuListItem href="#">
+                    <UserIcon /> Profil
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <Cog /> Konto
+                  </HeaderMenuListItem>
+                </HeaderMenuList>
+                <HeaderMenuList>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Personvern
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Avtaler
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Donasjoner
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ChevronRightIcon />
+                    Grupper
+                  </HeaderMenuListItem>
+                </HeaderMenuList>
+                <HeaderMenuList>
+                  <HeaderMenuListItem href="#">
+                    <HeartIcon />
+                    Støtt oss
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <ShoppingBasketIcon />
+                    Nettbutikk
+                  </HeaderMenuListItem>
+                </HeaderMenuList>
+
+                <HeaderMenuFooter className="flex flex-row gap-4 items-center justify-start dark">
+                  <ModeToggle
+                    align="start"
+                    variant="outline"
+                    size="default"
+                  ></ModeToggle>
+                </HeaderMenuFooter>
+              </HeaderMenuContent>
+            </HeaderMenu>
+          </HeaderWrapper>
+        </div>
+
         <main className="container w-5/6 md:w-2/3 mx-auto my-10">
           <h2>Hover Card</h2>
           <HoverCard>

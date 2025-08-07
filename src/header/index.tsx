@@ -61,6 +61,14 @@ function HeaderLogo({
   );
 }
 
+function HeaderTitle({ className, ...props }: React.ComponentProps<"span">) {
+  return (
+    <div data-slot="header-title" className="grow">
+      <span className={cn("text-xl", className)} {...props} />
+    </div>
+  );
+}
+
 function HeaderNavigation({
   className,
   ...props
@@ -175,4 +183,5 @@ export {
   HeaderMenuList,
   HeaderMenuListItem,
   HeaderMenuFooter,
+  HeaderTitle,
 };

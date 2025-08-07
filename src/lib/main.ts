@@ -148,6 +148,7 @@ export {
   HeaderMenuList,
   HeaderMenuListItem,
   HeaderMenuFooter,
+  HeaderTitle,
 } from "../header";
 export {
   FooterWrapper,
