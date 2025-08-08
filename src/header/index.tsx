@@ -41,8 +41,9 @@ function HeaderLogo({
   className,
   src,
   darkSrc,
+  href,
   ...props
-}: React.ComponentProps<"img"> & { darkSrc?: string }) {
+}: React.ComponentProps<"img"> & { darkSrc?: string; href?: string }) {
   const { theme } = useTheme();
 
   if (!src) return null;
@@ -50,21 +51,47 @@ function HeaderLogo({
   // Use darkSrc if provided and theme is dark, otherwise use the regular src
   const logoSrc = darkSrc && theme === "dark" ? darkSrc : src;
 
+  const imgElement = (
+    <img
+      className={cn("w-auto max-h-[100px] min-w-[150px]", className)}
+      src={logoSrc}
+      {...props}
+    />
+  );
+
   return (
     <div data-slot="header-logo" className="grow">
-      <img
-        className={cn("w-auto max-h-[100px] min-w-[150px]", className)}
-        src={logoSrc}
-        {...props}
-      />
+      {href ? (
+        <a href={href} tabIndex={0} aria-label="Logo">
+          {imgElement}
+        </a>
+      ) : (
+        imgElement
+      )}
     </div>
   );
 }
 
-function HeaderTitle({ className, ...props }: React.ComponentProps<"span">) {
+function HeaderTitle({
+  className,
+  href,
+  ...props
+}: React.ComponentProps<"span"> & { href?: string }) {
+  const content = <span className={cn("text-xl", className)} {...props} />;
   return (
     <div data-slot="header-title" className="grow">
-      <span className={cn("text-xl", className)} {...props} />
+      {href ? (
+        <a
+          href={href}
+          tabIndex={0}
+          aria-label="Title"
+          className="hover:underline dark:hover:text-blue-200 hover:text-blue-600"
+        >
+          {content}
+        </a>
+      ) : (
+        content
+      )}
     </div>
   );
 }

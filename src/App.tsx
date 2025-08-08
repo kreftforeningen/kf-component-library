@@ -257,7 +257,7 @@ import {
   Mail,
   HandCoins,
   Cog,
-  ExternalLink,
+  ArrowRightIcon,
 } from "lucide-react";
 import {
   FaFacebook,
@@ -1102,6 +1102,7 @@ function App() {
               src="/assets/logo.svg"
               darkSrc="/assets/logo-dark.svg"
               alt="Logo"
+              href="/"
             />
             <HeaderButton href="#" variant="destructive">
               Støtt oss <HeartIcon className="hidden sm:block" />
@@ -1197,14 +1198,14 @@ function App() {
             Header for App
           </h3>
           <HeaderWrapper>
-            <HeaderTitle>App Title by Kreftforeningen</HeaderTitle>
+            <HeaderTitle href="/">App Title</HeaderTitle>
 
             <HeaderButton
-              href="https://nettbutikk.kreftforeningen.no"
+              href="https://kreftforeningen.no"
               className="hidden sm:block"
               variant="outline"
             >
-              Kreftforeningen.no <ExternalLink />
+              Til Kreftforeningen <ArrowRightIcon />
             </HeaderButton>
 
             <HeaderMenu>
@@ -1253,6 +1254,14 @@ function App() {
                   <HeaderMenuListItem href="#">
                     <ShoppingBasketIcon />
                     Nettbutikk
+                  </HeaderMenuListItem>
+                  <HeaderMenuListItem href="#">
+                    <img
+                      src="/assets/logo-symbol.svg"
+                      alt="Kreftforeningen"
+                      className="h-6 w-6"
+                    />
+                    Kreftforeningen
                   </HeaderMenuListItem>
                 </HeaderMenuList>
 
