@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Separator } from "../separator";
 import { ChevronRight } from "lucide-react";
 
-const footerVariants = cva("my-4 px-6 bg-grey-800 py-10", {
+const footerVariants = cva("mt-4 px-6 bg-grey-800 py-10", {
   variants: {
     variant: {
       default: "",
