@@ -296,3 +296,4 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from "../tooltip";
+export { Spinner } from "../spinner";

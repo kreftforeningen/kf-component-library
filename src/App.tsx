@@ -225,6 +225,7 @@ import {
   FooterActions,
   FooterContactItem,
   FooterCopyright,
+  Spinner,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -1677,6 +1678,9 @@ function App() {
           >
             Show Toast
           </Button>
+
+          <h2>Spinner</h2>
+          <Spinner>Loading</Spinner>
 
           <h2>Switch</h2>
           <Switch />
