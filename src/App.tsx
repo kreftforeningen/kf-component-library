@@ -3,6 +3,8 @@ import * as React from "react";
 import { ModeToggle } from "./mode-toggle";
 import { ThemeProvider } from "./theme-provider";
 
+import bannerImage from "/assets/banner.jpg";
+
 import {
   AccentuatedLink,
   AccentuatedLinkTitle,
@@ -267,6 +269,7 @@ import {
   FaLinkedin,
   FaTiktok,
 } from "react-icons/fa";
+import { BannerButtonPrimary, BannerButtonSecondary } from "./banner";
 
 const personItems = [
   {
@@ -560,8 +563,8 @@ function App() {
           </div>
 
           <h2 id="banner">Banner</h2>
-          <Banner variant="right" color="red">
-            <BannerImage src="https://picsum.photos/800/800" alt="Banner" />
+          <Banner>
+            <BannerImage src={bannerImage} alt="Banner" />
             <BannerContent>
               <BannerTitle>Banner</BannerTitle>
               <BannerDescription>
@@ -575,15 +578,24 @@ function App() {
                   Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
                   Text. Text. Text. Text.
                 </p>
+                <p className="mb-4">
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text.
+                </p>
+                <p className="mb-4">
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
+                  Text. Text. Text. Text.
+                </p>
               </BannerDescription>
               <BannerButtons>
-                <Button className="bg-red-800">Button</Button>
-                <Button
-                  className="border-red-800 bg-transparent text-red-800"
-                  variant="outline"
-                >
-                  Button
-                </Button>
+                <BannerButtonPrimary href="https://example.com">
+                  Example
+                </BannerButtonPrimary>
+                <BannerButtonSecondary href="https://example.com">
+                  Example
+                </BannerButtonSecondary>
               </BannerButtons>
             </BannerContent>
           </Banner>

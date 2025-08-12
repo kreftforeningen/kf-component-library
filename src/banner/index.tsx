@@ -1,12 +1,14 @@
 import * as React from "react";
-import { useRef, useEffect, useState, forwardRef } from "react";
+import { forwardRef } from "react";
+
+import { Button } from "@/button";
 
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
 const bannerVariants = cva(
-  "flex flex-col sm:flex-row rounded-xl bg-blue-200 min-h-[400px] overflow-hidden",
+  "group grid grid-cols-1 sm:grid-cols-2 rounded-xl sm:min-h-[400px] overflow-hidden",
   {
     variants: {
       variant: {
@@ -15,12 +17,7 @@ const bannerVariants = cva(
         full: "",
       },
       color: {
-        default: "bg-blue-200",
-        red: "bg-red-200 dark:bg-red-950",
-        green: "bg-green-200",
-        orange: "bg-orange-200",
-        purple: "bg-purple-200",
-        grey: "bg-grey-200",
+        default: "bg-blue-100 dark:bg-blue-900",
       },
     },
     defaultVariants: {
@@ -37,36 +34,6 @@ function Banner({
   children,
   ...props
 }: React.ComponentProps<"div"> & VariantProps<typeof bannerVariants>) {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [imageHeight, setImageHeight] = useState(400);
-
-  useEffect(() => {
-    const updateImageHeight = () => {
-      if (contentRef.current) {
-        const contentHeight = contentRef.current.offsetHeight;
-        // Use content height, but minimum 400px
-        const newHeight = Math.max(contentHeight, 400);
-        setImageHeight(newHeight);
-      }
-    };
-
-    updateImageHeight();
-
-    // Update on window resize
-    window.addEventListener("resize", updateImageHeight);
-
-    // Use ResizeObserver to watch for content changes
-    const resizeObserver = new ResizeObserver(updateImageHeight);
-    if (contentRef.current) {
-      resizeObserver.observe(contentRef.current);
-    }
-
-    return () => {
-      window.removeEventListener("resize", updateImageHeight);
-      resizeObserver.disconnect();
-    };
-  }, []);
-
   return (
     <div
       data-slot="banner"
@@ -74,27 +41,7 @@ function Banner({
       className={cn(bannerVariants({ variant, color, className }))}
       {...props}
     >
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          if (child.type === BannerContent) {
-            return React.cloneElement(
-              child as React.ReactElement<
-                React.ComponentProps<typeof BannerContent>
-              >,
-              { ref: contentRef }
-            );
-          }
-          if (child.type === BannerImage) {
-            return React.cloneElement(
-              child as React.ReactElement<
-                React.ComponentProps<typeof BannerImage>
-              >,
-              { style: { height: `${imageHeight}px` } }
-            );
-          }
-        }
-        return child;
-      })}
+      {children}
     </div>
   );
 }
@@ -107,7 +54,7 @@ function BannerImage({
   return (
     <img
       className={cn(
-        "flex-1 w-full object-cover data-[variant=right]:order-2",
+        "order-1 sm:order-none w-full h-full object-cover object-center group-data-[variant=right]:sm:order-2 max-h-[300px] sm:max-h-full",
         className
       )}
       style={style}
@@ -122,7 +69,7 @@ const BannerContent = forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
       <div
         ref={ref}
         className={cn(
-          "py-16 px-16 flex-1 flex flex-col gap-2 data-[variant=right]:order-1",
+          "p-8 flex flex-col gap-2 order-2 sm:order-none group-data-[variant=right]:sm:order-1",
           className
         )}
         {...props}
@@ -147,6 +94,40 @@ function BannerButtons({ className, ...props }: React.ComponentProps<"div">) {
   return <div className={cn("flex gap-2 ", className)} {...props} />;
 }
 
+function BannerButtonPrimary({
+  className,
+  href,
+  ...props
+}: React.ComponentProps<"button"> & { href: string }) {
+  if (!props.children || props.children === "" || !href || href === "") {
+    return null;
+  }
+  return (
+    <a href={href}>
+      <Button className={cn("", className)} variant="default" {...props} />
+    </a>
+  );
+}
+
+function BannerButtonSecondary({
+  className,
+  href,
+  ...props
+}: React.ComponentProps<"button"> & { href: string }) {
+  if (!props.children || props.children === "" || !href || href === "") {
+    return null;
+  }
+  return (
+    <a href={href}>
+      <Button
+        className={cn("bg-transparent", className)}
+        variant="outline"
+        {...props}
+      />
+    </a>
+  );
+}
+
 export {
   Banner,
   BannerTitle,
@@ -154,4 +135,6 @@ export {
   BannerDescription,
   BannerButtons,
   BannerImage,
+  BannerButtonPrimary,
+  BannerButtonSecondary,
 };
