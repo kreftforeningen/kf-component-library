@@ -33,6 +33,8 @@ export {
   BannerTitle,
   BannerDescription,
   BannerButtons,
+  BannerButtonPrimary,
+  BannerButtonSecondary,
 } from "../banner";
 export {
   Breadcrumb,
