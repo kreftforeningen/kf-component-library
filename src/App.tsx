@@ -279,7 +279,7 @@ const personItems = [
     email: "john.long.name.johnson.doe@example.com",
     phone: "+47 98765432",
     title: "Software Engineer",
-    image: "https://picsum.photos/300/300",
+    image: "https://robohash.org/John?set=set4",
     description:
       "John Doe is a software engineer with a passion for building scalable and efficient systems. He is a quick learner and always looking for new challenges.",
   },
@@ -300,7 +300,7 @@ const personItems = [
     email: "a.hitchcock@example.com",
     phone: "+47 98765432",
     title: "Product Manager",
-    image: "https://picsum.photos/300/300",
+    image: "https://robohash.org/Alfred?set=set4",
     description:
       "Alfred Hitchcock is a product manager with a passion for building scalable and efficient systems. He is a quick learner and always looking for new challenges.",
   },
@@ -311,7 +311,7 @@ const personItems = [
     email: "j.fonda@example.com",
     phone: "+47 98765432",
     title: "Sales Manager",
-    image: "https://picsum.photos/300/300",
+    image: "https://robohash.org/Jane?set=set4",
     description:
       "Jane Fonda is a sales manager with a passion for building scalable and efficient systems. She is a quick learner and always looking for new challenges.",
   },
@@ -484,7 +484,7 @@ function App() {
           <p className="mb-4">Image using aspect ratio set to 21/9.</p>
           <AspectRatio ratio={21 / 9}>
             <img
-              src="https://picsum.photos/1600/900"
+              src="https://picsum.photos/id/260/1600/900"
               alt="Card Image"
               className="object-cover w-full h-full rounded-md"
             />
@@ -493,12 +493,15 @@ function App() {
           <h2>Avatar</h2>
           <div className="flex flex-row flex-wrap items-center gap-12">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage
+                src="https://robohash.org/CN?set=set4"
+                alt="@shadcn"
+              />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar className="rounded-lg">
               <AvatarImage
-                src="https://github.com/evilrabbit.png"
+                src="https://robohash.org/ER?set=set4"
                 alt="@evilrabbit"
               />
               <AvatarFallback>ER</AvatarFallback>
@@ -506,24 +509,24 @@ function App() {
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
               <Avatar>
                 <AvatarImage
-                  src="https://github.com/shadcn.png"
+                  src="https://robohash.org/AB?set=set4"
                   alt="@shadcn"
                 />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>AB</AvatarFallback>
               </Avatar>
               <Avatar>
                 <AvatarImage
-                  src="https://github.com/leerob.png"
+                  src="https://robohash.org/LR?set=set4"
                   alt="@leerob"
                 />
                 <AvatarFallback>LR</AvatarFallback>
               </Avatar>
               <Avatar>
                 <AvatarImage
-                  src="https://github.com/evilrabbit.png"
+                  src="https://robohash.org/BR?set=set4"
                   alt="@evilrabbit"
                 />
-                <AvatarFallback>ER</AvatarFallback>
+                <AvatarFallback>BR</AvatarFallback>
               </Avatar>
             </div>
           </div>
@@ -564,7 +567,10 @@ function App() {
 
           <h2 id="banner">Banner</h2>
           <Banner>
-            <BannerImage src="https://picsum.photos/1600/900" alt="Banner" />
+            <BannerImage
+              src="https://picsum.photos/id/240/1600/900"
+              alt="Banner"
+            />
             <BannerContent>
               <BannerTitle>Banner</BannerTitle>
               <BannerDescription>
@@ -634,7 +640,7 @@ function App() {
                 className="rounded-t-md overflow-hidden"
               >
                 <img
-                  src="https://picsum.photos/1600/900"
+                  src="https://picsum.photos/id/241/1600/900"
                   alt="Card Image"
                   className="object-cover w-full h-full"
                 />
@@ -683,7 +689,7 @@ function App() {
                 <CarouselItem>
                   <AspectRatio ratio={16 / 9}>
                     <img
-                      src="https://picsum.photos/1600/900"
+                      src="https://picsum.photos/id/237/1600/900"
                       alt="Card Image"
                       className="object-cover w-full h-full rounded-md"
                     />
@@ -692,7 +698,7 @@ function App() {
                 <CarouselItem>
                   <AspectRatio ratio={16 / 9}>
                     <img
-                      src="https://picsum.photos/1600/900"
+                      src="https://picsum.photos/id/238/1600/900"
                       alt="Card Image"
                       className="object-cover w-full h-full rounded-md"
                     />
@@ -701,7 +707,7 @@ function App() {
                 <CarouselItem>
                   <AspectRatio ratio={16 / 9}>
                     <img
-                      src="https://picsum.photos/1600/900"
+                      src="https://picsum.photos/id/239/1600/900"
                       alt="Card Image"
                       className="object-cover w-full h-full rounded-md"
                     />
@@ -873,7 +879,7 @@ function App() {
           <h2>Download</h2>
           <Download>
             <DownloadContent>
-              <DownloadImage src="https://picsum.photos/200/300" />
+              <DownloadImage src="https://picsum.photos/id/200/200/300" />
               <DownloadMain>
                 <DownloadTitle>Download</DownloadTitle>
                 <DownloadDescription>

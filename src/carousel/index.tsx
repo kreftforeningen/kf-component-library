@@ -166,6 +166,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       ref={carouselRef}
+      id="carousel-content"
       className="overflow-hidden rounded-xl"
       data-slot="carousel-content"
     >
@@ -204,7 +205,7 @@ function CarouselDots({ className, ...props }: React.ComponentProps<"div">) {
           role="tab"
           data-slot="carousel-dot"
           aria-selected={index === selectedIndex}
-          aria-controls="carousel-item"
+          aria-controls="carousel-content"
           aria-label={`Slide ${index + 1}`}
           className={cn(
             "size-4 rounded-full border-2 border-ring  cursor-pointer hover:bg-ring/20",
