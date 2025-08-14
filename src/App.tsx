@@ -53,6 +53,7 @@ import {
   CardTitle,
   Carousel,
   CarouselContent,
+  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -691,7 +692,7 @@ function App() {
             </Card>
           </div>
 
-          <h2>Carousel</h2>
+          <h2 id="carousel">Carousel</h2>
           <Carousel>
             <CarouselContent>
               <CarouselItem>
@@ -722,6 +723,7 @@ function App() {
                 </AspectRatio>
               </CarouselItem>
             </CarouselContent>
+            <CarouselDots />
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
