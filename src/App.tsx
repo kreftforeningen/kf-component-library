@@ -51,6 +51,7 @@ import {
   CardTitle,
   Carousel,
   CarouselContent,
+  CarouselContentWrapper,
   CarouselDots,
   CarouselItem,
   CarouselNext,
@@ -677,38 +678,40 @@ function App() {
 
           <h2 id="carousel">Carousel</h2>
           <Carousel>
-            <CarouselContent>
-              <CarouselItem>
-                <AspectRatio ratio={16 / 9}>
-                  <img
-                    src="https://picsum.photos/1600/900"
-                    alt="Card Image"
-                    className="object-cover w-full h-full rounded-md"
-                  />
-                </AspectRatio>
-              </CarouselItem>
-              <CarouselItem>
-                <AspectRatio ratio={16 / 9}>
-                  <img
-                    src="https://picsum.photos/1600/900"
-                    alt="Card Image"
-                    className="object-cover w-full h-full rounded-md"
-                  />
-                </AspectRatio>
-              </CarouselItem>
-              <CarouselItem>
-                <AspectRatio ratio={16 / 9}>
-                  <img
-                    src="https://picsum.photos/1600/900"
-                    alt="Card Image"
-                    className="object-cover w-full h-full rounded-md"
-                  />
-                </AspectRatio>
-              </CarouselItem>
-            </CarouselContent>
+            <CarouselContentWrapper>
+              <CarouselContent>
+                <CarouselItem>
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src="https://picsum.photos/1600/900"
+                      alt="Card Image"
+                      className="object-cover w-full h-full rounded-md"
+                    />
+                  </AspectRatio>
+                </CarouselItem>
+                <CarouselItem>
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src="https://picsum.photos/1600/900"
+                      alt="Card Image"
+                      className="object-cover w-full h-full rounded-md"
+                    />
+                  </AspectRatio>
+                </CarouselItem>
+                <CarouselItem>
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src="https://picsum.photos/1600/900"
+                      alt="Card Image"
+                      className="object-cover w-full h-full rounded-md"
+                    />
+                  </AspectRatio>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </CarouselContentWrapper>
             <CarouselDots />
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
 
           <h2>Chart</h2>

@@ -58,6 +58,7 @@ export {
 export {
   Carousel,
   CarouselContent,
+  CarouselContentWrapper,
   CarouselDots,
   CarouselItem,
   CarouselNext,

@@ -148,6 +148,18 @@ function Carousel({
   );
 }
 
+function CarouselContentWrapper({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("relative", className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
 function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   const { carouselRef, orientation } = useCarousel();
 
@@ -195,7 +207,7 @@ function CarouselDots({ className, ...props }: React.ComponentProps<"div">) {
           aria-controls="carousel-item"
           aria-label={`Slide ${index + 1}`}
           className={cn(
-            "size-4 rounded-full border border-ring cursor-pointer hover:bg-ring/20",
+            "size-4 rounded-full border-2 border-ring  cursor-pointer hover:bg-ring/20",
             index === selectedIndex
               ? "bg-ring w-8 transition-all duration-500 animate-in hover:bg-ring hover:cursor-default"
               : "bg-transparent transition-all duration-500 animate-out"
@@ -289,6 +301,7 @@ export {
   type CarouselApi,
   Carousel,
   CarouselContent,
+  CarouselContentWrapper,
   CarouselDots,
   CarouselItem,
   CarouselPrevious,
