@@ -3,8 +3,6 @@ import * as React from "react";
 import { ModeToggle } from "./mode-toggle";
 import { ThemeProvider } from "./theme-provider";
 
-import bannerImage from "/assets/banner.jpg";
-
 import {
   AccentuatedLink,
   AccentuatedLinkTitle,
@@ -565,25 +563,10 @@ function App() {
 
           <h2 id="banner">Banner</h2>
           <Banner>
-            <BannerImage src={bannerImage} alt="Banner" />
+            <BannerImage src="https://picsum.photos/1600/900" alt="Banner" />
             <BannerContent>
               <BannerTitle>Banner</BannerTitle>
               <BannerDescription>
-                <p className="mb-4">
-                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
-                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
-                  Text. Text. Text. Text.
-                </p>
-                <p className="mb-4">
-                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
-                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
-                  Text. Text. Text. Text.
-                </p>
-                <p className="mb-4">
-                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
-                  Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
-                  Text. Text. Text. Text.
-                </p>
                 <p className="mb-4">
                   Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
                   Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
