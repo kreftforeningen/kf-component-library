@@ -6,7 +6,15 @@ import { Button } from "../button";
 import { Input } from "../input";
 
 import { Search as SearchIcon } from "lucide-react";
-import { Sheet, SheetContent, SheetFooter, SheetTrigger } from "../sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "../sheet";
 
 const headerVariants = cva(
   "flex flex-row flex-stretch gap-2 items-center my-4 container mx-auto px-6",
@@ -159,9 +167,17 @@ function HeaderMenuTrigger({ children }: React.ComponentProps<"div">) {
 
 function HeaderMenuContent({ children }: React.ComponentProps<"div">) {
   return (
-    <SheetContent className="w-[400px] sm:w-[540px] pt-14 flex flex-col gap-4 px-8 text-xl pb-2 bg-grey-900 text-grey-50 border-none shadow-2xl">
-      {children}
-    </SheetContent>
+    <>
+      <SheetContent className="w-[400px] sm:w-[540px] pt-14 flex flex-col gap-4 px-8 text-xl pb-2 bg-grey-900 text-grey-50 border-none shadow-2xl">
+        <SheetHeader className="sr-only">
+          <SheetTitle>
+            <h1>Menu</h1>
+          </SheetTitle>
+          <SheetDescription>Menu.</SheetDescription>
+        </SheetHeader>
+        {children}
+      </SheetContent>
+    </>
   );
 }
 
