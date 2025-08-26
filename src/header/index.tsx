@@ -170,9 +170,7 @@ function HeaderMenuContent({ children }: React.ComponentProps<"div">) {
     <>
       <SheetContent className="w-[400px] sm:w-[540px] pt-14 flex flex-col gap-4 px-8 text-xl pb-2 bg-grey-900 text-grey-50 border-none shadow-2xl">
         <SheetHeader className="sr-only">
-          <SheetTitle>
-            <h1>Menu</h1>
-          </SheetTitle>
+          <SheetTitle>Menu</SheetTitle>
           <SheetDescription>Menu.</SheetDescription>
         </SheetHeader>
         {children}
