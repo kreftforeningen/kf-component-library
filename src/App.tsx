@@ -691,7 +691,7 @@ function App() {
                     <img
                       src="https://picsum.photos/id/237/1600/900"
                       alt="Card Image"
-                      className="object-cover w-full h-full rounded-md"
+                      className="object-cover w-full h-full rounded-xl"
                     />
                   </AspectRatio>
                 </CarouselItem>
@@ -700,7 +700,7 @@ function App() {
                     <img
                       src="https://picsum.photos/id/238/1600/900"
                       alt="Card Image"
-                      className="object-cover w-full h-full rounded-md"
+                      className="object-cover w-full h-full rounded-xl"
                     />
                   </AspectRatio>
                 </CarouselItem>
@@ -709,7 +709,7 @@ function App() {
                     <img
                       src="https://picsum.photos/id/239/1600/900"
                       alt="Card Image"
-                      className="object-cover w-full h-full rounded-md"
+                      className="object-cover w-full h-full rounded-xl"
                     />
                   </AspectRatio>
                 </CarouselItem>
