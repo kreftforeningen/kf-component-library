@@ -1,6 +1,6 @@
 {
   "name": "kf-component-library",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "type": "module",
   "sideEffects": false,
   "files": [

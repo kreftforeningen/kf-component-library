@@ -61,6 +61,7 @@ export {
   CarouselContentWrapper,
   CarouselDots,
   CarouselItem,
+  CarouselItemDescription,
   CarouselNext,
   CarouselPrevious,
 } from "../carousel";

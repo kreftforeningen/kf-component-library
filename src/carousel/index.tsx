@@ -229,12 +229,31 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full overflow-hidden",
+        "relative min-w-0 shrink-0 grow-0 basis-full overflow-hidden",
         orientation === "horizontal" ? "pl-4" : "pt-4",
         className
       )}
       {...props}
     />
+  );
+}
+
+function CarouselItemDescription({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="carousel-item-description"
+      className={cn("absolute bottom-0 w-full text-white", className)}
+      {...props}
+    >
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 sm:h-32 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+      <div className="relative text-sm sm:text-base text-center p-2">
+        {children}
+      </div>
+    </div>
   );
 }
 
@@ -305,6 +324,7 @@ export {
   CarouselContentWrapper,
   CarouselDots,
   CarouselItem,
+  CarouselItemDescription,
   CarouselPrevious,
   CarouselNext,
 };
