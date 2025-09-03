@@ -141,6 +141,20 @@ export {
   FactBoxDescription,
 } from "../fact-box";
 export {
+  Feedback,
+  FeedbackHeader,
+  FeedbackTitle,
+  FeedbackDescription,
+  FeedbackContent,
+  FeedbackButtons,
+  FeedbackComment,
+  FeedbackCommentInput,
+  FeedbackButtonPositive,
+  FeedbackButtonNegative,
+  FeedbackSubmit,
+  FeedbackAction,
+} from "../feedback";
+export {
   HeaderWrapper,
   HeaderLogo,
   HeaderNavigation,
