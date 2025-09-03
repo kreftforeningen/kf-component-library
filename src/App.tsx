@@ -228,6 +228,19 @@ import {
   FooterContactItem,
   FooterCopyright,
   Spinner,
+  Feedback,
+  FeedbackAction,
+  FeedbackTitle,
+  FeedbackHeader,
+  FeedbackDescription,
+  FeedbackButtons,
+  FeedbackContent,
+  FeedbackComment,
+  FeedbackCommentInput,
+  FeedbackButtonPositive,
+  FeedbackButtonNegative,
+  FeedbackSubmit,
+  CarouselItemDescription,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -261,6 +274,8 @@ import {
   HandCoins,
   Cog,
   ArrowRightIcon,
+  ThumbsUpIcon,
+  ThumbsDownIcon,
 } from "lucide-react";
 import {
   FaFacebook,
@@ -693,6 +708,7 @@ function App() {
                       alt="Card Image"
                       className="object-cover w-full h-full rounded-xl"
                     />
+                    <CarouselItemDescription>A dog.</CarouselItemDescription>
                   </AspectRatio>
                 </CarouselItem>
                 <CarouselItem>
@@ -703,6 +719,7 @@ function App() {
                       className="object-cover w-full h-full rounded-xl"
                     />
                   </AspectRatio>
+                  <CarouselItemDescription>A city.</CarouselItemDescription>
                 </CarouselItem>
                 <CarouselItem>
                   <AspectRatio ratio={16 / 9}>
@@ -712,6 +729,9 @@ function App() {
                       className="object-cover w-full h-full rounded-xl"
                     />
                   </AspectRatio>
+                  <CarouselItemDescription>
+                    A flower. So beautiful that it needs a longer description.
+                  </CarouselItemDescription>
                 </CarouselItem>
               </CarouselContent>
               <CarouselPrevious />
@@ -963,6 +983,30 @@ function App() {
             </FactBoxContent>
             <FactBoxAction>Fact Box</FactBoxAction>
           </FactBox>
+
+          <h2 id="feedback">Feedback</h2>
+          <Feedback>
+            <FeedbackHeader>
+              <FeedbackTitle>We value your feedback</FeedbackTitle>
+              <FeedbackDescription>
+                Please let us know if our service met your expectations.
+              </FeedbackDescription>
+              <FeedbackAction className="flex flex-row gap-2 text-gray-500">
+                <ThumbsUpIcon size={16} />
+                <ThumbsDownIcon size={16} />
+              </FeedbackAction>
+            </FeedbackHeader>
+            <FeedbackContent>
+              <FeedbackButtons>
+                <FeedbackButtonPositive>Positiv</FeedbackButtonPositive>
+                <FeedbackButtonNegative>Negativ</FeedbackButtonNegative>
+              </FeedbackButtons>
+              <FeedbackComment>
+                <FeedbackCommentInput>Feedback</FeedbackCommentInput>
+                <FeedbackSubmit>Submit Feedback</FeedbackSubmit>
+              </FeedbackComment>
+            </FeedbackContent>
+          </Feedback>
 
           <h2 id="footer">Footer</h2>
         </main>
