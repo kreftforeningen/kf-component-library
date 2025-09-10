@@ -86,7 +86,7 @@ function FeedbackButtonPositive({
       aria-pressed={isActive}
       onClick={() => setFeedback("positive")}
     >
-      <ThumbsUpIcon size={30} />
+      <ThumbsUpIcon />
       <span>{children || "Positive"}</span>
     </Button>
   );
@@ -107,7 +107,7 @@ function FeedbackButtonNegative({
       aria-pressed={isActive}
       onClick={() => setFeedback("negative")}
     >
-      <ThumbsDownIcon size={30} />
+      <ThumbsDownIcon />
       <span>{children || "Negative"}</span>
     </Button>
   );

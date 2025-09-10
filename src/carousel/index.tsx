@@ -249,7 +249,10 @@ function CarouselItemDescription({
       className={cn("absolute bottom-0 w-full text-white", className)}
       {...props}
     >
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 sm:h-32 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"
+        style={{ height: "calc(100% + 1rem)" }}
+      />
       <div className="relative text-sm sm:text-base text-center p-2">
         {children}
       </div>

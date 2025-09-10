@@ -708,7 +708,15 @@ function App() {
                       alt="Card Image"
                       className="object-cover w-full h-full rounded-xl"
                     />
-                    <CarouselItemDescription>A dog.</CarouselItemDescription>
+                    <CarouselItemDescription>
+                      A dog. A dog is a good boy. A dog is a good boy. A dog is
+                      a good boy. What a dog can do is amazing. A dog can save a
+                      life. A dog can be a good friend. A dog can be a good
+                      companion. A dog can be a good pet. A dog can be a good
+                      friend. A dog can be a good companion. A dog can be a good
+                      pet. A dog can be a good friend. A dog can be a good
+                      companion. A dog can be a good pet.
+                    </CarouselItemDescription>
                   </AspectRatio>
                 </CarouselItem>
                 <CarouselItem>
@@ -1002,7 +1010,7 @@ function App() {
                 <FeedbackButtonNegative>Negativ</FeedbackButtonNegative>
               </FeedbackButtons>
               <FeedbackComment>
-                <FeedbackCommentInput>Feedback</FeedbackCommentInput>
+                <FeedbackCommentInput />
                 <FeedbackSubmit>Submit Feedback</FeedbackSubmit>
               </FeedbackComment>
             </FeedbackContent>
@@ -1758,7 +1766,7 @@ function App() {
             </TableBody>
           </Table>
 
-          <h2>Tabs</h2>
+          <h2 id="tabs">Tabs</h2>
           <Tabs defaultValue="account">
             <TabsList>
               <TabsTrigger value="account">Account</TabsTrigger>
