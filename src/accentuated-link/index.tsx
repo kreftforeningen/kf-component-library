@@ -25,7 +25,7 @@ function AccentuatedLink({
     <AccentuatedLinkContext.Provider value={{ href }}>
       <article
         className={cn(
-          "border-l-2 border-blue-600 pl-6 py-1 flex flex-col gap-2",
+          "border-l-2 border-primary pl-6 py-1 flex flex-col gap-2",
           className
         )}
         {...props}
@@ -68,7 +68,7 @@ function AccentuatedLinkSubtitle({
 }: React.ComponentProps<"p">) {
   return (
     <p
-      className={cn("text-sm text-grey-600 dark:text-grey-100", className)}
+      className={cn("text-sm text-gray-600 dark:text-gray-100", className)}
       {...props}
     />
   );

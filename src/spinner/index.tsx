@@ -22,7 +22,7 @@ function Spinner({
   VariantProps<typeof spinnerVariants> & { children?: React.ReactNode }) {
   return (
     <div className={cn(spinnerVariants({ variant }), className)} {...props}>
-      <div className="w-12 h-12 rounded-full border-4 border-dotted animate-spin border-blue-600 dark:border-blue-400  border-t-transparent dark:border-t-transparent" />
+      <div className="w-12 h-12 rounded-full border-4 border-dotted animate-spin border-primary dark:border-blue-400  border-t-transparent dark:border-t-transparent" />
       {children && <div className="animate-pulse-text">{children}</div>}
     </div>
   );
