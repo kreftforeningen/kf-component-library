@@ -144,4 +144,8 @@ git push origin develop
 
 ## License
 
-MIT © Asbjørn Ness / Kreftforeningen
+MIT
+
+## Author
+
+Asbjørn Ness / Kreftforeningen
