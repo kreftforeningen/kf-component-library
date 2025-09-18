@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Separator } from "../separator";
 import { ChevronRight } from "lucide-react";
 
-const footerVariants = cva("mt-4 px-6 bg-grey-800 py-10", {
+const footerVariants = cva("mt-4 px-6 bg-gray-800 py-10", {
   variants: {
     variant: {
       default: "",
@@ -104,7 +104,7 @@ function FooterContactItem({
 
 function FooterCopyright({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="container mx-auto text-grey-800 dark:text-grey-200 text-sm [&>a]:text-blue-800 [&>a]:dark:text-blue-200 [&>a]:hover:text-blue-900 [&>a]:dark:hover:text-blue-100 [&>a]:hover:underline">
+    <div className="container mx-auto text-gray-800 dark:text-gray-200 text-sm [&>a]:text-blue-800 [&>a]:dark:text-blue-200 [&>a]:hover:text-blue-900 [&>a]:dark:hover:text-blue-100 [&>a]:hover:underline">
       <Separator className="my-10" />
       {children}
     </div>

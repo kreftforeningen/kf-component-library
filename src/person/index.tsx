@@ -19,7 +19,7 @@ const personVariants = cva("", {
 const personItemVariants = cva("", {
   variants: {
     color: {
-      default: "bg-grey-100 dark:bg-grey-800",
+      default: "bg-gray-100 dark:bg-gray-800",
       blue: "bg-blue-100 dark:bg-blue-950",
     },
   },
@@ -74,7 +74,7 @@ function PersonItemImage({
       )}
     >
       <AvatarImage {...props} />
-      <AvatarFallback className="bg-grey-700 dark:bg-grey-100 text-grey-100 dark:text-grey-700">
+      <AvatarFallback className="bg-gray-700 dark:bg-gray-100 text-gray-100 dark:text-gray-700">
         {fallback}
       </AvatarFallback>
     </Avatar>
@@ -108,7 +108,7 @@ function PersonItemTitle({ className, ...props }: React.ComponentProps<"p">) {
   return (
     <p
       data-slot="person-item-title"
-      className={cn("text-sm text-grey-700 dark:text-grey-100", className)}
+      className={cn("text-sm text-gray-700 dark:text-gray-100", className)}
       {...props}
     />
   );

@@ -93,7 +93,7 @@ function HeaderTitle({
           href={href}
           tabIndex={0}
           aria-label="Title"
-          className="hover:underline dark:hover:text-blue-200 hover:text-blue-600"
+          className="hover:underline dark:hover:text-blue-200 hover:text-primary"
         >
           {content}
         </a>
@@ -168,7 +168,7 @@ function HeaderMenuTrigger({ children }: React.ComponentProps<"div">) {
 function HeaderMenuContent({ children }: React.ComponentProps<"div">) {
   return (
     <>
-      <SheetContent className="w-[400px] sm:w-[540px] pt-14 flex flex-col gap-4 px-8 text-xl pb-2 bg-grey-900 text-grey-50 border-none shadow-2xl">
+      <SheetContent className="w-[400px] sm:w-[540px] pt-14 flex flex-col gap-4 px-8 text-xl pb-2 bg-gray-900 text-gray-50 border-none shadow-2xl">
         <SheetHeader className="sr-only">
           <SheetTitle>Menu</SheetTitle>
           <SheetDescription>Menu.</SheetDescription>

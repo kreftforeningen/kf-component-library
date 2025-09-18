@@ -557,7 +557,7 @@ function App() {
             <div className="flex w-full flex-wrap gap-2">
               <Badge
                 variant="secondary"
-                className="bg-blue-500 text-white dark:bg-blue-600"
+                className="bg-blue-500 text-white dark:bg-primary"
               >
                 <CircleCheck />
                 Verified
@@ -644,7 +644,7 @@ function App() {
             mode="single"
             selected={date}
             onSelect={setDate}
-            className="rounded-lg bg-grey-100"
+            className="rounded-lg bg-gray-100"
           />
 
           <h2>Card</h2>
@@ -763,8 +763,12 @@ function App() {
               />
               <ChartTooltip content={<ChartTooltipContent />} />
               <ChartLegend content={<ChartLegendContent />} />
-              <Bar dataKey="desktop" fill="var(--color-blue-600)" radius={4} />
-              <Bar dataKey="mobile" fill="var(--color-red-600)" radius={4} />
+              <Bar dataKey="desktop" fill="var(--color-primary)" radius={4} />
+              <Bar
+                dataKey="mobile"
+                fill="var(--color-destructive)"
+                radius={4}
+              />
             </BarChart>
           </ChartContainer>
 
@@ -788,11 +792,11 @@ function App() {
               <Checkbox id="toggle" disabled />
               <Label htmlFor="toggle">Enable notifications</Label>
             </div>
-            <Label className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
+            <Label className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-primary has-[[aria-checked=true]]:bg-primary-foreground dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
               <Checkbox
                 id="toggle-2"
                 defaultChecked
-                className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700"
+                className="data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700"
               />
               <div className="grid gap-1.5 font-normal">
                 <p className="text-sm leading-none font-medium">
