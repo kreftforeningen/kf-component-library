@@ -34,7 +34,7 @@ function InfographicItem({
   return (
     <article
       data-slot="infographic-item"
-      className={cn("p-10 bg-grey-100 dark:bg-grey-800 rounded-xl", className)}
+      className={cn("p-10 bg-gray-100 dark:bg-gray-800 rounded-xl", className)}
       {...props}
     />
   );

@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const downloadVariants = cva(
-  "flex flex-col sm:flex-row gap-4 bg-grey-100 dark:bg-grey-800 overflow-hidden rounded-xl my-4",
+  "flex flex-col sm:flex-row gap-4 bg-gray-100 dark:bg-gray-800 overflow-hidden rounded-xl my-4",
   {
     variants: {
       variant: {
@@ -123,7 +123,7 @@ function DownloadDownloadUrl({
     <a
       data-slot="download-download-url"
       className={cn(
-        "flex flex-row h-full sm:w-full gap-2 items-center hover:cursor-pointer hover:text-grey-950 hover:underline w-1/2 justify-center bg-grey-300 text-grey-900 p-4 dark:bg-grey-700 dark:text-grey-100",
+        "flex flex-row h-full sm:w-full gap-2 items-center hover:cursor-pointer hover:text-gray-950 hover:underline w-1/2 justify-center bg-gray-300 text-gray-900 p-4 dark:bg-gray-700 dark:text-gray-100",
         className
       )}
       href={href}
@@ -146,7 +146,7 @@ function DownloadOrderUrl({
     <a
       data-slot="download-order-url"
       className={cn(
-        "flex flex-row h-full sm:w-full gap-2 items-center hover:cursor-pointer hover:text-grey-950 hover:underline w-1/2 justify-center bg-grey-200 text-grey-900 p-4 dark:bg-grey-600 dark:text-grey-100",
+        "flex flex-row h-full sm:w-full gap-2 items-center hover:cursor-pointer hover:text-gray-950 hover:underline w-1/2 justify-center bg-gray-200 text-gray-900 p-4 dark:bg-gray-600 dark:text-gray-100",
         className
       )}
       href={href}

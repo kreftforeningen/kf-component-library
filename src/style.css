@@ -1,3 +1,104 @@
+/* Tailwind CSS */
 @import "tailwindcss";
+
+/* Default Shadcn UI variables */
+@import "./shadcn-ui/index.css";
+
+/* Fallback variables that Tailwind CSS doesn't support */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  --font-condensed: ui-sans-serif, system-ui;
+  --font-serif: ui-serif, Georgia, Cambria, Times New Roman;
+
+  --color-vipps-50: oklch(0.9738 0.0151 54.93);
+  --color-vipps-100: oklch(0.9405 0.0365 58.04);
+  --color-vipps-200: oklch(0.8756 0.0758 52.88);
+  --color-vipps-300: oklch(0.7972 0.128 49.18);
+  --color-vipps-400: oklch(0.7127 0.1871 40.96);
+  --color-vipps-500: oklch(0.6838 0.2092 37.3);
+  --color-vipps-600: oklch(0.6186 0.2288 32.46);
+  --color-vipps-700: oklch(0.5336 0.202 31.27);
+  --color-vipps-800: oklch(0.4522 0.1675 30.24);
+  --color-vipps-900: oklch(41.745% 0.1198 34.356);
+  --color-vipps-950: oklch(0.2557 0.0904 29.55);
+
+  --animate-pulse-text: pulseText 1s ease-in-out infinite;
+  --animate-fade-in-out: fade-in-out 5s ease-in-out;
+
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulseText {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-6 font-condensed font-medium;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  h6 {
+    @apply text-base;
+  }
+
+  blockquote {
+    @apply font-serif;
+  }
+
+  blockquote cite {
+    @apply font-sans text-sm;
+  }
+}
+
+/* Custom Kreftforeningen variables */
 @import "kf-tailwind/index.css";
+
+/* Tw Animate CSS */
 @import "tw-animate-css";
