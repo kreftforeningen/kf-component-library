@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.6.0
+
+### Minor Changes
+
+- 0f55e62: Include fallback css and variables in package
+
+### Patch Changes
+
+- 0f55e62: Permission fix
+
 ## 1.5.0
 
 ### Minor Changes
