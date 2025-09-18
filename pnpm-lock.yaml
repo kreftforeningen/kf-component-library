@@ -142,7 +142,7 @@ importers:
         version: 1.1.2(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@changesets/cli':
-        specifier: ^2.27.11
+        specifier: ^2.29.7
         version: 2.29.7(@types/node@24.5.2)
       '@eslint/js':
         specifier: ^9.35.0
@@ -175,8 +175,8 @@ importers:
         specifier: ^16.4.0
         version: 16.4.0
       kf-tailwind:
-        specifier: ^1.4.3
-        version: 1.4.3
+        specifier: ^1.6.1
+        version: 1.6.1
       tailwindcss:
         specifier: ^4.1.13
         version: 4.1.13
@@ -2231,8 +2231,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  kf-tailwind@1.4.3:
-    resolution: {integrity: sha512-cV2YTrpMQOyBzZYTve8rrODRyF9SyJZRcBsfYCBhZpe0syL+9N6R7RXz3J0GW6PJPY5aeyT5QdLxIy2vXeLomQ==}
+  kf-tailwind@1.6.1:
+    resolution: {integrity: sha512-yrnRXXaS8S9NcxOgbxVe3NO+JM8d2abZgedeFgA4EZNudsNPGuEJ0zznvDcwxkLTEmDeEfcGOj+X6e92c118Yg==}
 
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
@@ -5045,7 +5045,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  kf-tailwind@1.4.3: {}
+  kf-tailwind@1.6.1: {}
 
   kolorist@1.8.0: {}
 
