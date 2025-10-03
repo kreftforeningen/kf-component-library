@@ -14,6 +14,7 @@ import {
   SheetDescription,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "../sheet";
 
 const headerVariants = cva(
@@ -212,6 +213,10 @@ function HeaderMenuListItem({
   );
 }
 
+function HeaderMenuClose() {
+  return <SheetClose>Close</SheetClose>;
+}
+
 export {
   HeaderWrapper,
   HeaderLogo,
@@ -224,5 +229,6 @@ export {
   HeaderMenuList,
   HeaderMenuListItem,
   HeaderMenuFooter,
+  HeaderMenuClose,
   HeaderTitle,
 };
