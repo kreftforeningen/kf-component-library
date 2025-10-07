@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.8.0
+
+### Minor Changes
+
+- 87df3e8: Include fallback css and variables in package
+- 87df3e8: add header close
+
+### Patch Changes
+
+- 87df3e8: Readme fix
+- 87df3e8: Upgrade packages
+- 87df3e8: Add role and aria-live to Spinner
+- 87df3e8: Permission fix
+
 ## 1.7.0
 
 ### Minor Changes
