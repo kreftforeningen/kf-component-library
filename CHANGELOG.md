@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.7.0
+
+### Minor Changes
+
+- 9683260: Include fallback css and variables in package
+- 9683260: add header close
+
+### Patch Changes
+
+- 9683260: Readme fix
+- 9683260: Upgrade packages
+- 9683260: Permission fix
+
 ## 1.6.0
 
 ### Minor Changes
