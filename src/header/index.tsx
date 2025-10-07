@@ -202,11 +202,7 @@ function HeaderMenuListItem({
 }: React.ComponentProps<"a"> & { href: string }) {
   return (
     <li>
-      <a
-        href={href}
-        className="flex items-center gap-2 hover:underline hover:text-blue-400"
-        {...props}
-      >
+      <a href={href} className="flex items-center gap-2 s8" {...props}>
         {children}
       </a>
     </li>
