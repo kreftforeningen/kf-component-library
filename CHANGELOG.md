@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.2
+
+### Patch Changes
+
+- d4b875a: fix
+- d4b875a: color
+
 ## 1.8.0
 
 ### Minor Changes
