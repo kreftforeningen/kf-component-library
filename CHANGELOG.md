@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.0
+
+### Major Changes
+
+- 345b1ff: yes
+- 345b1ff: this is a major bump
+
+### Patch Changes
+
+- 345b1ff: fix
+- 345b1ff: color
+
 ## 1.7.2
 
 ### Patch Changes
