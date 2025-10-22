@@ -14,12 +14,6 @@ jobs:
       contents: write
       pull-requests: write
       id-token: write
-<<<<<<< HEAD
-      actions: write
-      checks: write
-      statuses: write
-=======
->>>>>>> 492170d (Add release workflow, with changeset and npmjs (#3))
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,11 +32,7 @@ jobs:
           version: 10
 
       - name: Install dependencies
-<<<<<<< HEAD
         run: pnpm install --no-frozen-lockfile
-=======
-        run: pnpm install
->>>>>>> 492170d (Add release workflow, with changeset and npmjs (#3))
 
       - name: Build packages
         run: pnpm build
