@@ -148,4 +148,4 @@ MIT
 
 ## Author
 
-Asbjørn Ness / Kreftforeningen
+Asbjørn Ness, Kreftforeningen
