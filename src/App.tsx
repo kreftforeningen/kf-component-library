@@ -475,6 +475,14 @@ function App() {
             </AlertDescription>
           </Alert>
 
+          <Alert variant="success" className="my-4">
+            <CircleCheck />
+            <AlertTitle>Success!</AlertTitle>
+            <AlertDescription>
+              You can add components and dependencies to your app using the CLI.
+            </AlertDescription>
+          </Alert>
+
           <h2>Alert Dialog</h2>
           <AlertDialog>
             <AlertDialogTrigger asChild>
