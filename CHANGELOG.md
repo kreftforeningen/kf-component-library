@@ -4,6 +4,22 @@
 
 ### Minor Changes
 
+- e7fc237: Include fallback css and variables in package
+- e994a79: add header close
+- bd9f78a: Adding workflows etc
+
+### Patch Changes
+
+- 56e737b: Readme fix
+- 9307e65: Upgrade packages
+- d88b137: Add role and aria-live to Spinner
+- b268f13: color
+- 44c78ec: Permission fix
+
+## 1.8.0
+
+### Minor Changes
+
 - 87df3e8: Include fallback css and variables in package
 - 87df3e8: add header close
 
