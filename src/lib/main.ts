@@ -316,3 +316,15 @@ export {
   TooltipTrigger,
 } from "../tooltip";
 export { Spinner } from "../spinner";
+export {
+  Field,
+  FieldLabel,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldContent,
+  FieldTitle,
+} from "../field";
