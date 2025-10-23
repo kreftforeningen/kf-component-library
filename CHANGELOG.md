@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.0
+
+### Major Changes
+
+- b38a458: yes
+- b38a458: this is a major bump
+
+### Minor Changes
+
+- b38a458: Add Field and Button Group components
+
+### Patch Changes
+
+- b38a458: fix
+- b38a458: color
+
 ## 2.0.0
 
 ### Major Changes
