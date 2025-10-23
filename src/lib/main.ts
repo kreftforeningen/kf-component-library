@@ -45,6 +45,11 @@ export {
   BreadcrumbSeparator,
 } from "../breadcrumb";
 export { Button } from "../button";
+export {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "../button-group";
 export { Calendar } from "../calendar";
 export {
   Card,
@@ -128,11 +133,20 @@ export {
 } from "../drawer";
 export {
   DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
+  DropdownMenuPortal,
   DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
 } from "../dropdown-menu";
 export {
   FactBox,
@@ -316,3 +330,15 @@ export {
   TooltipTrigger,
 } from "../tooltip";
 export { Spinner } from "../spinner";
+export {
+  Field,
+  FieldLabel,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldContent,
+  FieldTitle,
+} from "../field";
