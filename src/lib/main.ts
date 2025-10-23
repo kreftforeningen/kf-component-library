@@ -45,6 +45,11 @@ export {
   BreadcrumbSeparator,
 } from "../breadcrumb";
 export { Button } from "../button";
+export {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "../button-group";
 export { Calendar } from "../calendar";
 export {
   Card,
@@ -128,11 +133,20 @@ export {
 } from "../drawer";
 export {
   DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
+  DropdownMenuPortal,
   DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
 } from "../dropdown-menu";
 export {
   FactBox,

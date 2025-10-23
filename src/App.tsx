@@ -41,6 +41,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Button,
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
   Calendar,
   Card,
   CardAction,
@@ -87,9 +90,9 @@ import {
   DrawerTitle,
   DrawerTrigger,
   DropdownMenu,
+  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
@@ -283,6 +286,7 @@ import {
   ArrowRightIcon,
   ThumbsUpIcon,
   ThumbsDownIcon,
+  ArrowLeftIcon,
 } from "lucide-react";
 import {
   FaFacebook,
@@ -653,6 +657,25 @@ function App() {
             </Button>
             <Button variant="link">Link</Button>
           </div>
+
+          <h2>Button Group</h2>
+          <ButtonGroup>
+            <ButtonGroup className="hidden sm:flex">
+              <Button variant="outline" size="icon" aria-label="Go Back">
+                <ArrowLeftIcon />
+              </Button>
+            </ButtonGroup>
+            <ButtonGroup>
+              <Button variant="outline">Archive</Button>
+              <Button variant="outline">Report</Button>
+            </ButtonGroup>
+            <ButtonGroupSeparator />
+            <ButtonGroup>
+              <Button variant="outline">Archive</Button>
+              <Button variant="outline">Report</Button>
+            </ButtonGroup>
+            <ButtonGroupText>Button Group Text</ButtonGroupText>
+          </ButtonGroup>
 
           <h2>Calendar</h2>
           <Calendar
