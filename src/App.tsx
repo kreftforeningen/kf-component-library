@@ -2160,7 +2160,15 @@ function App() {
           </Button>
 
           <h2>Spinner</h2>
-          <Spinner>Loading</Spinner>
+          <div className="flex flex-col items-center gap-6">
+            <Button disabled size="sm">
+              <Spinner className="size-3" />
+              Loading...
+            </Button>
+            <Spinner className="size-4" />
+            <Spinner className="size-6" />
+            <Spinner className="size-8" />
+          </div>
 
           <h2>Switch</h2>
           <Switch />
