@@ -253,6 +253,7 @@ export {
   ItemHeader,
   ItemFooter,
 } from "../item";
+export { Kbd, KbdGroup } from "../kbd";
 export { Label } from "../label";
 export {
   LinkList,
