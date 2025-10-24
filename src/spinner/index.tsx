@@ -1,35 +1,16 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { Loader2Icon } from "lucide-react"
 
-const spinnerVariants = cva("flex flex-col gap-4 justify-center items-center", {
-  variants: {
-    variant: {
-      default: "",
-      destructive: "",
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-});
+import { cn } from "@/lib/utils"
 
-function Spinner({
-  className,
-  variant,
-  children,
-  ...props
-}: React.ComponentProps<"div"> &
-  VariantProps<typeof spinnerVariants> & { children?: React.ReactNode }) {
+function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
   return (
-    <div className={cn(spinnerVariants({ variant }), className)} {...props}>
-      <div
-        role="status"
-        aria-live="polite"
-        className="w-12 h-12 rounded-full border-4 border-dotted animate-spin border-primary dark:border-blue-400  border-t-transparent dark:border-t-transparent"
-      />
-      {children && <div className="animate-pulse-text">{children}</div>}
-    </div>
-  );
+    <Loader2Icon
+      role="status"
+      aria-label="Loading"
+      className={cn("size-4 animate-spin", className)}
+      {...props}
+    />
+  )
 }
 
-export { Spinner };
+export { Spinner }

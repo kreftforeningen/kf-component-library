@@ -14,14 +14,16 @@ export {
 export { Alert, AlertDescription, AlertTitle } from "../alert";
 export {
   AlertDialog,
+  AlertDialogPortal,
+  AlertDialogOverlay,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
 } from "../alert-dialog";
 export { AspectRatio } from "../aspect-ratio";
 export { Avatar, AvatarFallback, AvatarImage } from "../avatar";
@@ -38,11 +40,12 @@ export {
 } from "../banner";
 export {
   Breadcrumb,
+  BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
+  BreadcrumbEllipsis,
 } from "../breadcrumb";
 export { Button } from "../button";
 export {
@@ -50,7 +53,7 @@ export {
   ButtonGroupSeparator,
   ButtonGroupText,
 } from "../button-group";
-export { Calendar } from "../calendar";
+export { Calendar, CalendarDayButton } from "../calendar";
 export {
   Card,
   CardAction,
@@ -67,8 +70,8 @@ export {
   CarouselDots,
   CarouselItem,
   CarouselItemDescription,
-  CarouselNext,
   CarouselPrevious,
+  CarouselNext,
 } from "../carousel";
 export {
   ChartContainer,
@@ -88,25 +91,40 @@ export {
 export {
   Command,
   CommandDialog,
+  CommandInput,
+  CommandList,
   CommandEmpty,
   CommandGroup,
-  CommandInput,
   CommandItem,
-  CommandList,
-  CommandSeparator,
   CommandShortcut,
+  CommandSeparator,
 } from "../command";
 export {
   ContextMenu,
+  ContextMenuTrigger,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuTrigger,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuGroup,
+  ContextMenuPortal,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuRadioGroup,
 } from "../context-menu";
 export {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
+  DialogOverlay,
+  DialogPortal,
   DialogTitle,
   DialogTrigger,
 } from "../dialog";
@@ -123,13 +141,15 @@ export {
 } from "../download";
 export {
   Drawer,
+  DrawerPortal,
+  DrawerOverlay,
+  DrawerTrigger,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
+  DrawerFooter,
   DrawerTitle,
-  DrawerTrigger,
+  DrawerDescription,
 } from "../drawer";
 export {
   DropdownMenu,
@@ -148,6 +168,14 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
 } from "../dropdown-menu";
+export {
+  Empty,
+  EmptyHeader,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+  EmptyMedia,
+} from "../empty";
 export {
   FactBox,
   FactBoxTitle,
@@ -170,19 +198,17 @@ export {
   FeedbackAction,
 } from "../feedback";
 export {
-  HeaderWrapper,
-  HeaderLogo,
-  HeaderNavigation,
-  HeaderButton,
-  HeaderSearch,
-  HeaderMenu,
-  HeaderMenuTrigger,
-  HeaderMenuContent,
-  HeaderMenuList,
-  HeaderMenuListItem,
-  HeaderMenuFooter,
-  HeaderTitle,
-} from "../header";
+  Field,
+  FieldLabel,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldContent,
+  FieldTitle,
+} from "../field";
 export {
   FooterWrapper,
   FooterSocial,
@@ -194,8 +220,21 @@ export {
   FooterContactItem,
   FooterCopyright,
 } from "../footer";
-export { ModeToggle } from "../mode-toggle";
-export { ThemeProvider, useTheme } from "../theme-provider";
+export {
+  HeaderWrapper,
+  HeaderLogo,
+  HeaderNavigation,
+  HeaderButton,
+  HeaderSearch,
+  HeaderMenu,
+  HeaderMenuTrigger,
+  HeaderMenuContent,
+  HeaderMenuList,
+  HeaderMenuListItem,
+  HeaderMenuFooter,
+  HeaderMenuClose,
+  HeaderTitle,
+} from "../header";
 export { HoverCard, HoverCardContent, HoverCardTrigger } from "../hover-card";
 export {
   Infographic,
@@ -208,11 +247,32 @@ export {
 } from "../infographic";
 export { Input } from "../input";
 export {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupText,
+  InputGroupInput,
+  InputGroupTextarea,
+} from "../input-group";
+export {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
 } from "../input-otp";
+export {
+  Item,
+  ItemMedia,
+  ItemContent,
+  ItemActions,
+  ItemGroup,
+  ItemSeparator,
+  ItemTitle,
+  ItemDescription,
+  ItemHeader,
+  ItemFooter,
+} from "../item";
+export { Kbd, KbdGroup } from "../kbd";
 export { Label } from "../label";
 export {
   LinkList,
@@ -222,34 +282,46 @@ export {
 } from "../link-list";
 export {
   Menubar,
-  MenubarContent,
-  MenubarItem,
+  MenubarPortal,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
+  MenubarContent,
+  MenubarGroup,
+  MenubarSeparator,
+  MenubarLabel,
+  MenubarItem,
+  MenubarShortcut,
+  MenubarCheckboxItem,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSub,
+  MenubarSubTrigger,
+  MenubarSubContent,
 } from "../menubar";
+export { ModeToggle } from "../mode-toggle";
+export {
+  NativeSelect,
+  NativeSelectOptGroup,
+  NativeSelectOption,
+} from "../native-select";
 export {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuContent,
   NavigationMenuTrigger,
+  NavigationMenuLink,
+  NavigationMenuIndicator,
   NavigationMenuViewport,
 } from "../navigation-menu";
 export {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
   PaginationLink,
-  PaginationNext,
+  PaginationItem,
   PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
 } from "../pagination";
 export {
   Person,
@@ -262,7 +334,12 @@ export {
   PersonItemPhone,
   PersonItemDescription,
 } from "../person";
-export { Popover, PopoverContent, PopoverTrigger } from "../popover";
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverAnchor,
+} from "../popover";
 export { Progress } from "../progress";
 export { RadioGroup, RadioGroupItem } from "../radio-group";
 export {
@@ -270,49 +347,72 @@ export {
   ResizablePanel,
   ResizablePanelGroup,
 } from "../resizable";
-export { ScrollArea } from "../scroll-area";
+export { ScrollArea, ScrollBar } from "../scroll-area";
 export {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
   SelectTrigger,
   SelectValue,
 } from "../select";
 export { Separator } from "../separator";
 export {
   Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
   SheetClose,
+  SheetContent,
+  SheetHeader,
   SheetFooter,
+  SheetTitle,
+  SheetDescription,
 } from "../sheet";
 export {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
+  SidebarInset,
   SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSkeleton,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarTrigger,
 } from "../sidebar";
 export { Skeleton } from "../skeleton";
 export { Slider } from "../slider";
+export { Spinner } from "../spinner";
 export { Switch } from "../switch";
 export {
   Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
   TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
   TableRow,
+  TableCell,
+  TableCaption,
 } from "../table";
 export { Tabs, TabsContent, TabsList, TabsTrigger } from "../tabs";
 export { Textarea } from "../textarea";
+export { ThemeProvider, useTheme } from "../theme-provider";
 export {
   Timeline,
   TimelineItem,
@@ -329,16 +429,3 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from "../tooltip";
-export { Spinner } from "../spinner";
-export {
-  Field,
-  FieldLabel,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLegend,
-  FieldSeparator,
-  FieldSet,
-  FieldContent,
-  FieldTitle,
-} from "../field";
