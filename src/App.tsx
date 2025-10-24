@@ -251,6 +251,29 @@ import {
   FieldLegend,
   FieldSeparator,
   FieldSet,
+  Empty,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+  InputGroup,
+  InputGroupInput,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupText,
+  InputGroupTextarea,
+  Item,
+  ItemDescription,
+  ItemContent,
+  ItemTitle,
+  ItemActions,
+  ItemMedia,
+  ItemGroup,
+  Kbd,
+  KbdGroup,
+  NativeSelect,
+  NativeSelectOption,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -287,6 +310,14 @@ import {
   ThumbsUpIcon,
   ThumbsDownIcon,
   ArrowLeftIcon,
+  FolderCodeIcon,
+  ArrowUpRightIcon,
+  SearchIcon,
+  InfoIcon,
+  PlusIcon,
+  CheckIcon,
+  ArrowUpIcon,
+  BadgeCheckIcon,
 } from "lucide-react";
 import {
   FaFacebook,
@@ -420,6 +451,27 @@ const chartConfig = {
     label: "Mobile",
   },
 } satisfies ChartConfig;
+
+const music = [
+  {
+    title: "Midnight City Lights",
+    artist: "Neon Dreams",
+    album: "Electric Nights",
+    duration: "3:45",
+  },
+  {
+    title: "Coffee Shop Conversations",
+    artist: "The Morning Brew",
+    album: "Urban Stories",
+    duration: "4:05",
+  },
+  {
+    title: "Digital Rain",
+    artist: "Cyber Symphony",
+    album: "Binary Beats",
+    duration: "3:30",
+  },
+];
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -1011,6 +1063,36 @@ function App() {
             </DropdownMenu>
           </div>
 
+          <h2 id="empty">Empty</h2>
+          <Empty>
+            <EmptyHeader>
+              <EmptyMedia variant="icon">
+                <FolderCodeIcon />
+              </EmptyMedia>
+              <EmptyTitle>No Projects Yet</EmptyTitle>
+              <EmptyDescription>
+                You haven&apos;t created any projects yet. Get started by
+                creating your first project.
+              </EmptyDescription>
+            </EmptyHeader>
+            <EmptyContent>
+              <div className="flex gap-2">
+                <Button>Create Project</Button>
+                <Button variant="outline">Import Project</Button>
+              </div>
+            </EmptyContent>
+            <Button
+              variant="link"
+              asChild
+              className="text-muted-foreground"
+              size="sm"
+            >
+              <a href="#">
+                Learn More <ArrowUpRightIcon />
+              </a>
+            </Button>
+          </Empty>
+
           <h2>Fact Box</h2>
           <FactBox>
             <FactBoxContent>
@@ -1565,6 +1647,78 @@ function App() {
             <Input />
           </div>
 
+          <h2 id="input-group">Input Group</h2>
+          <div className="grid w-full max-w-sm gap-6">
+            <InputGroup>
+              <InputGroupInput placeholder="Search..." />
+              <InputGroupAddon>
+                <SearchIcon />
+              </InputGroupAddon>
+              <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+            </InputGroup>
+            <InputGroup>
+              <InputGroupInput placeholder="example.com" className="!pl-1" />
+              <InputGroupAddon>
+                <InputGroupText>https://</InputGroupText>
+              </InputGroupAddon>
+              <InputGroupAddon align="inline-end">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <InputGroupButton className="rounded-full" size="icon-xs">
+                      <InfoIcon />
+                    </InputGroupButton>
+                  </TooltipTrigger>
+                  <TooltipContent>This is content in a tooltip.</TooltipContent>
+                </Tooltip>
+              </InputGroupAddon>
+            </InputGroup>
+            <InputGroup>
+              <InputGroupTextarea placeholder="Ask, Search or Chat..." />
+              <InputGroupAddon align="block-end">
+                <InputGroupButton
+                  variant="outline"
+                  className="rounded-full"
+                  size="icon-xs"
+                >
+                  <PlusIcon />
+                </InputGroupButton>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <InputGroupButton variant="ghost">Auto</InputGroupButton>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    side="top"
+                    align="start"
+                    className="[--radius:0.95rem]"
+                  >
+                    <DropdownMenuItem>Auto</DropdownMenuItem>
+                    <DropdownMenuItem>Agent</DropdownMenuItem>
+                    <DropdownMenuItem>Manual</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <InputGroupText className="ml-auto">52% used</InputGroupText>
+                <Separator orientation="vertical" className="h-4" />
+                <InputGroupButton
+                  variant="default"
+                  className="rounded-full"
+                  size="icon-xs"
+                  disabled
+                >
+                  <ArrowUpIcon />
+                  <span className="sr-only">Send</span>
+                </InputGroupButton>
+              </InputGroupAddon>
+            </InputGroup>
+            <InputGroup>
+              <InputGroupInput placeholder="@shadcn" />
+              <InputGroupAddon align="inline-end">
+                <div className="bg-primary text-primary-foreground flex size-4 items-center justify-center rounded-full">
+                  <CheckIcon className="size-3" />
+                </div>
+              </InputGroupAddon>
+            </InputGroup>
+          </div>
+
           <h2>Input OTP</h2>
           <InputOTP maxLength={6}>
             <InputOTPGroup>
@@ -1579,6 +1733,87 @@ function App() {
               <InputOTPSlot index={5} />
             </InputOTPGroup>
           </InputOTP>
+
+          <h2 id="item">Item</h2>
+          <div className="flex w-full max-w-md flex-col gap-6 mb-10">
+            <Item variant="outline">
+              <ItemContent>
+                <ItemTitle>Basic Item</ItemTitle>
+                <ItemDescription>
+                  A simple item with title and description.
+                </ItemDescription>
+              </ItemContent>
+              <ItemActions>
+                <Button variant="outline" size="sm">
+                  Action
+                </Button>
+              </ItemActions>
+            </Item>
+            <Item variant="outline" size="sm" asChild>
+              <a href="#">
+                <ItemMedia>
+                  <BadgeCheckIcon className="size-5" />
+                </ItemMedia>
+                <ItemContent>
+                  <ItemTitle>Your profile has been verified.</ItemTitle>
+                </ItemContent>
+                <ItemActions>
+                  <ChevronRightIcon className="size-4" />
+                </ItemActions>
+              </a>
+            </Item>
+          </div>
+          <div className="flex w-full max-w-md flex-col gap-6">
+            <ItemGroup className="gap-4">
+              {music.map((song) => (
+                <Item
+                  key={song.title}
+                  variant="outline"
+                  asChild
+                  role="listitem"
+                >
+                  <a href="#">
+                    <ItemMedia variant="image">
+                      <img
+                        src={`https://avatar.vercel.sh/${song.title}`}
+                        alt={song.title}
+                        width={32}
+                        height={32}
+                        className="object-cover grayscale"
+                      />
+                    </ItemMedia>
+                    <ItemContent>
+                      <ItemTitle className="line-clamp-1">
+                        {song.title} -{" "}
+                        <span className="text-muted-foreground">
+                          {song.album}
+                        </span>
+                      </ItemTitle>
+                      <ItemDescription>{song.artist}</ItemDescription>
+                    </ItemContent>
+                    <ItemContent className="flex-none text-center">
+                      <ItemDescription>{song.duration}</ItemDescription>
+                    </ItemContent>
+                  </a>
+                </Item>
+              ))}
+            </ItemGroup>
+          </div>
+
+          <h2 id="kbd">Kbd</h2>
+          <div className="flex flex-col items-center gap-4">
+            <KbdGroup>
+              <Kbd>⌘</Kbd>
+              <Kbd>⇧</Kbd>
+              <Kbd>⌥</Kbd>
+              <Kbd>⌃</Kbd>
+            </KbdGroup>
+            <KbdGroup>
+              <Kbd>Ctrl</Kbd>
+              <span>+</span>
+              <Kbd>B</Kbd>
+            </KbdGroup>
+          </div>
 
           <h2>Link List</h2>
           <LinkList>
@@ -1695,6 +1930,17 @@ function App() {
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
+
+          <h2 id="native-select">Native Select</h2>
+          <NativeSelect>
+            <NativeSelectOption value="">Select status</NativeSelectOption>
+            <NativeSelectOption value="todo">Todo</NativeSelectOption>
+            <NativeSelectOption value="in-progress">
+              In Progress
+            </NativeSelectOption>
+            <NativeSelectOption value="done">Done</NativeSelectOption>
+            <NativeSelectOption value="cancelled">Cancelled</NativeSelectOption>
+          </NativeSelect>
 
           <h2>Navigation Menu (Do not use yet)</h2>
           <NavigationMenu viewport={false}>
@@ -1914,7 +2160,15 @@ function App() {
           </Button>
 
           <h2>Spinner</h2>
-          <Spinner>Loading</Spinner>
+          <div className="flex flex-col items-center gap-6">
+            <Button disabled size="sm">
+              <Spinner className="size-3" />
+              Loading...
+            </Button>
+            <Spinner className="size-4" />
+            <Spinner className="size-6" />
+            <Spinner className="size-8" />
+          </div>
 
           <h2>Switch</h2>
           <Switch />
