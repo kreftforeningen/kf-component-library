@@ -241,6 +241,18 @@ export {
   InputOTPSeparator,
   InputOTPSlot,
 } from "../input-otp";
+export {
+  Item,
+  ItemMedia,
+  ItemContent,
+  ItemActions,
+  ItemGroup,
+  ItemSeparator,
+  ItemTitle,
+  ItemDescription,
+  ItemHeader,
+  ItemFooter,
+} from "../item";
 export { Label } from "../label";
 export {
   LinkList,

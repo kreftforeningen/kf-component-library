@@ -263,6 +263,13 @@ import {
   InputGroupButton,
   InputGroupText,
   InputGroupTextarea,
+  Item,
+  ItemDescription,
+  ItemContent,
+  ItemTitle,
+  ItemActions,
+  ItemMedia,
+  ItemGroup,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -306,6 +313,7 @@ import {
   PlusIcon,
   CheckIcon,
   ArrowUpIcon,
+  BadgeCheckIcon,
 } from "lucide-react";
 import {
   FaFacebook,
@@ -439,6 +447,27 @@ const chartConfig = {
     label: "Mobile",
   },
 } satisfies ChartConfig;
+
+const music = [
+  {
+    title: "Midnight City Lights",
+    artist: "Neon Dreams",
+    album: "Electric Nights",
+    duration: "3:45",
+  },
+  {
+    title: "Coffee Shop Conversations",
+    artist: "The Morning Brew",
+    album: "Urban Stories",
+    duration: "4:05",
+  },
+  {
+    title: "Digital Rain",
+    artist: "Cyber Symphony",
+    album: "Binary Beats",
+    duration: "3:30",
+  },
+];
 
 function App() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -1700,6 +1729,72 @@ function App() {
               <InputOTPSlot index={5} />
             </InputOTPGroup>
           </InputOTP>
+
+          <h2 id="item">Item</h2>
+          <div className="flex w-full max-w-md flex-col gap-6 mb-10">
+            <Item variant="outline">
+              <ItemContent>
+                <ItemTitle>Basic Item</ItemTitle>
+                <ItemDescription>
+                  A simple item with title and description.
+                </ItemDescription>
+              </ItemContent>
+              <ItemActions>
+                <Button variant="outline" size="sm">
+                  Action
+                </Button>
+              </ItemActions>
+            </Item>
+            <Item variant="outline" size="sm" asChild>
+              <a href="#">
+                <ItemMedia>
+                  <BadgeCheckIcon className="size-5" />
+                </ItemMedia>
+                <ItemContent>
+                  <ItemTitle>Your profile has been verified.</ItemTitle>
+                </ItemContent>
+                <ItemActions>
+                  <ChevronRightIcon className="size-4" />
+                </ItemActions>
+              </a>
+            </Item>
+          </div>
+          <div className="flex w-full max-w-md flex-col gap-6">
+            <ItemGroup className="gap-4">
+              {music.map((song) => (
+                <Item
+                  key={song.title}
+                  variant="outline"
+                  asChild
+                  role="listitem"
+                >
+                  <a href="#">
+                    <ItemMedia variant="image">
+                      <img
+                        src={`https://avatar.vercel.sh/${song.title}`}
+                        alt={song.title}
+                        width={32}
+                        height={32}
+                        className="object-cover grayscale"
+                      />
+                    </ItemMedia>
+                    <ItemContent>
+                      <ItemTitle className="line-clamp-1">
+                        {song.title} -{" "}
+                        <span className="text-muted-foreground">
+                          {song.album}
+                        </span>
+                      </ItemTitle>
+                      <ItemDescription>{song.artist}</ItemDescription>
+                    </ItemContent>
+                    <ItemContent className="flex-none text-center">
+                      <ItemDescription>{song.duration}</ItemDescription>
+                    </ItemContent>
+                  </a>
+                </Item>
+              ))}
+            </ItemGroup>
+          </div>
 
           <h2>Link List</h2>
           <LinkList>
