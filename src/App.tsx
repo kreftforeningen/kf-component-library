@@ -251,6 +251,18 @@ import {
   FieldLegend,
   FieldSeparator,
   FieldSet,
+  Empty,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+  InputGroup,
+  InputGroupInput,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupText,
+  InputGroupTextarea,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -287,6 +299,13 @@ import {
   ThumbsUpIcon,
   ThumbsDownIcon,
   ArrowLeftIcon,
+  FolderCodeIcon,
+  ArrowUpRightIcon,
+  SearchIcon,
+  InfoIcon,
+  PlusIcon,
+  CheckIcon,
+  ArrowUpIcon,
 } from "lucide-react";
 import {
   FaFacebook,
@@ -1011,6 +1030,36 @@ function App() {
             </DropdownMenu>
           </div>
 
+          <h2 id="empty">Empty</h2>
+          <Empty>
+            <EmptyHeader>
+              <EmptyMedia variant="icon">
+                <FolderCodeIcon />
+              </EmptyMedia>
+              <EmptyTitle>No Projects Yet</EmptyTitle>
+              <EmptyDescription>
+                You haven&apos;t created any projects yet. Get started by
+                creating your first project.
+              </EmptyDescription>
+            </EmptyHeader>
+            <EmptyContent>
+              <div className="flex gap-2">
+                <Button>Create Project</Button>
+                <Button variant="outline">Import Project</Button>
+              </div>
+            </EmptyContent>
+            <Button
+              variant="link"
+              asChild
+              className="text-muted-foreground"
+              size="sm"
+            >
+              <a href="#">
+                Learn More <ArrowUpRightIcon />
+              </a>
+            </Button>
+          </Empty>
+
           <h2>Fact Box</h2>
           <FactBox>
             <FactBoxContent>
@@ -1563,6 +1612,78 @@ function App() {
           <div className="flex flex-row flex-wrap gap-2">
             <Label>Input</Label>
             <Input />
+          </div>
+
+          <h2 id="input-group">Input Group</h2>
+          <div className="grid w-full max-w-sm gap-6">
+            <InputGroup>
+              <InputGroupInput placeholder="Search..." />
+              <InputGroupAddon>
+                <SearchIcon />
+              </InputGroupAddon>
+              <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+            </InputGroup>
+            <InputGroup>
+              <InputGroupInput placeholder="example.com" className="!pl-1" />
+              <InputGroupAddon>
+                <InputGroupText>https://</InputGroupText>
+              </InputGroupAddon>
+              <InputGroupAddon align="inline-end">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <InputGroupButton className="rounded-full" size="icon-xs">
+                      <InfoIcon />
+                    </InputGroupButton>
+                  </TooltipTrigger>
+                  <TooltipContent>This is content in a tooltip.</TooltipContent>
+                </Tooltip>
+              </InputGroupAddon>
+            </InputGroup>
+            <InputGroup>
+              <InputGroupTextarea placeholder="Ask, Search or Chat..." />
+              <InputGroupAddon align="block-end">
+                <InputGroupButton
+                  variant="outline"
+                  className="rounded-full"
+                  size="icon-xs"
+                >
+                  <PlusIcon />
+                </InputGroupButton>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <InputGroupButton variant="ghost">Auto</InputGroupButton>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    side="top"
+                    align="start"
+                    className="[--radius:0.95rem]"
+                  >
+                    <DropdownMenuItem>Auto</DropdownMenuItem>
+                    <DropdownMenuItem>Agent</DropdownMenuItem>
+                    <DropdownMenuItem>Manual</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <InputGroupText className="ml-auto">52% used</InputGroupText>
+                <Separator orientation="vertical" className="h-4" />
+                <InputGroupButton
+                  variant="default"
+                  className="rounded-full"
+                  size="icon-xs"
+                  disabled
+                >
+                  <ArrowUpIcon />
+                  <span className="sr-only">Send</span>
+                </InputGroupButton>
+              </InputGroupAddon>
+            </InputGroup>
+            <InputGroup>
+              <InputGroupInput placeholder="@shadcn" />
+              <InputGroupAddon align="inline-end">
+                <div className="bg-primary text-primary-foreground flex size-4 items-center justify-center rounded-full">
+                  <CheckIcon className="size-3" />
+                </div>
+              </InputGroupAddon>
+            </InputGroup>
           </div>
 
           <h2>Input OTP</h2>
