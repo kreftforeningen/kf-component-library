@@ -272,6 +272,8 @@ import {
   ItemGroup,
   Kbd,
   KbdGroup,
+  NativeSelect,
+  NativeSelectOption,
 } from "./lib/main";
 import { toast } from "sonner";
 
@@ -1928,6 +1930,17 @@ function App() {
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
+
+          <h2 id="native-select">Native Select</h2>
+          <NativeSelect>
+            <NativeSelectOption value="">Select status</NativeSelectOption>
+            <NativeSelectOption value="todo">Todo</NativeSelectOption>
+            <NativeSelectOption value="in-progress">
+              In Progress
+            </NativeSelectOption>
+            <NativeSelectOption value="done">Done</NativeSelectOption>
+            <NativeSelectOption value="cancelled">Cancelled</NativeSelectOption>
+          </NativeSelect>
 
           <h2>Navigation Menu (Do not use yet)</h2>
           <NavigationMenu viewport={false}>

@@ -274,6 +274,11 @@ export {
   MenubarTrigger,
 } from "../menubar";
 export {
+  NativeSelect,
+  NativeSelectOptGroup,
+  NativeSelectOption,
+} from "../native-select";
+export {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuIndicator,
