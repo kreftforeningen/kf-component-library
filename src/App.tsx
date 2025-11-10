@@ -483,9 +483,9 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        <main className="container w-5/6 md:w-2/3 mx-auto my-10">
+        <main className="app-main-section">
           <Toaster position="top-center" richColors closeButton />
-          <div className="fixed z-50 -ml-40">
+          <div className="app-mode-toggle-anchor">
             <ModeToggle variant="outline" size="default">
               Text/Icon
             </ModeToggle>
@@ -530,7 +530,7 @@ function App() {
             </AlertDescription>
           </Alert>
 
-          <Alert variant="destructive" className="my-4">
+          <Alert variant="destructive">
             <CircleAlert />
             <AlertTitle>Heads up!</AlertTitle>
             <AlertDescription>
@@ -538,7 +538,7 @@ function App() {
             </AlertDescription>
           </Alert>
 
-          <Alert variant="success" className="my-4">
+          <Alert variant="success">
             <CircleCheck />
             <AlertTitle>Success!</AlertTitle>
             <AlertDescription>
@@ -567,17 +567,17 @@ function App() {
           </AlertDialog>
 
           <h2>Aspect Ratio</h2>
-          <p className="mb-4">Image using aspect ratio set to 21/9.</p>
+          <p className="app-spacing-bottom">Image using aspect ratio set to 21/9.</p>
           <AspectRatio ratio={21 / 9}>
             <img
               src="https://picsum.photos/id/260/1600/900"
               alt="Card Image"
-              className="object-cover w-full h-full rounded-md"
+              className="app-media-rounded"
             />
           </AspectRatio>
 
           <h2>Avatar</h2>
-          <div className="flex flex-row flex-wrap items-center gap-12">
+          <div className="app-avatar-row">
             <Avatar>
               <AvatarImage
                 src="https://robohash.org/CN?set=set4"
@@ -585,14 +585,14 @@ function App() {
               />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <Avatar className="rounded-lg">
+            <Avatar>
               <AvatarImage
                 src="https://robohash.org/ER?set=set4"
                 alt="@evilrabbit"
               />
               <AvatarFallback>ER</AvatarFallback>
             </Avatar>
-            <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+            <div className="app-avatar-stack">
               <Avatar>
                 <AvatarImage
                   src="https://robohash.org/AB?set=set4"
@@ -618,35 +618,17 @@ function App() {
           </div>
 
           <h2>Badge</h2>
-          <div className="flex flex-col items-center gap-2">
-            <div className="flex w-full flex-wrap gap-2">
+          <div className="app-centered-column-sm">
+            <div className="app-flex-row-wrap">
               <Badge>Badge</Badge>
               <Badge variant="secondary">Secondary</Badge>
               <Badge variant="destructive">Destructive</Badge>
               <Badge variant="outline">Outline</Badge>
             </div>
-            <div className="flex w-full flex-wrap gap-2">
-              <Badge
-                variant="secondary"
-                className="bg-blue-500 text-white dark:bg-primary"
-              >
+            <div className="app-flex-row-wrap">
+              <Badge variant="secondary">
                 <CircleCheck />
                 Verified
-              </Badge>
-              <Badge className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums">
-                8
-              </Badge>
-              <Badge
-                className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
-                variant="destructive"
-              >
-                99
-              </Badge>
-              <Badge
-                className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
-                variant="outline"
-              >
-                20+
               </Badge>
             </div>
           </div>
@@ -660,7 +642,7 @@ function App() {
             <BannerContent>
               <BannerTitle>Banner</BannerTitle>
               <BannerDescription>
-                <p className="mb-4">
+                <p className="app-spacing-bottom">
                   Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
                   Text. Text. Text. Text. Text. Text. Text. Text. Text. Text.
                   Text. Text. Text. Text.
@@ -695,7 +677,7 @@ function App() {
           </Breadcrumb>
 
           <h2 id="button">Button</h2>
-          <div className="flex flex-row flex-wrap gap-2">
+          <div className="app-button-row">
             <Button variant="default">Default</Button>
             <Button variant="default" disabled>
               Default Disabled
@@ -712,7 +694,7 @@ function App() {
 
           <h2 id="button-group">Button Group</h2>
           <ButtonGroup>
-            <ButtonGroup className="hidden sm:flex">
+            <ButtonGroup>
               <Button variant="outline" size="icon" aria-label="Go Back">
                 <ArrowLeftIcon />
               </Button>
@@ -730,24 +712,16 @@ function App() {
           </ButtonGroup>
 
           <h2 id="calendar">Calendar</h2>
-          <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="rounded-lg bg-gray-100"
-          />
+          <Calendar mode="single" selected={date} onSelect={setDate} />
 
           <h2 id="card">Card</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="pt-0">
-              <AspectRatio
-                ratio={16 / 9}
-                className="rounded-t-md overflow-hidden"
-              >
+          <div className="app-card-grid">
+            <Card>
+              <AspectRatio ratio={16 / 9}>
                 <img
                   src="https://picsum.photos/id/241/1600/900"
                   alt="Card Image"
-                  className="object-cover w-full h-full"
+                  className="app-media-cover"
                 />
               </AspectRatio>
               <CardHeader>
@@ -796,7 +770,7 @@ function App() {
                     <img
                       src="https://picsum.photos/id/237/1600/900"
                       alt="Card Image"
-                      className="object-cover w-full h-full rounded-xl"
+                      className="app-media-rounded-xl"
                     />
                     <CarouselItemDescription>
                       A dog. A dog is a good boy. A dog is a good boy. A dog is
@@ -814,7 +788,7 @@ function App() {
                     <img
                       src="https://picsum.photos/id/238/1600/900"
                       alt="Card Image"
-                      className="object-cover w-full h-full rounded-xl"
+                      className="app-media-rounded-xl"
                     />
                   </AspectRatio>
                   <CarouselItemDescription>A city.</CarouselItemDescription>
@@ -824,7 +798,7 @@ function App() {
                     <img
                       src="https://picsum.photos/id/239/1600/900"
                       alt="Card Image"
-                      className="object-cover w-full h-full rounded-xl"
+                      className="app-media-rounded-xl"
                     />
                   </AspectRatio>
                   <CarouselItemDescription>
@@ -839,7 +813,7 @@ function App() {
           </Carousel>
 
           <h2 id="chart">Chart</h2>
-          <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+          <ChartContainer config={chartConfig}>
             <BarChart accessibilityLayer data={chartData}>
               <CartesianGrid vertical={false} />
               <XAxis
@@ -863,36 +837,32 @@ function App() {
           </ChartContainer>
 
           <h2 id="checkbox">Checkbox</h2>
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3">
+          <div className="app-stack-gap-lg">
+            <div className="app-inline-gap-md">
               <Checkbox id="terms" />
               <Label htmlFor="terms">Accept terms and conditions</Label>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="app-inline-gap-md-top">
               <Checkbox id="terms-2" defaultChecked />
-              <div className="grid gap-2">
+              <div className="app-grid-gap-sm">
                 <Label htmlFor="terms-2">Accept terms and conditions</Label>
-                <p className="text-muted-foreground text-sm">
+                <p className="app-muted-text-sm">
                   By clicking this checkbox, you agree to the terms and
                   conditions.
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="app-inline-gap-md-top">
               <Checkbox id="toggle" disabled />
               <Label htmlFor="toggle">Enable notifications</Label>
             </div>
-            <Label className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-aria-checked:border-primary has-aria-checked:bg-primary-foreground dark:has-aria-checked:border-blue-900 dark:has-aria-checked:bg-blue-950">
-              <Checkbox
-                id="toggle-2"
-                defaultChecked
-                className="data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700"
-              />
-              <div className="grid gap-1.5 font-normal">
-                <p className="text-sm leading-none font-medium">
+            <Label>
+              <Checkbox id="toggle-2" defaultChecked />
+              <div className="app-grid-tight">
+                <p className="app-text-strong">
                   Enable notifications
                 </p>
-                <p className="text-muted-foreground text-sm">
+                <p className="app-muted-text-sm">
                   You can enable or disable notifications at any time.
                 </p>
               </div>
@@ -903,34 +873,33 @@ function App() {
           <Collapsible
             open={isCollapsibleOpen}
             onOpenChange={setIsCollapsibleOpen}
-            className="flex w-[350px] flex-col gap-2"
           >
-            <div className="flex items-center justify-between gap-4 px-4">
-              <h4 className="text-sm font-semibold">
+            <div className="app-collapsible-header">
+              <h4 className="app-text-semibold">
                 @peduarte starred 3 repositories
               </h4>
               <CollapsibleTrigger asChild>
-                <Button variant="ghost" size="icon" className="size-8">
+                <Button variant="ghost" size="icon">
                   <ChevronsUpDown />
-                  <span className="sr-only">Toggle</span>
+                  <span className="app-sr-only">Toggle</span>
                 </Button>
               </CollapsibleTrigger>
             </div>
-            <div className="rounded-md border px-4 py-2 font-mono text-sm">
+            <div className="app-code-chip">
               @radix-ui/primitives
             </div>
-            <CollapsibleContent className="flex flex-col gap-2">
-              <div className="rounded-md border px-4 py-2 font-mono text-sm">
+            <CollapsibleContent>
+              <div className="app-code-chip">
                 @radix-ui/colors
               </div>
-              <div className="rounded-md border px-4 py-2 font-mono text-sm">
+              <div className="app-code-chip">
                 @stitches/react
               </div>
             </CollapsibleContent>
           </Collapsible>
 
           <h2 id="command">Command</h2>
-          <Command className="rounded-lg border shadow-md md:min-w-[450px]">
+          <Command>
             <CommandInput placeholder="Type a command or search..." />
             <CommandList>
               <CommandEmpty>No results found.</CommandEmpty>
@@ -1028,12 +997,12 @@ function App() {
               <Button variant="outline">Open Drawer</Button>
             </DrawerTrigger>
             <DrawerContent>
-              <div className="mx-auto w-full max-w-sm">
+              <div className="app-centered-panel">
                 <DrawerHeader>
                   <DrawerTitle>Drawer</DrawerTitle>
                   <DrawerDescription>Achieve your goals.</DrawerDescription>
                 </DrawerHeader>
-                <div className="p-4 pb-0 text-center">
+                <div className="app-panel-message">
                   Some content in this drawer.
                 </div>
                 <DrawerFooter>
@@ -1047,7 +1016,7 @@ function App() {
           </Drawer>
 
           <h2 id="dropdown-menu">DropdownMenu</h2>
-          <div className="flex flex-row flex-wrap gap-2">
+          <div className="app-button-row">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" shape="square">
@@ -1076,17 +1045,12 @@ function App() {
               </EmptyDescription>
             </EmptyHeader>
             <EmptyContent>
-              <div className="flex gap-2">
+              <div className="app-inline-gap-sm">
                 <Button>Create Project</Button>
                 <Button variant="outline">Import Project</Button>
               </div>
             </EmptyContent>
-            <Button
-              variant="link"
-              asChild
-              className="text-muted-foreground"
-              size="sm"
-            >
+            <Button variant="link" asChild size="sm">
               <a href="#">
                 Learn More <ArrowUpRightIcon />
               </a>
@@ -1098,12 +1062,12 @@ function App() {
             <FactBoxContent>
               <FactBoxTitle>Fact About Cancer</FactBoxTitle>
               <FactBoxDescription>
-                <p className="mb-4">
+                <p className="app-spacing-bottom">
                   Something you should know about cancer. Is that it is a
                   disease that affects many people. It can be treated and cured
                   in many cases. But it can also be fatal.
                 </p>
-                <p className="mb-4">
+                <p className="app-spacing-bottom">
                   Do you think you have cancer? You probably don't. But you
                   should still get checked out.
                 </p>
@@ -1123,7 +1087,7 @@ function App() {
               <FeedbackDescription>
                 Please let us know if our service met your expectations.
               </FeedbackDescription>
-              <FeedbackAction className="flex flex-row gap-2 text-gray-500">
+              <FeedbackAction>
                 <ThumbsUpIcon size={16} />
                 <ThumbsDownIcon size={16} />
               </FeedbackAction>
@@ -1141,7 +1105,7 @@ function App() {
           </Feedback>
 
           <h2 id="field">Field</h2>
-          <div className="w-full max-w-md">
+          <div className="app-max-width">
             <form>
               <FieldGroup>
                 <FieldSet>
@@ -1173,7 +1137,7 @@ function App() {
                         Enter your 16-digit card number
                       </FieldDescription>
                     </Field>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="app-grid-three">
                       <Field>
                         <FieldLabel htmlFor="checkout-exp-month-ts6">
                           Month
@@ -1239,10 +1203,7 @@ function App() {
                         id="checkout-7j9-same-as-shipping-wgm"
                         defaultChecked
                       />
-                      <FieldLabel
-                        htmlFor="checkout-7j9-same-as-shipping-wgm"
-                        className="font-normal"
-                      >
+                      <FieldLabel htmlFor="checkout-7j9-same-as-shipping-wgm">
                         Same as shipping address
                       </FieldLabel>
                     </Field>
@@ -1257,7 +1218,6 @@ function App() {
                       <Textarea
                         id="checkout-7j9-optional-comments"
                         placeholder="Add any additional comments"
-                        className="resize-none"
                       />
                     </Field>
                   </FieldGroup>
@@ -1274,21 +1234,21 @@ function App() {
 
           <h2 id="footer">Footer</h2>
         </main>
-        <FooterWrapper className="dark">
+        <FooterWrapper>
           <FooterActions>
             <Button variant="destructive" asChild>
               <a href="#">
-                Støtt oss <HeartIcon className="hidden sm:block" />
+                Støtt oss <HeartIcon />
               </a>
             </Button>
             <Button variant="outline" asChild>
               <a href="#">
-                Nettbutikk <ShoppingBasketIcon className="hidden sm:block" />
+                Nettbutikk <ShoppingBasketIcon />
               </a>
             </Button>
             <Button variant="outline" asChild>
               <a href="#">
-                Vipps 2277 <HandCoins className="hidden sm:block" />
+                Vipps 2277 <HandCoins />
               </a>
             </Button>
           </FooterActions>
@@ -1407,13 +1367,11 @@ function App() {
             <a href="https://ncu.nu/">NCU</a>.
           </FooterCopyright>
         </FooterWrapper>
-        <main className="container w-5/6 md:w-2/3 mx-auto my-10">
+        <main className="app-main-section">
           <h2 id="header">Header</h2>
         </main>
-        <div className="my-20">
-          <h3 className="container w-5/6 md:w-2/3 mx-auto my-10">
-            Header for Web
-          </h3>
+        <div className="app-vertical-spacing">
+          <h3 className="app-main-section">Header for Web</h3>
           <HeaderWrapper>
             <HeaderLogo
               src="/assets/logo.svg"
@@ -1422,11 +1380,10 @@ function App() {
               href="/"
             />
             <HeaderButton href="#" variant="destructive">
-              Støtt oss <HeartIcon className="hidden sm:block" />
+              Støtt oss <HeartIcon />
             </HeaderButton>
             <HeaderButton
               href="https://nettbutikk.kreftforeningen.no"
-              className="hidden sm:block"
               variant="outline"
             >
               Nettbutikk <ShoppingBasketIcon />
@@ -1434,12 +1391,8 @@ function App() {
 
             <HeaderMenu>
               <HeaderMenuTrigger>
-                <Button
-                  variant="default"
-                  data-slot="header-button"
-                  className="flex items-center gap-2"
-                >
-                  <span className="hidden sm:block">Menu</span> <MenuIcon />
+                <Button variant="default" data-slot="header-button">
+                  <span className="app-hidden-mobile">Menu</span> <MenuIcon />
                 </Button>
               </HeaderMenuTrigger>
               <HeaderMenuContent>
@@ -1499,7 +1452,7 @@ function App() {
                     Aktuelt
                   </HeaderMenuListItem>
                 </HeaderMenuList>
-                <HeaderMenuFooter className="flex flex-row gap-4 items-center justify-start dark">
+                <HeaderMenuFooter>
                   <ModeToggle
                     align="start"
                     variant="outline"
@@ -1510,29 +1463,19 @@ function App() {
             </HeaderMenu>
           </HeaderWrapper>
         </div>
-        <div className="my-20">
-          <h3 className="container w-5/6 md:w-2/3 mx-auto my-10">
-            Header for App
-          </h3>
+        <div className="app-vertical-spacing">
+          <h3 className="app-main-section">Header for App</h3>
           <HeaderWrapper>
             <HeaderTitle href="/">App Title</HeaderTitle>
 
-            <HeaderButton
-              href="https://kreftforeningen.no"
-              className="hidden sm:block"
-              variant="outline"
-            >
+            <HeaderButton href="https://kreftforeningen.no" variant="outline">
               Til Kreftforeningen <ArrowRightIcon />
             </HeaderButton>
 
             <HeaderMenu>
               <HeaderMenuTrigger>
-                <Button
-                  variant="default"
-                  data-slot="header-button"
-                  className="flex items-center gap-2"
-                >
-                  <span className="hidden sm:block">Menu</span> <MenuIcon />
+                <Button variant="default" data-slot="header-button">
+                  <span className="app-hidden-mobile">Menu</span> <MenuIcon />
                 </Button>
               </HeaderMenuTrigger>
               <HeaderMenuContent>
@@ -1576,13 +1519,13 @@ function App() {
                     <img
                       src="/assets/logo-symbol.svg"
                       alt="Kreftforeningen"
-                      className="h-6 w-6"
+                      className="app-icon-medium"
                     />
                     Kreftforeningen
                   </HeaderMenuListItem>
                 </HeaderMenuList>
 
-                <HeaderMenuFooter className="flex flex-row gap-4 items-center justify-start dark">
+                <HeaderMenuFooter>
                   <ModeToggle
                     align="start"
                     variant="outline"
@@ -1594,24 +1537,24 @@ function App() {
           </HeaderWrapper>
         </div>
 
-        <main className="container w-5/6 md:w-2/3 mx-auto my-10">
+        <main className="app-main-section">
           <h2 id="hover-card">Hover Card</h2>
           <HoverCard>
             <HoverCardTrigger asChild>
               <Button variant="link">@nextjs</Button>
             </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <div className="flex justify-between gap-4">
+            <HoverCardContent>
+              <div className="app-inline-justify">
                 <Avatar>
                   <AvatarImage src="https://github.com/vercel.png" />
                   <AvatarFallback>VC</AvatarFallback>
                 </Avatar>
-                <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">@nextjs</h4>
-                  <p className="text-sm">
+                <div className="app-column-gap-xs">
+                  <h4 className="app-text-semibold">@nextjs</h4>
+                  <p className="app-text-sm">
                     The React Framework – created and maintained by @vercel.
                   </p>
-                  <div className="text-muted-foreground text-xs">
+                  <div className="app-muted-text-xs">
                     Joined December 2021
                   </div>
                 </div>
@@ -1624,7 +1567,7 @@ function App() {
             {infographicItems.map((item) => (
               <InfographicItem key={item.id} color="blue">
                 <InfographicItemIcon>
-                  <ServerIcon className="w-10 h-10" strokeWidth={1} />
+                  <ServerIcon strokeWidth={1} />
                 </InfographicItemIcon>
                 <InfographicItemTitle>
                   <InfographicItemTitleNumber>
@@ -1642,13 +1585,13 @@ function App() {
           </Infographic>
 
           <h2 id="input-label">Input + Label</h2>
-          <div className="flex flex-row flex-wrap gap-2">
+          <div className="app-button-row">
             <Label>Input</Label>
             <Input />
           </div>
 
           <h2 id="input-group">Input Group</h2>
-          <div className="grid w-full max-w-sm gap-6">
+          <div className="app-form-grid">
             <InputGroup>
               <InputGroupInput placeholder="Search..." />
               <InputGroupAddon>
@@ -1657,14 +1600,14 @@ function App() {
               <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
             </InputGroup>
             <InputGroup>
-              <InputGroupInput placeholder="example.com" className="!pl-1" />
+              <InputGroupInput placeholder="example.com" />
               <InputGroupAddon>
                 <InputGroupText>https://</InputGroupText>
               </InputGroupAddon>
               <InputGroupAddon align="inline-end">
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <InputGroupButton className="rounded-full" size="icon-xs">
+                    <InputGroupButton size="icon-xs">
                       <InfoIcon />
                     </InputGroupButton>
                   </TooltipTrigger>
@@ -1675,45 +1618,32 @@ function App() {
             <InputGroup>
               <InputGroupTextarea placeholder="Ask, Search or Chat..." />
               <InputGroupAddon align="block-end">
-                <InputGroupButton
-                  variant="outline"
-                  className="rounded-full"
-                  size="icon-xs"
-                >
+                <InputGroupButton variant="outline" size="icon-xs">
                   <PlusIcon />
                 </InputGroupButton>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <InputGroupButton variant="ghost">Auto</InputGroupButton>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent
-                    side="top"
-                    align="start"
-                    className="[--radius:0.95rem]"
-                  >
+                  <DropdownMenuContent side="top" align="start">
                     <DropdownMenuItem>Auto</DropdownMenuItem>
                     <DropdownMenuItem>Agent</DropdownMenuItem>
                     <DropdownMenuItem>Manual</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <InputGroupText className="ml-auto">52% used</InputGroupText>
-                <Separator orientation="vertical" className="h-4" />
-                <InputGroupButton
-                  variant="default"
-                  className="rounded-full"
-                  size="icon-xs"
-                  disabled
-                >
+                <InputGroupText>52% used</InputGroupText>
+                <Separator orientation="vertical" />
+                <InputGroupButton variant="default" size="icon-xs" disabled>
                   <ArrowUpIcon />
-                  <span className="sr-only">Send</span>
+                  <span className="app-sr-only">Send</span>
                 </InputGroupButton>
               </InputGroupAddon>
             </InputGroup>
             <InputGroup>
               <InputGroupInput placeholder="@shadcn" />
               <InputGroupAddon align="inline-end">
-                <div className="bg-primary text-primary-foreground flex size-4 items-center justify-center rounded-full">
-                  <CheckIcon className="size-3" />
+                <div className="app-status-indicator">
+                  <CheckIcon />
                 </div>
               </InputGroupAddon>
             </InputGroup>
@@ -1735,7 +1665,7 @@ function App() {
           </InputOTP>
 
           <h2 id="item">Item</h2>
-          <div className="flex w-full max-w-md flex-col gap-6 mb-10">
+          <div className="app-feature-list">
             <Item variant="outline">
               <ItemContent>
                 <ItemTitle>Basic Item</ItemTitle>
@@ -1752,19 +1682,19 @@ function App() {
             <Item variant="outline" size="sm" asChild>
               <a href="#">
                 <ItemMedia>
-                  <BadgeCheckIcon className="size-5" />
+                  <BadgeCheckIcon />
                 </ItemMedia>
                 <ItemContent>
                   <ItemTitle>Your profile has been verified.</ItemTitle>
                 </ItemContent>
                 <ItemActions>
-                  <ChevronRightIcon className="size-4" />
+                  <ChevronRightIcon />
                 </ItemActions>
               </a>
             </Item>
           </div>
-          <div className="flex w-full max-w-md flex-col gap-6">
-            <ItemGroup className="gap-4">
+          <div className="app-feature-list-compact">
+            <ItemGroup>
               {music.map((song) => (
                 <Item
                   key={song.title}
@@ -1779,19 +1709,19 @@ function App() {
                         alt={song.title}
                         width={32}
                         height={32}
-                        className="object-cover grayscale"
+                        className="app-media-muted"
                       />
                     </ItemMedia>
                     <ItemContent>
-                      <ItemTitle className="line-clamp-1">
+                      <ItemTitle>
                         {song.title} -{" "}
-                        <span className="text-muted-foreground">
+                        <span className="app-muted-text">
                           {song.album}
                         </span>
                       </ItemTitle>
                       <ItemDescription>{song.artist}</ItemDescription>
                     </ItemContent>
-                    <ItemContent className="flex-none text-center">
+                    <ItemContent>
                       <ItemDescription>{song.duration}</ItemDescription>
                     </ItemContent>
                   </a>
@@ -1801,7 +1731,7 @@ function App() {
           </div>
 
           <h2 id="kbd">Kbd</h2>
-          <div className="flex flex-col items-center gap-4">
+          <div className="app-centered-column-lg">
             <KbdGroup>
               <Kbd>⌘</Kbd>
               <Kbd>⇧</Kbd>
@@ -1881,13 +1811,13 @@ function App() {
             <MenubarMenu>
               <MenubarTrigger>View</MenubarTrigger>
               <MenubarContent>
-                <MenubarItem className="flex items-center gap-3 mb-2">
+                <MenubarItem>
                   <Checkbox id="always-show-bookmarks-bar" />
                   <Label htmlFor="always-show-bookmarks-bar">
                     Always Show Bookmarks Bar
                   </Label>
                 </MenubarItem>
-                <MenubarItem className="flex items-center gap-3">
+                <MenubarItem>
                   <Checkbox id="always-show-full-urls" checked />
                   <Label htmlFor="always-show-full-urls">
                     Always Show Full URLs
@@ -1909,16 +1839,16 @@ function App() {
             <MenubarMenu>
               <MenubarTrigger>Profiles</MenubarTrigger>
               <MenubarContent>
-                <RadioGroup value="benoit" className="gap-2">
-                  <MenubarItem className="flex items-center gap-3 ">
+                <RadioGroup value="benoit">
+                  <MenubarItem>
                     <RadioGroupItem value="andy" />
                     <Label htmlFor="andy">Andy</Label>
                   </MenubarItem>
-                  <MenubarItem className="flex items-center gap-3">
+                  <MenubarItem>
                     <RadioGroupItem value="benoit" />
                     <Label htmlFor="benoit">Benoit</Label>
                   </MenubarItem>
-                  <MenubarItem className="flex items-center gap-3">
+                  <MenubarItem>
                     <RadioGroupItem value="Luis" />
                     <Label htmlFor="Luis">Luis</Label>
                   </MenubarItem>
@@ -1959,22 +1889,22 @@ function App() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-4">
+                  <ul className="app-menu-grid">
                     <li>
                       <NavigationMenuLink asChild>
-                        <a href="#" className="flex-row items-center gap-2">
+                        <a href="#" className="app-inline-row-gap">
                           <CircleHelp />
                           Backlog
                         </a>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <a href="#" className="flex-row items-center gap-2">
+                        <a href="#" className="app-inline-row-gap">
                           <CircleAlert />
                           To Do
                         </a>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <a href="#" className="flex-row items-center gap-2">
+                        <a href="#" className="app-inline-row-gap">
                           <CircleCheck />
                           Done
                         </a>
@@ -2047,42 +1977,39 @@ function App() {
 
           <h2 id="radio-group">Radio Group</h2>
           <RadioGroup defaultValue="option-one">
-            <div className="flex items-center space-x-2">
+            <div className="app-inline-space">
               <RadioGroupItem value="option-one" id="option-one" />
               <Label htmlFor="option-one">Option One</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="app-inline-space">
               <RadioGroupItem value="option-two" id="option-two" />
               <Label htmlFor="option-two">Option Two</Label>
             </div>
           </RadioGroup>
 
           <h2 id="resizable">Resizable</h2>
-          <ResizablePanelGroup
-            direction="vertical"
-            className="min-h-[200px] max-w-md rounded-lg border md:min-w-[450px]"
-          >
+          <ResizablePanelGroup direction="vertical">
             <ResizablePanel defaultSize={25}>
-              <div className="flex h-full items-center justify-center p-6">
-                <span className="font-semibold">Header</span>
+              <div className="app-panel-centered">
+                <span className="app-font-semibold">Header</span>
               </div>
             </ResizablePanel>
             <ResizableHandle />
             <ResizablePanel defaultSize={75}>
-              <div className="flex h-full items-center justify-center p-6">
-                <span className="font-semibold">Content</span>
+              <div className="app-panel-centered">
+                <span className="app-font-semibold">Content</span>
               </div>
             </ResizablePanel>
           </ResizablePanelGroup>
 
           <h2 id="scroll-area">Scroll Area</h2>
-          <ScrollArea className="h-72 w-48 rounded-md border">
-            <div className="p-4">
-              <h4 className="mb-4 text-base leading-none m-0">Tags</h4>
+          <ScrollArea>
+            <div className="app-padding-md">
+              <h4 className="app-list-heading">Tags</h4>
               {tags.map((tag) => (
                 <React.Fragment key={tag}>
-                  <div className="text-sm">{tag}</div>
-                  <Separator className="my-2" />
+                  <div className="app-text-sm">{tag}</div>
+                  <Separator />
                 </React.Fragment>
               ))}
             </div>
@@ -2116,12 +2043,12 @@ function App() {
                   done.
                 </SheetDescription>
               </SheetHeader>
-              <div className="grid flex-1 auto-rows-min gap-6 px-4">
-                <div className="grid gap-3">
+              <div className="app-dashboard-grid">
+                <div className="app-grid-gap-md">
                   <Label htmlFor="sheet-demo-name">Name</Label>
                   <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
                 </div>
-                <div className="grid gap-3">
+                <div className="app-grid-gap-md">
                   <Label htmlFor="sheet-demo-username">Username</Label>
                   <Input id="sheet-demo-username" defaultValue="@peduarte" />
                 </div>
@@ -2136,11 +2063,11 @@ function App() {
           </Sheet>
 
           <h2 id="skeleton">Skeleton</h2>
-          <div className="flex items-center space-x-4">
-            <Skeleton className="h-12 w-12 rounded-full" />
-            <div className="space-y-2">
-              <Skeleton className="h-4 w-[250px]" />
-              <Skeleton className="h-4 w-[200px]" />
+          <div className="app-inline-space-lg">
+            <Skeleton />
+            <div className="app-column-gap-sm">
+              <Skeleton />
+              <Skeleton />
             </div>
           </div>
 
@@ -2160,14 +2087,14 @@ function App() {
           </Button>
 
           <h2 id="spinner">Spinner</h2>
-          <div className="flex flex-col items-center gap-6">
+          <div className="app-centered-column-lg">
             <Button disabled size="sm">
-              <Spinner className="size-3" />
+              <Spinner />
               Loading...
             </Button>
-            <Spinner className="size-4" />
-            <Spinner className="size-6" />
-            <Spinner className="size-8" />
+            <Spinner />
+            <Spinner />
+            <Spinner />
           </div>
 
           <h2 id="switch">Switch</h2>
@@ -2178,18 +2105,18 @@ function App() {
             <TableCaption>A list of your recent invoices.</TableCaption>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[100px]">Invoice</TableHead>
+                <TableHead>Invoice</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>Method</TableHead>
-                <TableHead className="text-right">Amount</TableHead>
+                <TableHead>Amount</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableCell className="font-medium">INV001</TableCell>
+                <TableCell>INV001</TableCell>
                 <TableCell>Paid</TableCell>
                 <TableCell>Credit Card</TableCell>
-                <TableCell className="text-right">$250.00</TableCell>
+                <TableCell>$250.00</TableCell>
               </TableRow>
             </TableBody>
           </Table>

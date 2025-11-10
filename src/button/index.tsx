@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 const ButtonGlobalStyles = createGlobalStyle`
   .kf-btn {
+    font-family: var(--kf-font-sans);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +46,6 @@ const ButtonGlobalStyles = createGlobalStyle`
   }
   .kf-btn:focus-visible {
     outline: 0;
-    /* Tailwind-compatible order: draw offset first, then colored ring that includes the offset width */
     box-shadow:
       0 0 0 var(--kf-ring-offset-width) var(--kf-ring-offset-color),
       0 0 0 calc(var(--kf-ring-offset-width) + var(--kf-ring-width)) var(--kf-ring-color);

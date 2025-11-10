@@ -1,8 +1,133 @@
 import * as React from "react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
+import { createGlobalStyle } from "styled-components";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/button";
+
+const AlertDialogGlobalStyles = createGlobalStyle`
+  .kf-alert-dialog__overlay {
+    font-family: var(--kf-font-sans);
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: color-mix(in srgb, #000 50%, transparent);
+  }
+
+  .kf-alert-dialog__overlay[data-state="open"] {
+    animation: kf-alert-dialog-fade-in 160ms var(--kf-ease-out, ease-out) forwards;
+  }
+
+  .kf-alert-dialog__overlay[data-state="closed"] {
+    animation: kf-alert-dialog-fade-out 160ms var(--kf-ease-in, ease-in) forwards;
+  }
+
+  .kf-alert-dialog__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    display: grid;
+    gap: calc(var(--kf-spacing, 0.25rem) * 4);
+    width: min(32rem, calc(100% - calc(var(--kf-spacing, 0.25rem) * 8)));
+    transform: translate(-50%, -50%);
+    background: var(--color-background, #ffffff);
+    color: var(--color-foreground, #0f172a);
+    border-radius: var(--kf-radius-lg, 0.5rem);
+    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    padding: calc(var(--kf-spacing, 0.25rem) * 6);
+    box-shadow: var(--kf-shadow-xl, 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04));
+    background-clip: padding-box;
+  }
+
+  .kf-alert-dialog__content[data-state="open"] {
+    animation:
+      kf-alert-dialog-fade-in 160ms var(--kf-ease-out, ease-out) forwards,
+      kf-alert-dialog-zoom-in 160ms var(--kf-ease-out, ease-out) forwards;
+  }
+
+  .kf-alert-dialog__content[data-state="closed"] {
+    animation:
+      kf-alert-dialog-fade-out 120ms var(--kf-ease-in, ease-in) forwards,
+      kf-alert-dialog-zoom-out 120ms var(--kf-ease-in, ease-in) forwards;
+  }
+
+  .kf-alert-dialog__header {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--kf-spacing, 0.25rem) * 2);
+    text-align: center;
+  }
+
+  @media (min-width: var(--kf-breakpoint-sm, 40rem)) {
+    .kf-alert-dialog__header {
+      text-align: left;
+    }
+  }
+
+  .kf-alert-dialog__footer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: calc(var(--kf-spacing, 0.25rem) * 2);
+  }
+
+  @media (min-width: var(--kf-breakpoint-sm, 40rem)) {
+    .kf-alert-dialog__footer {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  .kf-alert-dialog__title {
+    margin: 0;
+    font-size: var(--kf-text-xl, 1.25rem);
+    line-height: var(--kf-text-xl--line-height, 1.4);
+    font-weight: 600;
+  }
+
+  .kf-alert-dialog__description {
+    font-size: var(--kf-text-sm, 0.875rem);
+    line-height: var(--kf-text-sm--line-height, 1.4285714286);
+    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.64));
+    margin: 0;
+  }
+
+  @keyframes kf-alert-dialog-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes kf-alert-dialog-fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes kf-alert-dialog-zoom-in {
+    from {
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes kf-alert-dialog-zoom-out {
+    from {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+  }
+`;
 
 function AlertDialog({
   ...props
@@ -31,14 +156,14 @@ function AlertDialogOverlay({
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {
   return (
-    <AlertDialogPrimitive.Overlay
-      data-slot="alert-dialog-overlay"
-      className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
-        className
-      )}
-      {...props}
-    />
+    <>
+      <AlertDialogGlobalStyles />
+      <AlertDialogPrimitive.Overlay
+        data-slot="alert-dialog-overlay"
+        className={cn("kf-alert-dialog__overlay", className)}
+        {...props}
+      />
+    </>
   );
 }
 
@@ -51,10 +176,7 @@ function AlertDialogContent({
       <AlertDialogOverlay />
       <AlertDialogPrimitive.Content
         data-slot="alert-dialog-content"
-        className={cn(
-          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",
-          className
-        )}
+        className={cn("kf-alert-dialog__content", className)}
         {...props}
       />
     </AlertDialogPortal>
@@ -68,7 +190,7 @@ function AlertDialogHeader({
   return (
     <div
       data-slot="alert-dialog-header"
-      className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
+      className={cn("kf-alert-dialog__header", className)}
       {...props}
     />
   );
@@ -81,10 +203,7 @@ function AlertDialogFooter({
   return (
     <div
       data-slot="alert-dialog-footer"
-      className={cn(
-        "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
-        className
-      )}
+      className={cn("kf-alert-dialog__footer", className)}
       {...props}
     />
   );
@@ -97,7 +216,7 @@ function AlertDialogTitle({
   return (
     <AlertDialogPrimitive.Title
       data-slot="alert-dialog-title"
-      className={cn("text-xl font-semibold m-0", className)}
+      className={cn("kf-alert-dialog__title", className)}
       {...props}
     />
   );
@@ -110,7 +229,7 @@ function AlertDialogDescription({
   return (
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
-      className={cn("text-muted-foreground text-sm", className)}
+      className={cn("kf-alert-dialog__description", className)}
       {...props}
     />
   );
