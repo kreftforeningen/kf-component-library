@@ -128,7 +128,7 @@ const CalendarGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-sm, 0.875rem);
   }
 
-  .kf-calendar__table {
+  .kf-calendar__month table {
     width: 100%;
     border-collapse: collapse;
   }
@@ -313,7 +313,6 @@ function Calendar({
             "kf-calendar__caption-label",
             defaultClassNames.caption_label
           ),
-          table: cn("kf-calendar__table", defaultClassNames.table),
           weekdays: cn("kf-calendar__weekdays", defaultClassNames.weekdays),
           weekday: cn("kf-calendar__weekday", defaultClassNames.weekday),
           week: cn("kf-calendar__week", defaultClassNames.week),
