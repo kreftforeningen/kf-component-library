@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- d0a9108: yes
+- d0a9108: this is a major bump
+
+### Minor Changes
+
+- d0a9108: Add new components. Replace Spinner, but should still be working in projects.
+- d0a9108: Add Field and Button Group components
+
+### Patch Changes
+
+- d0a9108: fix
+- d0a9108: color
+
 ## 3.0.0
 
 ### Major Changes

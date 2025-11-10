@@ -98,5 +98,6 @@
   "bugs": {
     "url": "https://github.com/kreftforeningen/kf-component-library/issues"
   },
-  "homepage": "https://github.com/kreftforeningen/kf-component-library#readme"
+  "homepage": "https://github.com/kreftforeningen/kf-component-library#readme",
+  "packageManager": "pnpm@10.20.0"
 }
