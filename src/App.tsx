@@ -490,9 +490,9 @@ function App() {
               Text/Icon
             </ModeToggle>
           </div>
-          <h1>kf-component-library</h1>
+          <h1>@kreftforeningen/web-react</h1>
 
-          <h2>Accentuated Link</h2>
+          <h2 id="accentuated-link">Accentuated Link</h2>
           <AccentuatedLink href="https://www.google.com">
             <AccentuatedLinkSubtitle>Read more</AccentuatedLinkSubtitle>
             <AccentuatedLinkTitle>
@@ -500,7 +500,7 @@ function App() {
             </AccentuatedLinkTitle>
           </AccentuatedLink>
 
-          <h2>Accordion</h2>
+          <h2 id="accordion">Accordion</h2>
           <Accordion type="single" collapsible defaultValue="item-1">
             <AccordionItem value="item-1">
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -694,7 +694,7 @@ function App() {
             </BreadcrumbList>
           </Breadcrumb>
 
-          <h2>Button</h2>
+          <h2 id="button">Button</h2>
           <div className="flex flex-row flex-wrap gap-2">
             <Button variant="default">Default</Button>
             <Button variant="default" disabled>
@@ -710,7 +710,7 @@ function App() {
             <Button variant="link">Link</Button>
           </div>
 
-          <h2>Button Group</h2>
+          <h2 id="button-group">Button Group</h2>
           <ButtonGroup>
             <ButtonGroup className="hidden sm:flex">
               <Button variant="outline" size="icon" aria-label="Go Back">
@@ -729,7 +729,7 @@ function App() {
             <ButtonGroupText>Button Group Text</ButtonGroupText>
           </ButtonGroup>
 
-          <h2>Calendar</h2>
+          <h2 id="calendar">Calendar</h2>
           <Calendar
             mode="single"
             selected={date}
@@ -737,7 +737,7 @@ function App() {
             className="rounded-lg bg-gray-100"
           />
 
-          <h2>Card</h2>
+          <h2 id="card">Card</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card className="pt-0">
               <AspectRatio
@@ -838,7 +838,7 @@ function App() {
             <CarouselDots />
           </Carousel>
 
-          <h2>Chart</h2>
+          <h2 id="chart">Chart</h2>
           <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
             <BarChart accessibilityLayer data={chartData}>
               <CartesianGrid vertical={false} />
@@ -862,7 +862,7 @@ function App() {
             </BarChart>
           </ChartContainer>
 
-          <h2>Checkbox</h2>
+          <h2 id="checkbox">Checkbox</h2>
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <Checkbox id="terms" />
@@ -882,7 +882,7 @@ function App() {
               <Checkbox id="toggle" disabled />
               <Label htmlFor="toggle">Enable notifications</Label>
             </div>
-            <Label className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-primary has-[[aria-checked=true]]:bg-primary-foreground dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
+            <Label className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-aria-checked:border-primary has-aria-checked:bg-primary-foreground dark:has-aria-checked:border-blue-900 dark:has-aria-checked:bg-blue-950">
               <Checkbox
                 id="toggle-2"
                 defaultChecked
@@ -899,7 +899,7 @@ function App() {
             </Label>
           </div>
 
-          <h2>Collapsible</h2>
+          <h2 id="collapsible">Collapsible</h2>
           <Collapsible
             open={isCollapsibleOpen}
             onOpenChange={setIsCollapsibleOpen}
@@ -929,7 +929,7 @@ function App() {
             </CollapsibleContent>
           </Collapsible>
 
-          <h2>Command</h2>
+          <h2 id="command">Command</h2>
           <Command className="rounded-lg border shadow-md md:min-w-[450px]">
             <CommandInput placeholder="Type a command or search..." />
             <CommandList>
@@ -969,7 +969,7 @@ function App() {
             </CommandList>
           </Command>
 
-          <h2>Context Menu</h2>
+          <h2 id="context-menu">Context Menu</h2>
           <ContextMenu>
             <ContextMenuTrigger asChild>
               <Button variant="outline">Right click to show menu</Button>
@@ -982,7 +982,7 @@ function App() {
             </ContextMenuContent>
           </ContextMenu>
 
-          <h2>Dialog</h2>
+          <h2 id="dialog">Dialog</h2>
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline">Click to show dialog</Button>
@@ -998,7 +998,7 @@ function App() {
             </DialogContent>
           </Dialog>
 
-          <h2>Download</h2>
+          <h2 id="download">Download</h2>
           <Download>
             <DownloadContent>
               <DownloadImage src="https://picsum.photos/id/200/200/300" />
@@ -1022,7 +1022,7 @@ function App() {
             </DownloadFooter>
           </Download>
 
-          <h2>Drawer</h2>
+          <h2 id="drawer">Drawer</h2>
           <Drawer>
             <DrawerTrigger asChild>
               <Button variant="outline">Open Drawer</Button>
@@ -1046,7 +1046,7 @@ function App() {
             </DrawerContent>
           </Drawer>
 
-          <h2>DropdownMenu</h2>
+          <h2 id="dropdown-menu">DropdownMenu</h2>
           <div className="flex flex-row flex-wrap gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -1093,7 +1093,7 @@ function App() {
             </Button>
           </Empty>
 
-          <h2>Fact Box</h2>
+          <h2 id="fact-box">Fact Box</h2>
           <FactBox>
             <FactBoxContent>
               <FactBoxTitle>Fact About Cancer</FactBoxTitle>
@@ -1595,7 +1595,7 @@ function App() {
         </div>
 
         <main className="container w-5/6 md:w-2/3 mx-auto my-10">
-          <h2>Hover Card</h2>
+          <h2 id="hover-card">Hover Card</h2>
           <HoverCard>
             <HoverCardTrigger asChild>
               <Button variant="link">@nextjs</Button>
@@ -1619,7 +1619,7 @@ function App() {
             </HoverCardContent>
           </HoverCard>
 
-          <h2>Infographic</h2>
+          <h2 id="infographic">Infographic</h2>
           <Infographic>
             {infographicItems.map((item) => (
               <InfographicItem key={item.id} color="blue">
@@ -1641,7 +1641,7 @@ function App() {
             ))}
           </Infographic>
 
-          <h2>Input + Label</h2>
+          <h2 id="input-label">Input + Label</h2>
           <div className="flex flex-row flex-wrap gap-2">
             <Label>Input</Label>
             <Input />
@@ -1719,7 +1719,7 @@ function App() {
             </InputGroup>
           </div>
 
-          <h2>Input OTP</h2>
+          <h2 id="input-otp">Input OTP</h2>
           <InputOTP maxLength={6}>
             <InputOTPGroup>
               <InputOTPSlot index={0} />
@@ -1815,7 +1815,7 @@ function App() {
             </KbdGroup>
           </div>
 
-          <h2>Link List</h2>
+          <h2 id="link-list">Link List</h2>
           <LinkList>
             {linklistItems.map((item) => (
               <LinkListItem key={item.id} href={item.url}>
@@ -1825,7 +1825,7 @@ function App() {
             ))}
           </LinkList>
 
-          <h2>Menubar</h2>
+          <h2 id="menubar">Menubar</h2>
           <Menubar>
             <MenubarMenu>
               <MenubarTrigger>File</MenubarTrigger>
@@ -1942,7 +1942,7 @@ function App() {
             <NativeSelectOption value="cancelled">Cancelled</NativeSelectOption>
           </NativeSelect>
 
-          <h2>Navigation Menu (Do not use yet)</h2>
+          <h2 id="navigation-menu">Navigation Menu (Do not use yet)</h2>
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -1986,7 +1986,7 @@ function App() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <h2>Pagination</h2>
+          <h2 id="pagination">Pagination</h2>
           <Pagination>
             <PaginationContent>
               <PaginationItem>
@@ -2004,7 +2004,7 @@ function App() {
             </PaginationContent>
           </Pagination>
 
-          <h2>Person</h2>
+          <h2 id="person">Person</h2>
           <Person>
             {personItems.map((item) => (
               <PersonItem key={item.id}>
@@ -2034,7 +2034,7 @@ function App() {
             ))}
           </Person>
 
-          <h2>Popover</h2>
+          <h2 id="popover">Popover</h2>
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="outline">Open Popover</Button>
@@ -2042,10 +2042,10 @@ function App() {
             <PopoverContent>Place content for the popover here.</PopoverContent>
           </Popover>
 
-          <h2>Progress</h2>
+          <h2 id="progress">Progress</h2>
           <Progress value={50} />
 
-          <h2>Radio Group</h2>
+          <h2 id="radio-group">Radio Group</h2>
           <RadioGroup defaultValue="option-one">
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="option-one" id="option-one" />
@@ -2057,7 +2057,7 @@ function App() {
             </div>
           </RadioGroup>
 
-          <h2>Resizable</h2>
+          <h2 id="resizable">Resizable</h2>
           <ResizablePanelGroup
             direction="vertical"
             className="min-h-[200px] max-w-md rounded-lg border md:min-w-[450px]"
@@ -2075,7 +2075,7 @@ function App() {
             </ResizablePanel>
           </ResizablePanelGroup>
 
-          <h2>Scroll Area</h2>
+          <h2 id="scroll-area">Scroll Area</h2>
           <ScrollArea className="h-72 w-48 rounded-md border">
             <div className="p-4">
               <h4 className="mb-4 text-base leading-none m-0">Tags</h4>
@@ -2088,7 +2088,7 @@ function App() {
             </div>
           </ScrollArea>
 
-          <h2>Select</h2>
+          <h2 id="select">Select</h2>
           <Select>
             <SelectTrigger>
               <SelectValue placeholder="Select an option" />
@@ -2100,10 +2100,10 @@ function App() {
             </SelectContent>
           </Select>
 
-          <h2>Separator</h2>
+          <h2 id="separator">Separator</h2>
           <Separator />
 
-          <h2>Sheet</h2>
+          <h2 id="sheet">Sheet</h2>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline">Open</Button>
@@ -2135,7 +2135,7 @@ function App() {
             </SheetContent>
           </Sheet>
 
-          <h2>Skeleton</h2>
+          <h2 id="skeleton">Skeleton</h2>
           <div className="flex items-center space-x-4">
             <Skeleton className="h-12 w-12 rounded-full" />
             <div className="space-y-2">
@@ -2144,10 +2144,10 @@ function App() {
             </div>
           </div>
 
-          <h2>Slider</h2>
+          <h2 id="slider">Slider</h2>
           <Slider defaultValue={[33]} max={100} step={1} />
 
-          <h2>Sonner</h2>
+          <h2 id="sonner">Sonner</h2>
           <Button
             variant="outline"
             onClick={() =>
@@ -2159,7 +2159,7 @@ function App() {
             Show Toast
           </Button>
 
-          <h2>Spinner</h2>
+          <h2 id="spinner">Spinner</h2>
           <div className="flex flex-col items-center gap-6">
             <Button disabled size="sm">
               <Spinner className="size-3" />
@@ -2170,10 +2170,10 @@ function App() {
             <Spinner className="size-8" />
           </div>
 
-          <h2>Switch</h2>
+          <h2 id="switch">Switch</h2>
           <Switch />
 
-          <h2>Table</h2>
+          <h2 id="table">Table</h2>
           <Table>
             <TableCaption>A list of your recent invoices.</TableCaption>
             <TableHeader>
@@ -2210,28 +2210,26 @@ function App() {
             <TabsContent value="delete">Delete your account here.</TabsContent>
           </Tabs>
 
-          <h2>Textarea</h2>
+          <h2 id="textarea">Textarea</h2>
           <Textarea />
 
-          <h2>Toggle</h2>
+          <h2 id="toggle">Toggle</h2>
           <Toggle variant="outline">Toggle</Toggle>
 
-          <h2>Toggle Group</h2>
+          <h2 id="toggle-group">Toggle Group</h2>
           <ToggleGroup type="single" variant="outline">
             <ToggleGroupItem value="a">A</ToggleGroupItem>
             <ToggleGroupItem value="b">B</ToggleGroupItem>
             <ToggleGroupItem value="c">C</ToggleGroupItem>
           </ToggleGroup>
 
-          <h2>Tooltip</h2>
+          <h2 id="tooltip">Tooltip</h2>
           <Tooltip>
             <TooltipTrigger>Hover</TooltipTrigger>
             <TooltipContent>
               <p>Add to library</p>
             </TooltipContent>
           </Tooltip>
-
-          <h2></h2>
         </main>
       </ThemeProvider>
     </>
