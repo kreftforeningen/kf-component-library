@@ -12,18 +12,18 @@ jobs:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
-      - name: Fetch base branch
+      - name: Fetch base commit
         run: |
-          git fetch origin ${{ github.event.pull_request.base.ref }} --no-tags --prune --depth=1
+          git fetch --no-tags --prune --depth=1 origin ${{ github.event.pull_request.base.sha }}
 
       - name: Verify HEAD contains latest base
         run: |
-          BASE_REF='origin/${{ github.event.pull_request.base.ref }}'
-          if git merge-base --is-ancestor \"$BASE_REF\" HEAD; then
-            echo \"Branch is up to date with $BASE_REF\"
+          BASE_SHA='${{ github.event.pull_request.base.sha }}'
+          if git merge-base --is-ancestor \"$BASE_SHA\" HEAD; then
+            echo \"Branch is up to date with base $BASE_SHA\"
           else
-            echo \"Branch is not up to date with $BASE_REF. Please merge/rebase before merging.\" >&2
+            echo \"Branch is not up to date with base $BASE_SHA. Please merge/rebase before merging.\" >&2
             exit 1
           fi
