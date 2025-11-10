@@ -1,5 +1,25 @@
 # Changelog
 
+## 5.0.0
+
+### Major Changes
+
+- 0d6e8e0: yes
+- 2216f5a: this is a major bump
+
+### Minor Changes
+
+- 22d4880: Add new components. Replace Spinner, but should still be working in projects.
+- b5b2195: Add Field and Button Group components
+
+### Patch Changes
+
+- c1af6ae: fix
+- patch version 4.0.1
+- 1b6adc7: color
+- 02c386b: fix import of kf-tailwind
+- 050363a: patch
+
 ## 4.0.0
 
 ### Major Changes
