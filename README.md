@@ -79,52 +79,68 @@ This project follows a **feature branch workflow** with automated releases using
 
 ### Development Workflow
 
+1. Start from develop
+
 ```bash
-# 1. Start from develop branch
+git checkout develop
+git pull origin develop
+```
+
+2. Create a branch
+
+```bash
+git checkout -b feature/new-component
+# or: git checkout -b fix/button-styling
+```
+
+3. Implement changes and push
+
+```bash
+# edit files...
+git add .
+git commit -m "Implement feature"
+git push -u origin HEAD
+```
+
+Open a PR: feature/fix → develop. Merge after review.
+
+Lockfile policy:
+
+- Lockfile conflicts are avoided via `.gitattributes` (`pnpm-lock.yaml merge=ours`) which keeps `develop`’s lockfile.
+- If your change updates `package.json`, do not hand-merge the lockfile in the PR; let `develop` win and regenerate on `develop` later.
+
+4. Prepare release on develop (after features are merged)
+
+```bash
 git checkout develop
 git pull origin develop
 
-# 2. Create feature branch
-git checkout -b feature/new-component
-# or: git checkout -b fix/button-styling
-# or: git checkout -b docs/update-readme
-
-# 3. Make your changes
-# ... edit files ...
-git add .
-git commit -m "Add new component"
-
-# 4. Push feature branch
-git push origin feature/new-component
-
-# 5. Create PR: feature/new-component → develop
-# 6. Review and merge to develop
-
-# 7. Update local develop branch
-git checkout develop
-git pull origin develop  # Pull the merged changes
-# Now ready for next feature branch
+# Bump versions with Changesets
+pnpm changeset
+pnpm changeset version
 ```
 
-### Release Process
+5. Regenerate lockfile deterministically
 
 ```bash
-# 1. Create changeset (on develop branch)
-git checkout develop
-pnpm changeset
-# Select packages that changed
-# Choose version bump (patch/minor/major)
-# Write description of changes
+rm -f pnpm-lock.yaml
+pnpm install --lockfile-only --ignore-scripts
 
-# 2. Commit changeset
-git add .changeset/
-git commit -m "Add changeset for new component"
+git add .changeset/ package.json pnpm-lock.yaml
+git commit -m "chore: version and lockfile"
 git push origin develop
-
-# 3. Create release PR: develop → main
-# 4. Review and approve PR
-# 5. Merge PR → automatic release! 🚀
 ```
+
+6. Release PR: develop → main
+
+- Open PR from `develop` into `main`.
+- If `package.json` conflicts, keep `develop` (it already contains the version bumped above).
+- Merge to `main` to release.
+
+Notes:
+
+- `package.json` has a `packageManager` field. Run `corepack enable` locally to use the pinned pnpm version.
+- Prefer regenerating the lockfile over manual conflict resolution.
 
 ### Branch Strategy
 
