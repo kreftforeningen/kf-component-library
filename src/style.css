@@ -98,7 +98,7 @@
 }
 
 /* Custom Kreftforeningen variables */
-@import "kf-tailwind/index.css";
+@import "kf-tailwind";
 
 /* Tw Animate CSS */
 @import "tw-animate-css";
