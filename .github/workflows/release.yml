@@ -49,7 +49,7 @@ jobs:
             echo "has_changesets=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Version and Publish
+      - name: Version (if changesets present)
         if: steps.changesets.outputs.has_changesets == 'true'
         run: |
           git config user.name "github-actions[bot]"
@@ -68,17 +68,17 @@ jobs:
           # Push version changes
           git push origin main
 
-          # Configure npm authentication
+      - name: Configure npm authentication
+        run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
           echo "always-auth=true" >> ~/.npmrc
+          npm whoami || true
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-          # Debug: Check npm config
-          npm config list
-          npm whoami
-
-          # Publish to npm
-          pnpm release
+      - name: Publish to npm
+        run: pnpm release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
