@@ -1,7 +1,6 @@
 # kf-component-library
 
-A modern, accessible, and customizable React component library built with [Radix UI](https://www.radix-ui.com/), [Tailwind CSS](https://tailwindcss.com/), and [Vite](https://vitejs.dev/).  
-Perfect for building beautiful, production-ready UIs with speed and consistency.
+A modern, accessible, and customizable React component library built with [Radix UI](https://www.radix-ui.com/), [Tailwind CSS](https://tailwindcss.com/), and [Vite](https://vitejs.dev/). Perfect for building beautiful, production-ready UIs with speed and consistency.
 
 ## Features
 
