@@ -8,24 +8,29 @@ jobs:
   check-up-to-date:
     name: Ensure PR branch is up to date with base
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Add and fetch base remote
+      - name: Add and fetch base remote and commit
         run: |
           BASE_REMOTE_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.event.pull_request.base.repo.full_name }}.git"
           git remote add base "$BASE_REMOTE_URL" || git remote set-url base "$BASE_REMOTE_URL"
-          git fetch --no-tags --prune --depth=1 base ${{ github.event.pull_request.base.ref }}
+          # Fetch the exact base commit SHA to ensure it's present locally
+          git fetch --no-tags --prune --depth=1 base ${{ github.event.pull_request.base.sha }}
 
       - name: Verify HEAD contains latest base
         run: |
-          BASE_REF='base/${{ github.event.pull_request.base.ref }}'
-          if git merge-base --is-ancestor \"$BASE_REF\" HEAD; then
-            echo \"Branch is up to date with $BASE_REF\"
+          BASE_SHA='${{ github.event.pull_request.base.sha }}'
+          # Sanity: verify the commit exists
+          git cat-file -e \"$BASE_SHA^{commit}\"
+          if git merge-base --is-ancestor \"$BASE_SHA\" HEAD; then
+            echo \"Branch is up to date with base $BASE_SHA\"
           else
-            echo \"Branch is not up to date with $BASE_REF. Please merge/rebase before merging.\" >&2
+            echo \"Branch is not up to date with base $BASE_SHA. Please merge/rebase before merging.\" >&2
             exit 1
           fi
