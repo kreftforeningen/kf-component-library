@@ -7,11 +7,13 @@ import { buttonVariants } from "@/button";
 
 const AlertDialogGlobalStyles = createGlobalStyle`
   .kf-alert-dialog__overlay {
-    font-family: var(--kf-font-sans);
     position: fixed;
     inset: 0;
     z-index: 50;
-    background: color-mix(in srgb, #000 50%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-950, #020617) 50%, transparent);
+  }
+  .dark .kf-alert-dialog__overlay {
+    background: color-mix(in srgb, var(--kf-color-gray-950, #020617) 70%, transparent);
   }
 
   .kf-alert-dialog__overlay[data-state="open"] {
@@ -23,6 +25,7 @@ const AlertDialogGlobalStyles = createGlobalStyle`
   }
 
   .kf-alert-dialog__content {
+    font-family: var(--kf-font-sans);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -38,6 +41,11 @@ const AlertDialogGlobalStyles = createGlobalStyle`
     padding: calc(var(--kf-spacing, 0.25rem) * 6);
     box-shadow: var(--kf-shadow-xl, 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04));
     background-clip: padding-box;
+  }
+  .dark .kf-alert-dialog__content {
+    background: var(--kf-color-gray-900, #111827);
+    color: var(--kf-color-gray-50, #f8fafc);
+    border-color: var(--kf-color-gray-400, rgba(148, 163, 184, 0.4));
   }
 
   .kf-alert-dialog__content[data-state="open"] {
@@ -56,7 +64,6 @@ const AlertDialogGlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
-    text-align: center;
   }
 
   @media (min-width: var(--kf-breakpoint-sm, 40rem)) {
@@ -67,18 +74,29 @@ const AlertDialogGlobalStyles = createGlobalStyle`
 
   .kf-alert-dialog__footer {
     display: flex;
-    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
   }
 
-  @media (min-width: var(--kf-breakpoint-sm, 40rem)) {
+  .kf-alert-dialog__footer > * {
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: var(--kf-breakpoint-sm, 40rem)) {
     .kf-alert-dialog__footer {
-      flex-direction: row;
-      justify-content: flex-end;
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+
+    .kf-alert-dialog__footer > * {
+      width: 100%;
     }
   }
 
   .kf-alert-dialog__title {
+    font-family: var(--kf-font-condensed);
     margin: 0;
     font-size: var(--kf-text-xl, 1.25rem);
     line-height: var(--kf-text-xl--line-height, 1.4);
@@ -90,6 +108,9 @@ const AlertDialogGlobalStyles = createGlobalStyle`
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
     color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.64));
     margin: 0;
+  }
+  .dark .kf-alert-dialog__description {
+    color: var(--kf-color-gray-300, rgba(203, 213, 225, 0.72));
   }
 
   @keyframes kf-alert-dialog-fade-in {
