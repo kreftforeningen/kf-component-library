@@ -26,42 +26,19 @@ const DownloadGlobalStyles = createGlobalStyle`
     background: color-mix(in srgb, var(--kf-color-gray-800, #1f2937) 95%, transparent);
   }
 
+  @container download-container (min-width: 32rem) {
+    .kf-download {
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
   .kf-download--destructive {
     background: color-mix(in srgb, var(--kf-color-red-100, #fee2e2) 85%, transparent);
   }
 
   .dark .kf-download--destructive {
     background: color-mix(in srgb, var(--kf-color-red-900, #7f1d1d) 85%, transparent);
-  }
-
-  @container download-container (min-width: 40rem) {
-    .kf-download {
-      flex-direction: row;
-      align-items: stretch;
-    }
-
-    .kf-download__content {
-      background-color: green;
-      padding-inline-end: calc(var(--kf-spacing, 0.25rem) * 6);
-    }
-
-    .kf-download__footer {
-      display: flex;
-      flex-grow: 0;
-      background-color: blue;
-      flex-direction: column;
-      min-width: 9.375rem;
-      height: auto;
-      justify-content: center;
-      align-items: stretch;
-      padding-block: calc(var(--kf-spacing, 0.25rem) * 6);
-    }
-
-    .kf-download__link {
-      flex: 1 1 100%;
-      width: 100%;
-      min-height: calc(var(--kf-spacing, 0.25rem) * 12);
-    }
   }
 
   .kf-download__image {
@@ -75,9 +52,17 @@ const DownloadGlobalStyles = createGlobalStyle`
   .kf-download__content {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: calc(var(--kf-spacing, 0.25rem) * 4);
     padding: calc(var(--kf-spacing, 0.25rem) * 4);
+    color: var(--kf-color-gray-950, #0f172a);
+  }
+
+  @container download-container (min-width: 32rem) {
+    .kf-download__content {
+      padding-inline-end: calc(var(--kf-spacing, 0.25rem) * 6);
+      color: var(--kf-color-gray-950, #f8fafc);
+    }
   }
 
   .kf-download__main {
@@ -94,35 +79,34 @@ const DownloadGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-2xl, 1.25rem);
     line-height: var(--kf-text-2xl--line-height, 1.3333333333);
     font-weight: 400;
-    color: var(--kf-color-gray-950, #0f172a);
-  }
-
-  .dark .kf-download__title {
-    color: var(--kf-color-gray-950, #f8fafc);
   }
 
   .kf-download__description {
     margin: 0;
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-  }
-
-  .dark .kf-download__description {
-    color: color-mix(in srgb, var(--kf-color-gray-500, rgba(248, 250, 252, 0.8)) 90%, transparent);
+    -webkit-line-clamp: 4;
   }
 
   .kf-download__footer {
     display: flex;
     flex-direction: row;
-    gap: calc(var(--kf-spacing, 0.25rem) * 2);
     align-items: stretch;
-    padding: calc(var(--kf-spacing, 0.25rem) * 4);
     justify-content: center;
+  }
+
+  @container download-container (min-width: 32rem) {
+    .kf-download__footer {
+      display: flex;
+      flex-direction: column;
+      min-width: 9.375rem;
+      height: auto;
+      justify-content: center;
+      align-items: stretch;
+    }
   }
 
   .kf-download__link {
@@ -133,7 +117,6 @@ const DownloadGlobalStyles = createGlobalStyle`
     flex: 1 1 50%;
     min-height: calc(var(--kf-spacing, 0.25rem) * 10);
     padding: calc(var(--kf-spacing, 0.25rem) * 4);
-    border-radius: var(--kf-radius-md, 0.375rem);
     font-weight: 500;
     text-decoration: none;
     transition:
@@ -142,15 +125,7 @@ const DownloadGlobalStyles = createGlobalStyle`
       color 120ms var(--kf-ease-in-out, ease);
   }
 
-  @container download (min-width: 40rem) {
-    .kf-download__link {
-      flex: 1 1 100%;
-      width: 100%;
-      min-height: calc(var(--kf-spacing, 0.25rem) * 12);
-    }
-  }
-
-  @container (min-width: 40rem) {
+  @container download-container (min-width: 40rem) {
     .kf-download__link {
       flex: 1 1 100%;
       width: 100%;
@@ -160,7 +135,6 @@ const DownloadGlobalStyles = createGlobalStyle`
 
   .kf-download__link:hover {
     text-decoration: underline;
-    transform: translateY(-1px);
   }
 
   .kf-download__link:focus-visible {
