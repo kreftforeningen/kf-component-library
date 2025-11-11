@@ -93,7 +93,7 @@ const DownloadGlobalStyles = createGlobalStyle`
     padding-top: 0;
     font-size: var(--kf-text-2xl, 1.25rem);
     line-height: var(--kf-text-2xl--line-height, 1.3333333333);
-    
+    font-weight: 400;
     color: var(--kf-color-gray-950, #0f172a);
   }
 
