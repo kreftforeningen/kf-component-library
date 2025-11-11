@@ -6,10 +6,13 @@ import { cn } from "@/lib/utils";
 type DownloadVariant = "default" | "destructive";
 
 const DownloadGlobalStyles = createGlobalStyle`
+  .kf-download-container {
+    container-type: inline-size;
+    container-name: download-container;
+  }
+
   .kf-download {
     font-family: var(--kf-font-sans);
-    container-type: inline-size;
-    container-name: download;
     display: flex;
     flex-direction: column;
     gap: calc(var(--kf-spacing, 0.25rem) * 4);
@@ -31,10 +34,33 @@ const DownloadGlobalStyles = createGlobalStyle`
     background: color-mix(in srgb, var(--kf-color-red-900, #7f1d1d) 85%, transparent);
   }
 
-  @container download (min-width: 40rem) {
+  @container download-container (min-width: 40rem) {
     .kf-download {
       flex-direction: row;
       align-items: stretch;
+    }
+
+    .kf-download__content {
+      background-color: green;
+      padding-inline-end: calc(var(--kf-spacing, 0.25rem) * 6);
+    }
+
+    .kf-download__footer {
+      display: flex;
+      flex-grow: 0;
+      background-color: blue;
+      flex-direction: column;
+      min-width: 9.375rem;
+      height: auto;
+      justify-content: center;
+      align-items: stretch;
+      padding-block: calc(var(--kf-spacing, 0.25rem) * 6);
+    }
+
+    .kf-download__link {
+      flex: 1 1 100%;
+      width: 100%;
+      min-height: calc(var(--kf-spacing, 0.25rem) * 12);
     }
   }
 
@@ -43,36 +69,31 @@ const DownloadGlobalStyles = createGlobalStyle`
     height: 8rem;
     object-fit: cover;
     object-position: center;
-    border-radius: var(--kf-radius-sm, 0.125rem);
+    border-radius: var(--kf-radius-md, 0.125rem);
   }
 
   .kf-download__content {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 4);
     padding: calc(var(--kf-spacing, 0.25rem) * 4);
-    flex: 1 1 auto;
-  }
-
-  @container download (min-width: 40rem) {
-    .kf-download__content {
-      align-items: center;
-    }
   }
 
   .kf-download__main {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--kf-spacing, 0.25rem) * 3);
+    gap: var(--kf-spacing, 0.25rem);
   }
 
   .kf-download__title {
+    font-family: var(--kf-font-condensed);
     margin: 0;
     padding-top: 0;
-    font-size: var(--kf-text-lg, 1.125rem);
-    line-height: var(--kf-text-lg--line-height, 1.5555555556);
-    font-weight: 600;
+    font-size: var(--kf-text-2xl, 1.25rem);
+    line-height: var(--kf-text-2xl--line-height, 1.3333333333);
+    
     color: var(--kf-color-gray-950, #0f172a);
   }
 
@@ -85,6 +106,10 @@ const DownloadGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
     color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   .dark .kf-download__description {
@@ -97,15 +122,7 @@ const DownloadGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
     align-items: stretch;
     padding: calc(var(--kf-spacing, 0.25rem) * 4);
-  }
-
-  @container download (min-width: 40rem) {
-    .kf-download__footer {
-      flex-direction: column;
-      min-width: 9.375rem;
-      height: auto;
-      align-items: center;
-    }
+    justify-content: center;
   }
 
   .kf-download__link {
@@ -114,7 +131,7 @@ const DownloadGlobalStyles = createGlobalStyle`
     justify-content: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
     flex: 1 1 50%;
-    width: 100%;
+    min-height: calc(var(--kf-spacing, 0.25rem) * 10);
     padding: calc(var(--kf-spacing, 0.25rem) * 4);
     border-radius: var(--kf-radius-md, 0.375rem);
     font-weight: 500;
@@ -128,6 +145,16 @@ const DownloadGlobalStyles = createGlobalStyle`
   @container download (min-width: 40rem) {
     .kf-download__link {
       flex: 1 1 100%;
+      width: 100%;
+      min-height: calc(var(--kf-spacing, 0.25rem) * 12);
+    }
+  }
+
+  @container (min-width: 40rem) {
+    .kf-download__link {
+      flex: 1 1 100%;
+      width: 100%;
+      min-height: calc(var(--kf-spacing, 0.25rem) * 12);
     }
   }
 
@@ -179,7 +206,7 @@ function Download({
   ...props
 }: React.ComponentProps<"div"> & { variant?: DownloadVariant }) {
   return (
-    <>
+    <div className="kf-download-container">
       <DownloadGlobalStyles />
       <article
         data-slot="download"
@@ -190,7 +217,7 @@ function Download({
         )}
         {...props}
       />
-    </>
+    </div>
   );
 }
 

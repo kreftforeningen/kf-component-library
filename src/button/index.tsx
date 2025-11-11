@@ -72,7 +72,7 @@ const ButtonGlobalStyles = createGlobalStyle`
     color: var(--kf-color-blue-50, #eff6ff);
     border-color: var(--kf-color-blue-700, #1d4ed8);
     --kf-ring-color: var(--kf-color-blue-700, #1d4ed8);
-    --kf-ring-offset-color: var(--kf-color-blue-950, #172554);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
   }
 
   .kf-btn--default:hover {
@@ -105,7 +105,7 @@ const ButtonGlobalStyles = createGlobalStyle`
     color: var(--kf-color-pink-50, #eff6ff);
     border-color: var(--kf-color-pink-700, #9f1239);
     --kf-ring-color: var(--kf-color-pink-700, #9f1239);
-    --kf-ring-offset-color: var(--kf-color-pink-950, #450a0a);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
   }
 
   .kf-btn--secondary:hover {
@@ -138,7 +138,7 @@ const ButtonGlobalStyles = createGlobalStyle`
     color: var(--kf-color-red-50, #fef2f2);
     border-color: var(--kf-color-red-700, #b91c1c);
     --kf-ring-color: var(--kf-color-red-700, #b91c1c);
-    --kf-ring-offset-color: var(--kf-color-red-950, #172554);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
   }
 
   .kf-btn--destructive:hover {
