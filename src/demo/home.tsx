@@ -823,8 +823,8 @@ export default function HomeDemo() {
             />
             <ChartTooltip content={<ChartTooltipContent />} />
             <ChartLegend content={<ChartLegendContent />} />
-            <Bar dataKey="desktop" fill="var(--color-primary)" radius={4} />
-            <Bar dataKey="mobile" fill="var(--color-destructive)" radius={4} />
+            <Bar dataKey="desktop" fill="var(--kf-color-blue-600)" radius={4} />
+            <Bar dataKey="mobile" fill="var(--kf-color-red-700)" radius={4} />
           </BarChart>
         </ChartContainer>
 
