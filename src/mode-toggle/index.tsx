@@ -74,6 +74,16 @@ const ModeToggleGlobalStyles = createGlobalStyle`
   .kf-mode-toggle__label {
     font-weight: 500;
   }
+
+  .kf-mode-toggle_sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
 `;
 
 function ModeToggle({
@@ -124,7 +134,9 @@ function ModeToggle({
                 aria-hidden="true"
                 focusable="false"
               />
-              {size === "icon" && <span className="sr-only">Toggle theme</span>}
+              {size === "icon" && (
+                <span className="kf-mode-toggle__sr-only">Toggle theme</span>
+              )}
             </div>
             {renderLabel}
           </Button>
