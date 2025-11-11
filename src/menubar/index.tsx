@@ -14,8 +14,8 @@ const MenubarGlobalStyles = createGlobalStyle`
     height: calc(var(--kf-spacing, 0.25rem) * 11);
     padding: calc(var(--kf-spacing, 0.25rem) * 1);
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: var(--color-background, #ffffff);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, #ffffff);
     box-shadow: var(--kf-shadow-xs, 0 1px 2px 0 rgb(15 23 42 / 0.04));
   }
 
@@ -28,7 +28,7 @@ const MenubarGlobalStyles = createGlobalStyle`
     padding-block: calc(var(--kf-spacing, 0.25rem) * 1.5);
     border-radius: var(--kf-radius-sm, 0.25rem);
     background: transparent;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     font-size: var(--kf-text-base, 1rem);
     font-weight: 500;
     outline: none;
@@ -45,15 +45,15 @@ const MenubarGlobalStyles = createGlobalStyle`
   .kf-menubar__sub-trigger[data-state="open"],
   .kf-menubar__sub-trigger:hover,
   .kf-menubar__sub-trigger:focus-visible {
-    background: var(--color-accent, rgba(148, 163, 184, 0.16));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.16));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-menubar__trigger:focus-visible,
   .kf-menubar__sub-trigger:focus-visible {
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 60%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 60%, transparent);
   }
 
   .kf-menubar__trigger[data-disabled="true"],
@@ -66,10 +66,10 @@ const MenubarGlobalStyles = createGlobalStyle`
   .kf-menubar__sub-content {
     min-width: 12rem;
     padding: calc(var(--kf-spacing, 0.25rem) * 1);
-    background: var(--color-popover, #ffffff);
-    color: var(--color-popover-foreground, #0f172a);
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     box-shadow: var(--kf-shadow-md, 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.08));
     outline: none;
     z-index: 50;
@@ -151,13 +151,13 @@ const MenubarGlobalStyles = createGlobalStyle`
   }
 
   .kf-menubar__item[data-variant="destructive"] {
-    color: var(--color-destructive, #b91c1c);
+    color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-menubar__item[data-variant="destructive"]:hover,
   .kf-menubar__item[data-variant="destructive"]:focus-visible {
-    background: color-mix(in srgb, var(--color-destructive, #b91c1c) 16%, transparent);
-    color: var(--color-destructive, #b91c1c);
+    background: color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 16%, transparent);
+    color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-menubar__item:hover,
@@ -167,8 +167,8 @@ const MenubarGlobalStyles = createGlobalStyle`
   .kf-menubar__radio-item:hover,
   .kf-menubar__radio-item:focus-visible,
   .kf-menubar__sub-trigger[data-state="open"] {
-    background: var(--color-accent, rgba(148, 163, 184, 0.16));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.16));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-menubar__item[data-disabled="true"],
@@ -206,14 +206,14 @@ const MenubarGlobalStyles = createGlobalStyle`
     height: 1px;
     margin-inline: calc(var(--kf-spacing, 0.25rem) * -1);
     margin-block: calc(var(--kf-spacing, 0.25rem) * 1);
-    background: var(--color-border, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-menubar__shortcut {
     margin-left: auto;
     font-size: var(--kf-text-xs, 0.75rem);
     letter-spacing: 0.08em;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-menubar__sub-trigger-icon {

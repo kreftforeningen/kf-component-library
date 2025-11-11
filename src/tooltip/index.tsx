@@ -11,8 +11,8 @@ const TooltipGlobalStyles = createGlobalStyle`
     width: fit-content;
     padding: calc(var(--kf-spacing, 0.25rem) * 1.5) calc(var(--kf-spacing, 0.25rem) * 3);
     border-radius: var(--kf-radius-md, 0.375rem);
-    background: var(--color-primary, #1d4ed8);
-    color: var(--color-primary-foreground, #ffffff);
+    background: var(--kf-color-blue-600, #1d4ed8);
+    color: var(--kf-color-blue-50, #ffffff);
     font-size: var(--kf-text-xs, 0.75rem);
     text-wrap: balance;
     outline: none;
@@ -58,8 +58,8 @@ const TooltipGlobalStyles = createGlobalStyle`
     position: relative;
     width: calc(var(--kf-spacing, 0.25rem) * 2.5);
     height: calc(var(--kf-spacing, 0.25rem) * 2.5);
-    background: var(--color-primary, #1d4ed8);
-    fill: var(--color-primary, #1d4ed8);
+    background: var(--kf-color-blue-600, #1d4ed8);
+    fill: var(--kf-color-blue-600, #1d4ed8);
     transform: translateY(calc(-50% - 2px)) rotate(45deg);
     border-radius: 2px;
   }

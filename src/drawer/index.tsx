@@ -26,9 +26,9 @@ const DrawerGlobalStyles = createGlobalStyle`
     z-index: 50;
     display: flex;
     flex-direction: column;
-    background: var(--color-background, #ffffff);
-    color: var(--color-foreground, #0f172a);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-drawer__content[data-vaul-drawer-direction="bottom"] {
@@ -78,7 +78,7 @@ const DrawerGlobalStyles = createGlobalStyle`
     width: 100px;
     height: calc(var(--kf-spacing, 0.25rem) * 2);
     border-radius: var(--kf-radius-full, 9999px);
-    background: var(--color-accent, rgba(148, 163, 184, 0.3));
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.3));
     margin-inline: auto;
     margin-top: calc(var(--kf-spacing, 0.25rem) * 4);
     margin-bottom: calc(var(--kf-spacing, 0.25rem) * 2);
@@ -120,13 +120,13 @@ const DrawerGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-lg, 1.125rem);
     line-height: var(--kf-text-lg--line-height, 1.5555555556);
     font-weight: 600;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-drawer__description {
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.66));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
   }
 
   @keyframes kf-drawer-fade-in {

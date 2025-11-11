@@ -96,7 +96,7 @@ const CarouselGlobalStyles = createGlobalStyle`
     inset-inline: 0;
     bottom: 0;
     width: 100%;
-    color: var(--color-white, #ffffff);
+    color: var(--kf-color-white, #ffffff);
     pointer-events: none;
   }
 
@@ -147,7 +147,7 @@ const CarouselGlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
     border-radius: var(--kf-radius-full, 9999px);
-    border: var(--kf-border-2, 2px) solid var(--color-ring, rgba(59, 130, 246, 1));
+    border: var(--kf-border-2, 2px) solid var(--kf-color-blue-400, rgba(59, 130, 246, 1));
     background: transparent;
     cursor: pointer;
     transition:
@@ -159,12 +159,12 @@ const CarouselGlobalStyles = createGlobalStyle`
   .kf-carousel__dot:hover,
   .kf-carousel__dot:focus-visible {
     outline: none;
-    background: color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 1)) 20%, transparent);
+    background: color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 1)) 20%, transparent);
   }
 
   .kf-carousel__dot[data-selected="true"] {
     width: calc(var(--kf-spacing, 0.25rem) * 8);
-    background: var(--color-ring, rgba(59, 130, 246, 1));
+    background: var(--kf-color-blue-400, rgba(59, 130, 246, 1));
     cursor: default;
   }
 

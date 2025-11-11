@@ -15,16 +15,16 @@ const CheckboxGlobalStyles = createGlobalStyle`
     width: var(--kf-checkbox-size);
     height: var(--kf-checkbox-size);
     border-radius: 0.25rem;
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: color-mix(in srgb, var(--color-input, rgba(15, 23, 42, 0.08)) 90%, transparent);
-    color: var(--color-foreground, #0f172a);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(15, 23, 42, 0.08)) 90%, transparent);
+    color: var(--kf-color-gray-950, #0f172a);
     transition: box-shadow 150ms var(--kf-ease-in-out, ease), border-color 150ms var(--kf-ease-in-out, ease), background-color 150ms var(--kf-ease-in-out, ease);
     outline: none;
   }
 
   .kf-checkbox:focus-visible {
-    --kf-ring-color: var(--color-ring, rgba(59, 130, 246, 0.6));
-    --kf-ring-offset-color: var(--color-white, #ffffff);
+    --kf-ring-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
     --kf-ring-width: 3px;
     --kf-ring-offset-width: 2px;
     box-shadow:
@@ -34,17 +34,17 @@ const CheckboxGlobalStyles = createGlobalStyle`
 
   .kf-checkbox[data-state="checked"],
   .kf-checkbox[data-state="indeterminate"] {
-    background: var(--color-primary, #0f172a);
-    border-color: var(--color-primary, #0f172a);
-    color: var(--color-primary-foreground, #f8fafc);
+    background: var(--kf-color-blue-600, #0f172a);
+    border-color: var(--kf-color-blue-600, #0f172a);
+    color: var(--kf-color-blue-50, #f8fafc);
   }
 
   .kf-checkbox[aria-invalid="true"] {
-    border-color: var(--color-destructive, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-checkbox[aria-invalid="true"]:focus-visible {
-    --kf-ring-color: color-mix(in srgb, var(--color-destructive, #b91c1c) 40%, transparent);
+    --kf-ring-color: color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 40%, transparent);
   }
 
   .kf-checkbox[disabled] {

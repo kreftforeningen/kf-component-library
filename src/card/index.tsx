@@ -11,8 +11,8 @@ const CardGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 6);
     border-radius: var(--kf-radius-2xl, 1rem);
     padding-block: calc(var(--kf-spacing, 0.25rem) * 8);
-    background: var(--color-card, #ffffff);
-    color: var(--color-card-foreground, #0f172a);
+    background: var(--kf-color-gray-100, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-card__header {
@@ -46,7 +46,7 @@ const CardGlobalStyles = createGlobalStyle`
   .kf-card__description {
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     padding-bottom: calc(var(--kf-spacing, 0.25rem) * 2);
   }
 

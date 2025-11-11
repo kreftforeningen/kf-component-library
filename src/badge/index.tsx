@@ -40,8 +40,8 @@ const BadgeGlobalStyles = createGlobalStyle`
 
   .kf-badge:focus-visible {
     outline: none;
-    --kf-ring-color: var(--color-blue-500, #3b82f6);
-    --kf-ring-offset-color: var(--color-white, #ffffff);
+    --kf-ring-color: var(--kf-color-blue-500, #3b82f6);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
     --kf-ring-width: 3px;
     --kf-ring-offset-width: 2px;
     box-shadow:
@@ -50,49 +50,49 @@ const BadgeGlobalStyles = createGlobalStyle`
   }
 
   .kf-badge[aria-invalid="true"] {
-    border-color: var(--color-destructive, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-badge[aria-invalid="true"]:focus-visible {
-    --kf-ring-color: color-mix(in srgb, var(--color-destructive, #b91c1c) 40%, transparent);
+    --kf-ring-color: color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 40%, transparent);
   }
 
   .kf-badge--default {
-    background: var(--color-primary, #0f172a);
-    color: var(--color-primary-foreground, #f8fafc);
+    background: var(--kf-color-blue-600, #0f172a);
+    color: var(--kf-color-blue-50, #f8fafc);
   }
 
   .kf-badge--default:is(a:hover, a:focus-visible) {
-    background: color-mix(in srgb, var(--color-primary, #0f172a) 90%, transparent);
+    background: color-mix(in srgb, var(--kf-color-blue-600, #0f172a) 90%, transparent);
   }
 
   .kf-badge--secondary {
-    background: var(--color-secondary, #f1f5f9);
-    color: var(--color-secondary-foreground, #0f172a);
+    background: var(--kf-color-pink-600, #f1f5f9);
+    color: var(--kf-color-pink-50, #0f172a);
   }
 
   .kf-badge--secondary:is(a:hover, a:focus-visible) {
-    background: color-mix(in srgb, var(--color-secondary, #f1f5f9) 90%, rgba(15, 23, 42, 0.08));
+    background: color-mix(in srgb, var(--kf-color-pink-600, #f1f5f9) 90%, rgba(15, 23, 42, 0.08));
   }
 
   .kf-badge--destructive {
-    background: var(--color-destructive, #b91c1c);
-    color: var(--color-destructive-foreground, #fef2f2);
+    background: var(--kf-color-red-700, #b91c1c);
+    color: var(--kf-color-destructive-foreground, #fef2f2);
   }
 
   .kf-badge--destructive:is(a:hover, a:focus-visible) {
-    background: color-mix(in srgb, var(--color-destructive, #b91c1c) 90%, transparent);
+    background: color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 90%, transparent);
   }
 
   .kf-badge--outline {
     background: transparent;
-    color: var(--color-foreground, #0f172a);
-    border-color: var(--color-border, rgba(15, 23, 42, 0.12));
+    color: var(--kf-color-gray-950, #0f172a);
+    border-color: var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-badge--outline:is(a:hover, a:focus-visible) {
-    background: var(--color-accent, rgba(148, 163, 184, 0.16));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.16));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 `;
 

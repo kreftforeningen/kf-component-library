@@ -29,8 +29,8 @@ const SheetGlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     gap: calc(var(--kf-spacing, 0.25rem) * 4);
-    background: var(--color-background, #ffffff);
-    color: var(--color-foreground, #0f172a);
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
     box-shadow: var(--kf-shadow-lg, 0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.08));
     transition: transform 300ms var(--kf-ease-in-out, ease), opacity 300ms var(--kf-ease-in-out, ease);
   }
@@ -47,7 +47,7 @@ const SheetGlobalStyles = createGlobalStyle`
     inset: 0;
     inset-inline-start: auto;
     width: min(75vw, 24rem);
-    border-left: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-left: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     transform: translateX(100%);
   }
 
@@ -55,7 +55,7 @@ const SheetGlobalStyles = createGlobalStyle`
     inset: 0;
     inset-inline-end: auto;
     width: min(75vw, 24rem);
-    border-right: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-right: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     transform: translateX(-100%);
   }
 
@@ -63,7 +63,7 @@ const SheetGlobalStyles = createGlobalStyle`
     inset-inline: 0;
     inset-block-start: 0;
     width: 100%;
-    border-bottom: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-bottom: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     transform: translateY(-100%);
   }
 
@@ -71,7 +71,7 @@ const SheetGlobalStyles = createGlobalStyle`
     inset-inline: 0;
     inset-block-end: 0;
     width: 100%;
-    border-top: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-top: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     transform: translateY(100%);
   }
 
@@ -118,12 +118,12 @@ const SheetGlobalStyles = createGlobalStyle`
 
   .kf-sheet__title {
     font-weight: 600;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-sheet__description {
     font-size: var(--kf-text-sm, 0.875rem);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.66));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
   }
 
   .kf-sheet__close {

@@ -27,11 +27,11 @@ const BannerGlobalStyles = createGlobalStyle`
   }
 
   .kf-banner[data-color="default"] {
-    background: var(--color-blue-100, #dbeafe);
+    background: var(--kf-color-blue-100, #dbeafe);
   }
 
   .dark .kf-banner[data-color="default"] {
-    background: var(--color-blue-900, #1d4ed8);
+    background: var(--kf-color-blue-900, #1d4ed8);
   }
 
   .kf-banner__image {
@@ -87,7 +87,7 @@ const BannerGlobalStyles = createGlobalStyle`
   .kf-banner__description {
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-banner__actions {

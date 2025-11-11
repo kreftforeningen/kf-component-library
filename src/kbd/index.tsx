@@ -16,9 +16,9 @@ const KbdGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-xs, 0.75rem);
     font-weight: 500;
     border-radius: var(--kf-radius-sm, 0.125rem);
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 90%, transparent);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 90%, transparent);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     user-select: none;
     pointer-events: none;
   }
@@ -29,13 +29,13 @@ const KbdGlobalStyles = createGlobalStyle`
   }
 
   [data-slot="tooltip-content"] .kf-kbd {
-    background: color-mix(in srgb, var(--color-background, #ffffff) 20%, transparent);
-    color: var(--color-background-foreground, #0f172a);
+    background: color-mix(in srgb, var(--kf-color-gray-50, #ffffff) 20%, transparent);
+    color: var(--kf-color-background-foreground, #0f172a);
   }
 
   .dark [data-slot="tooltip-content"] .kf-kbd {
-    background: color-mix(in srgb, var(--color-background, #0f172a) 10%, transparent);
-    color: var(--color-background, #ffffff);
+    background: color-mix(in srgb, var(--kf-color-gray-50, #0f172a) 10%, transparent);
+    color: var(--kf-color-gray-50, #ffffff);
   }
 
   .kf-kbd-group {

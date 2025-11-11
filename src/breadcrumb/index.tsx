@@ -14,7 +14,7 @@ const BreadcrumbGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 1.5);
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     margin: 0;
     padding: 0;
     list-style: none;
@@ -44,12 +44,12 @@ const BreadcrumbGlobalStyles = createGlobalStyle`
 
   .kf-breadcrumb__link:hover,
   .kf-breadcrumb__link:focus-visible {
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     outline: none;
   }
 
   .kf-breadcrumb__page {
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     font-weight: 500;
   }
 

@@ -28,13 +28,13 @@ const InfographicGlobalStyles = createGlobalStyle`
   .kf-infographic__item {
     padding: calc(var(--kf-spacing, 0.25rem) * 10);
     border-radius: var(--kf-radius-2xl, 1rem);
-    background: color-mix(in srgb, var(--color-gray-100, #f1f5f9) 95%, transparent);
-    color: var(--color-foreground, #0f172a);
+    background: color-mix(in srgb, var(--kf-color-gray-100, #f1f5f9) 95%, transparent);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .dark .kf-infographic__item {
-    background: color-mix(in srgb, var(--color-gray-800, #1f2937) 95%, transparent);
-    color: var(--color-gray-100, #f3f4f6);
+    background: color-mix(in srgb, var(--kf-color-gray-800, #1f2937) 95%, transparent);
+    color: var(--kf-color-gray-100, #f3f4f6);
   }
 
   .kf-infographic__title {

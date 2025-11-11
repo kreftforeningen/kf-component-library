@@ -68,8 +68,8 @@ const ButtonGroupGlobalStyles = createGlobalStyle`
     display: flex;
     align-items: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
-    background: var(--color-muted, rgba(148, 163, 184, 0.16));
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, rgba(148, 163, 184, 0.16));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     border-radius: var(--kf-radius-md, 0.375rem);
     padding: 0 calc(var(--kf-spacing, 0.25rem) * 4);
     font-size: var(--kf-text-sm, 0.875rem);
@@ -92,7 +92,7 @@ const ButtonGroupGlobalStyles = createGlobalStyle`
     position: relative;
     margin: 0 !important;
     align-self: stretch;
-    background: var(--color-input, rgba(15, 23, 42, 0.1));
+    background: var(--kf-color-gray-50, rgba(15, 23, 42, 0.1));
   }
 
   .kf-button-group__separator[data-orientation="horizontal"] {

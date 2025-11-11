@@ -15,9 +15,9 @@ const SelectGlobalStyles = createGlobalStyle`
     padding-inline: calc(var(--kf-spacing, 0.25rem) * 3);
     padding-block: calc(var(--kf-spacing, 0.25rem) * 2);
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: var(--color-input, rgba(15, 23, 42, 0.08));
-    color: var(--color-foreground, #0f172a);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, rgba(15, 23, 42, 0.08));
+    color: var(--kf-color-gray-950, #0f172a);
     font-size: var(--kf-text-md, 1.0625rem);
     white-space: nowrap;
     box-shadow: var(--kf-shadow-xs, 0 1px 2px 0 rgb(15 23 42 / 0.05));
@@ -30,7 +30,7 @@ const SelectGlobalStyles = createGlobalStyle`
   }
 
   .kf-select__trigger[data-placeholder] {
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-select__trigger[data-size="default"] {
@@ -43,7 +43,7 @@ const SelectGlobalStyles = createGlobalStyle`
   }
 
   .kf-select__trigger svg:not([class*="text-"]) {
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-select__trigger svg {
@@ -52,19 +52,19 @@ const SelectGlobalStyles = createGlobalStyle`
   }
 
   .kf-select__trigger:focus-visible {
-    border-color: var(--color-ring, rgba(59, 130, 246, 0.6));
+    border-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 60%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 60%, transparent);
   }
 
   .kf-select__trigger[aria-invalid="true"] {
-    border-color: var(--color-destructive, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-select__trigger[aria-invalid="true"]:focus-visible {
     box-shadow:
-      0 0 0 2px color-mix(in srgb, var(--color-destructive, #b91c1c) 25%, transparent);
+      0 0 0 2px color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 25%, transparent);
   }
 
   .kf-select__trigger:disabled {
@@ -73,7 +73,7 @@ const SelectGlobalStyles = createGlobalStyle`
   }
 
   .dark .kf-select__trigger {
-    background: color-mix(in srgb, var(--color-input, rgba(148, 163, 184, 0.16)) 80%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 80%, transparent);
   }
 
   .kf-select__icon {
@@ -96,9 +96,9 @@ const SelectGlobalStyles = createGlobalStyle`
     min-width: 8rem;
     max-height: var(--radix-select-content-available-height);
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: var(--color-popover, #ffffff);
-    color: var(--color-popover-foreground, #0f172a);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
     box-shadow: var(--kf-shadow-md, 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.08));
     overflow-x: hidden;
     overflow-y: auto;
@@ -168,7 +168,7 @@ const SelectGlobalStyles = createGlobalStyle`
 
   .kf-select__label {
     font-size: var(--kf-text-xs, 0.75rem);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     padding-inline: calc(var(--kf-spacing, 0.25rem) * 2);
     padding-block: calc(var(--kf-spacing, 0.25rem) * 1.5);
   }
@@ -189,13 +189,13 @@ const SelectGlobalStyles = createGlobalStyle`
   }
 
   .kf-select__item svg:not([class*="text-"]) {
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-select__item:hover,
   .kf-select__item:focus-visible {
-    background: var(--color-accent, rgba(148, 163, 184, 0.16));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.16));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-select__item[data-disabled="true"] {
@@ -219,7 +219,7 @@ const SelectGlobalStyles = createGlobalStyle`
     height: 1px;
     margin-inline: calc(var(--kf-spacing, 0.25rem) * -1);
     margin-block: calc(var(--kf-spacing, 0.25rem) * 1);
-    background: var(--color-border, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-select__scroll-button {

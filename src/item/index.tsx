@@ -29,11 +29,11 @@ const ItemGlobalStyles = createGlobalStyle`
   }
 
   .kf-item[data-variant="outline"] {
-    border-color: var(--color-border, rgba(15, 23, 42, 0.12));
+    border-color: var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-item[data-variant="muted"] {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 50%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 50%, transparent);
   }
 
   .kf-item[data-size="default"] {
@@ -47,14 +47,14 @@ const ItemGlobalStyles = createGlobalStyle`
   }
 
   .kf-item:focus-visible {
-    border-color: var(--color-ring, rgba(59, 130, 246, 0.6));
+    border-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 65%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 65%, transparent);
   }
 
   .kf-item a:hover {
-    background: color-mix(in srgb, var(--color-accent, rgba(148, 163, 184, 0.16)) 50%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-200, rgba(148, 163, 184, 0.16)) 50%, transparent);
     transition: color 100ms var(--kf-ease-in-out, ease);
   }
 
@@ -70,8 +70,8 @@ const ItemGlobalStyles = createGlobalStyle`
     width: calc(var(--kf-spacing, 0.25rem) * 8);
     height: calc(var(--kf-spacing, 0.25rem) * 8);
     border-radius: var(--kf-radius-sm, 0.125rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 70%, transparent);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 70%, transparent);
   }
 
   .kf-item-media[data-variant="icon"] svg:not([class*="size-"]) {
@@ -115,7 +115,7 @@ const ItemGlobalStyles = createGlobalStyle`
   .kf-item-description {
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -129,7 +129,7 @@ const ItemGlobalStyles = createGlobalStyle`
   }
 
   .kf-item-description a:hover {
-    color: var(--color-primary, #0f172a);
+    color: var(--kf-color-blue-600, #0f172a);
   }
 
   .kf-item-actions {

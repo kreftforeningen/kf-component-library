@@ -20,8 +20,8 @@ const ScrollAreaGlobalStyles = createGlobalStyle`
 
   .kf-scroll-area__viewport:focus-visible {
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 60%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 60%, transparent);
   }
 
   .kf-scroll-area__scrollbar {
@@ -49,7 +49,7 @@ const ScrollAreaGlobalStyles = createGlobalStyle`
     position: relative;
     flex: 1 1 auto;
     border-radius: var(--kf-radius-full, 9999px);
-    background: var(--color-border, rgba(15, 23, 42, 0.16));
+    background: var(--kf-color-gray-300, rgba(15, 23, 42, 0.16));
   }
 `;
 

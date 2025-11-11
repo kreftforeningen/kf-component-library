@@ -38,7 +38,7 @@ const ModeToggleGlobalStyles = createGlobalStyle`
       transform 180ms var(--kf-ease-in-out, ease),
       opacity 180ms var(--kf-ease-in-out, ease),
       color 120ms var(--kf-ease-in-out, ease);
-    color: var(--color-blue-700, #1d4ed8);
+    color: var(--kf-color-blue-700, #1d4ed8);
   }
 
   .kf-mode-toggle__moon {
@@ -58,13 +58,13 @@ const ModeToggleGlobalStyles = createGlobalStyle`
   .dark .kf-mode-toggle__sun {
     transform: rotate(-90deg) scale(0);
     opacity: 0;
-    color: var(--color-blue-300, #93c5fd);
+    color: var(--kf-color-blue-300, #93c5fd);
   }
 
   .dark .kf-mode-toggle__moon {
     transform: rotate(0deg) scale(1);
     opacity: 1;
-    color: var(--color-blue-300, #93c5fd);
+    color: var(--kf-color-blue-300, #93c5fd);
   }
 
   .kf-mode-toggle[data-size="icon"] .kf-mode-toggle__label {

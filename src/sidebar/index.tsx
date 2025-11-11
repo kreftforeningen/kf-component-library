@@ -31,19 +31,19 @@ const SidebarGlobalStyles = createGlobalStyle`
     min-height: 100svh;
     width: 100%;
     display: flex;
-    background: var(--color-sidebar-background, transparent);
+    background: var(--kf-color-sidebar-background, transparent);
   }
 
   .kf-sidebar-wrapper[data-variant="inset"] {
-    background: var(--color-sidebar-background, transparent);
+    background: var(--kf-color-sidebar-background, transparent);
   }
 
   .kf-sidebar {
-    color: var(--color-sidebar-foreground, var(--color-foreground, #0f172a));
+    color: var(--kf-color-gray-950, var(--kf-color-gray-950, #0f172a));
   }
 
   .dark .kf-sidebar {
-    color: var(--color-sidebar-foreground, var(--color-card-foreground, #f8fafc));
+    color: var(--kf-color-gray-950, var(--kf-color-gray-950, #f8fafc));
   }
 
   .kf-sidebar__gap {
@@ -75,7 +75,7 @@ const SidebarGlobalStyles = createGlobalStyle`
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background: var(--color-sidebar, var(--color-card, #ffffff));
+    background: var(--kf-color-gray-100, var(--kf-color-gray-100, #ffffff));
     border-radius: var(--kf-radius-xl, 0.75rem);
     border: none;
     box-shadow: none;
@@ -84,13 +84,13 @@ const SidebarGlobalStyles = createGlobalStyle`
 
   .kf-sidebar__inner[data-variant="floating"],
   .kf-sidebar__inner[data-variant="inset"] {
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     box-shadow: var(--kf-shadow-sm, 0 1px 3px 0 rgb(15 23 42 / 0.1), 0 1px 2px -1px rgb(15 23 42 / 0.1));
   }
 
   .dark .kf-sidebar__inner[data-variant="floating"],
   .dark .kf-sidebar__inner[data-variant="inset"] {
-    border-color: color-mix(in srgb, var(--color-border, rgba(248, 250, 252, 0.16)) 70%, transparent);
+    border-color: color-mix(in srgb, var(--kf-color-gray-300, rgba(248, 250, 252, 0.16)) 70%, transparent);
     box-shadow: var(--kf-shadow-md, 0 4px 6px -1px rgb(15 23 42 / 0.45), 0 2px 4px -2px rgb(15 23 42 / 0.4));
   }
 
@@ -127,7 +127,7 @@ const SidebarGlobalStyles = createGlobalStyle`
   }
 
   .kf-sidebar__rail:hover::after {
-    background: var(--color-sidebar-border, rgba(15, 23, 42, 0.16));
+    background: var(--kf-color-gray-100, rgba(15, 23, 42, 0.16));
   }
 
   .kf-sidebar__inset {
@@ -136,7 +136,7 @@ const SidebarGlobalStyles = createGlobalStyle`
     flex: 1 1 auto;
     width: 100%;
     flex-direction: column;
-    background: var(--color-background, #ffffff);
+    background: var(--kf-color-gray-50, #ffffff);
   }
 
   .kf-sidebar__inset[data-variant="inset"] {
@@ -147,7 +147,7 @@ const SidebarGlobalStyles = createGlobalStyle`
   }
 
   .kf-sidebar__input {
-    background: var(--color-background, #ffffff);
+    background: var(--kf-color-gray-50, #ffffff);
     height: calc(var(--kf-spacing, 0.25rem) * 8);
     width: 100%;
     box-shadow: none;
@@ -164,7 +164,7 @@ const SidebarGlobalStyles = createGlobalStyle`
   .kf-sidebar__separator {
     margin-inline: calc(var(--kf-spacing, 0.25rem) * 2);
     width: auto;
-    background: var(--color-sidebar-border, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-100, rgba(15, 23, 42, 0.12));
   }
 
   .kf-sidebar__content {
@@ -196,7 +196,7 @@ const SidebarGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
     padding: calc(var(--kf-spacing, 0.25rem) * 2);
     border-radius: var(--kf-radius-lg, 0.5rem);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     font-size: var(--kf-text-sm, 0.875rem);
     font-weight: 500;
   }
@@ -242,12 +242,12 @@ const SidebarGlobalStyles = createGlobalStyle`
 
   .kf-sidebar__menu-item[data-active="true"],
   .kf-sidebar__menu-item:focus-visible {
-    background: color-mix(in srgb, var(--color-primary, #1d4ed8) 14%, transparent);
-    color: var(--color-primary-foreground, #ffffff);
+    background: color-mix(in srgb, var(--kf-color-blue-600, #1d4ed8) 14%, transparent);
+    color: var(--kf-color-blue-50, #ffffff);
   }
 
   .kf-sidebar__menu-item:hover {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 60%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 60%, transparent);
   }
 
   .kf-sidebar__menu-item[data-variant="floating"],
@@ -272,17 +272,17 @@ const SidebarGlobalStyles = createGlobalStyle`
   }
 
   .kf-sidebar__menu-button:hover {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 50%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 50%, transparent);
   }
 
   .kf-sidebar__menu-button:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #1d4ed8) 20%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--kf-color-blue-600, #1d4ed8) 20%, transparent);
   }
 
   .kf-sidebar__menu-button[data-active="true"] {
-    background: color-mix(in srgb, var(--color-primary, #1d4ed8) 14%, transparent);
-    color: var(--color-primary-foreground, #ffffff);
+    background: color-mix(in srgb, var(--kf-color-blue-600, #1d4ed8) 14%, transparent);
+    color: var(--kf-color-blue-50, #ffffff);
   }
 
   .kf-sidebar__menu-button[data-disabled="true"] {
@@ -306,17 +306,17 @@ const SidebarGlobalStyles = createGlobalStyle`
   }
 
   .kf-sidebar__menu-link:hover {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 60%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 60%, transparent);
   }
 
   .kf-sidebar__menu-link:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary, #1d4ed8) 20%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--kf-color-blue-600, #1d4ed8) 20%, transparent);
   }
 
   .kf-sidebar__menu-link[data-active="true"] {
-    background: color-mix(in srgb, var(--color-primary, #1d4ed8) 14%, transparent);
-    color: var(--color-primary-foreground, #ffffff);
+    background: color-mix(in srgb, var(--kf-color-blue-600, #1d4ed8) 14%, transparent);
+    color: var(--kf-color-blue-50, #ffffff);
   }
 
   .kf-sidebar__menu-badge {
@@ -325,13 +325,13 @@ const SidebarGlobalStyles = createGlobalStyle`
     border-radius: var(--kf-radius-md, 0.375rem);
     padding-inline: calc(var(--kf-spacing, 0.25rem) * 2);
     padding-block: calc(var(--kf-spacing, 0.25rem) * 0.5);
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 80%, transparent);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 80%, transparent);
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .dark .kf-sidebar__menu-badge {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.32)) 80%, transparent);
-    color: var(--color-muted-foreground, rgba(248, 250, 252, 0.76));
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.32)) 80%, transparent);
+    color: var(--kf-color-gray-500, rgba(248, 250, 252, 0.76));
   }
 
   .kf-sidebar__skeleton {

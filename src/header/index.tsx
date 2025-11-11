@@ -52,12 +52,12 @@ const HeaderGlobalStyles = createGlobalStyle`
   }
 
   .kf-header__title-link:hover {
-    color: var(--color-primary, #0f172a);
+    color: var(--kf-color-blue-600, #0f172a);
     text-decoration: underline;
   }
 
   .dark .kf-header__title-link:hover {
-    color: var(--color-blue-200, #bfdbfe);
+    color: var(--kf-color-blue-200, #bfdbfe);
   }
 
   .kf-header__navigation {
@@ -82,7 +82,7 @@ const HeaderGlobalStyles = createGlobalStyle`
     left: calc(var(--kf-spacing, 0.25rem) * 3);
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-gray-400, #9ca3af);
+    color: var(--kf-color-gray-400, #9ca3af);
   }
 
   .kf-header__search-input {
@@ -96,8 +96,8 @@ const HeaderGlobalStyles = createGlobalStyle`
     padding: calc(var(--kf-spacing, 0.25rem) * 8);
     padding-top: calc(var(--kf-spacing, 0.25rem) * 14);
     width: min(33.75rem, 100%);
-    background: var(--color-gray-900, #111827);
-    color: var(--color-gray-50, #f9fafb);
+    background: var(--kf-color-gray-900, #111827);
+    color: var(--kf-color-gray-50, #f9fafb);
     border: none;
     box-shadow: var(--kf-shadow-2xl, 0 25px 50px -12px rgb(0 0 0 / 0.25));
   }

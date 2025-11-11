@@ -17,7 +17,7 @@ const CalendarGlobalStyles = createGlobalStyle`
     display: inline-block;
     padding: calc(var(--kf-spacing, 0.25rem) * 3);
     border-radius: var(--kf-radius-lg, 0.5rem);
-    background: color-mix(in srgb, var(--color-background, #ffffff) 90%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, #ffffff) 90%, transparent);
   }
 
   [data-slot="card-content"] .kf-calendar,
@@ -106,14 +106,14 @@ const CalendarGlobalStyles = createGlobalStyle`
   .kf-calendar__dropdown-root {
     position: relative;
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-input, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-50, rgba(15, 23, 42, 0.12));
     box-shadow: var(--kf-shadow-xs, 0 1px 2px 0 rgb(0 0 0 / 0.05));
   }
 
   .kf-calendar__dropdown-root:focus-within {
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 65%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 65%, transparent);
   }
 
   .kf-calendar__dropdown {
@@ -141,7 +141,7 @@ const CalendarGlobalStyles = createGlobalStyle`
     flex: 1;
     font-size: 0.8rem;
     font-weight: 400;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     text-align: center;
     padding-block: calc(var(--kf-spacing, 0.25rem) * 1);
     border-radius: var(--kf-radius-sm, 0.125rem);
@@ -161,7 +161,7 @@ const CalendarGlobalStyles = createGlobalStyle`
 
   .kf-calendar__week-number {
     font-size: 0.8rem;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     user-select: none;
   }
 
@@ -208,20 +208,20 @@ const CalendarGlobalStyles = createGlobalStyle`
   .kf-calendar__day-button:focus-visible {
     outline: none;
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 65%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 65%, transparent);
   }
 
   .kf-calendar__day-button[data-selected-single="true"],
   .kf-calendar__day-button[data-range-start="true"],
   .kf-calendar__day-button[data-range-end="true"] {
-    background: var(--color-primary, #0f172a);
-    color: var(--color-primary-foreground, #f8fafc);
+    background: var(--kf-color-blue-600, #0f172a);
+    color: var(--kf-color-blue-50, #f8fafc);
   }
 
   .kf-calendar__day-button[data-range-middle="true"] {
-    background: var(--color-accent, rgba(148, 163, 184, 0.2));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.2));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-calendar__day-button[data-range-middle="true"] {
@@ -239,7 +239,7 @@ const CalendarGlobalStyles = createGlobalStyle`
   }
 
   .kf-calendar__day-button[data-outside="true"] {
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-calendar__day-button[data-disabled="true"] {
@@ -248,8 +248,8 @@ const CalendarGlobalStyles = createGlobalStyle`
   }
 
   .kf-calendar__day-button[data-today="true"] {
-    background: var(--color-accent, rgba(148, 163, 184, 0.2));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.2));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-calendar__hidden {

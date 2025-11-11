@@ -12,24 +12,24 @@ const ProgressGlobalStyles = createGlobalStyle`
     width: 100%;
     border-radius: var(--kf-radius-full, 9999px);
     overflow: hidden;
-    background: color-mix(in srgb, var(--color-primary, #1d4ed8) 20%, transparent);
+    background: color-mix(in srgb, var(--kf-color-blue-600, #1d4ed8) 20%, transparent);
   }
 
   .dark .kf-progress {
-    background: color-mix(in srgb, var(--color-blue-200, #bfdbfe) 20%, transparent);
+    background: color-mix(in srgb, var(--kf-color-blue-200, #bfdbfe) 20%, transparent);
   }
 
   .kf-progress__indicator {
     height: 100%;
     width: 100%;
     flex: 1 1 auto;
-    background: var(--color-primary, #1d4ed8);
+    background: var(--kf-color-blue-600, #1d4ed8);
     transform-origin: left center;
     transition: transform 160ms var(--kf-ease-in-out, ease);
   }
 
   .dark .kf-progress__indicator {
-    background: var(--color-blue-200, #bfdbfe);
+    background: var(--kf-color-blue-200, #bfdbfe);
   }
 `;
 

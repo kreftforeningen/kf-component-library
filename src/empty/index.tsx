@@ -16,9 +16,9 @@ const EmptyGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 6);
     padding: calc(var(--kf-spacing, 0.25rem) * 6);
     text-align: center;
-    border: var(--kf-border-1, 1px) dashed var(--color-border, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) dashed var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     border-radius: var(--kf-radius-lg, 0.5rem);
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     text-wrap: balance;
   }
 
@@ -53,8 +53,8 @@ const EmptyGlobalStyles = createGlobalStyle`
     width: calc(var(--kf-spacing, 0.25rem) * 10);
     height: calc(var(--kf-spacing, 0.25rem) * 10);
     border-radius: var(--kf-radius-lg, 0.5rem);
-    background: var(--color-muted, rgba(148, 163, 184, 0.16));
-    color: var(--color-foreground, #0f172a);
+    background: var(--kf-color-gray-50, rgba(148, 163, 184, 0.16));
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-empty__media--icon svg:not([class*="size-"]) {
@@ -72,7 +72,7 @@ const EmptyGlobalStyles = createGlobalStyle`
   .kf-empty__description {
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.66));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
   }
 
   .kf-empty__description > a {
@@ -81,7 +81,7 @@ const EmptyGlobalStyles = createGlobalStyle`
   }
 
   .kf-empty__description > a:hover {
-    color: var(--color-primary, #0f172a);
+    color: var(--kf-color-blue-600, #0f172a);
   }
 
   .kf-empty__content {
@@ -93,7 +93,7 @@ const EmptyGlobalStyles = createGlobalStyle`
     min-width: 0;
     align-items: center;
     font-size: var(--kf-text-sm, 0.875rem);
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     text-wrap: balance;
   }
 `;

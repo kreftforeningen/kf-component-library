@@ -50,7 +50,7 @@ const ToggleGroupGlobalStyles = createGlobalStyle`
   }
 
   .kf-toggle-group__item[data-variant="outline"]:first-child {
-    border-inline-start: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-inline-start: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-toggle-group__item:focus-visible {

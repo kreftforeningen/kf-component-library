@@ -19,8 +19,8 @@ const RadioGroupGlobalStyles = createGlobalStyle`
     height: calc(var(--kf-spacing, 0.25rem) * 4);
     flex-shrink: 0;
     border-radius: 9999px;
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: var(--color-input, rgba(15, 23, 42, 0.08));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, rgba(15, 23, 42, 0.08));
     outline: none;
     transition:
       color 120ms var(--kf-ease-in-out, ease),
@@ -30,23 +30,23 @@ const RadioGroupGlobalStyles = createGlobalStyle`
   }
 
   .dark .kf-radio-group__item {
-    background: color-mix(in srgb, var(--color-input, rgba(148, 163, 184, 0.12)) 80%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.12)) 80%, transparent);
   }
 
   .kf-radio-group__item[aria-invalid="true"] {
-    border-color: var(--color-destructive, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-radio-group__item[aria-invalid="true"]:focus-visible {
     box-shadow:
-      0 0 0 2px color-mix(in srgb, var(--color-destructive, #b91c1c) 25%, transparent);
+      0 0 0 2px color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 25%, transparent);
   }
 
   .kf-radio-group__item:focus-visible {
-    border-color: var(--color-ring, rgba(59, 130, 246, 0.6));
+    border-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 60%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 60%, transparent);
   }
 
   .kf-radio-group__item:disabled {
@@ -69,11 +69,11 @@ const RadioGroupGlobalStyles = createGlobalStyle`
     position: absolute;
     top: 50%;
     left: 50%;
-    fill: var(--color-primary, #1d4ed8);
+    fill: var(--kf-color-blue-600, #1d4ed8);
   }
 
   .dark .kf-radio-group__icon {
-    fill: var(--color-blue-200, #bfdbfe);
+    fill: var(--kf-color-blue-200, #bfdbfe);
   }
 `;
 

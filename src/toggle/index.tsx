@@ -18,7 +18,7 @@ const ToggleGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-base, 1rem);
     font-weight: 500;
     background: transparent;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     cursor: pointer;
     outline: none;
     transition:
@@ -42,24 +42,24 @@ const ToggleGlobalStyles = createGlobalStyle`
   }
 
   .kf-toggle[data-variant="outline"] {
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     box-shadow: var(--kf-shadow-xs, 0 1px 2px 0 rgb(15 23 42 / 0.05));
   }
 
   .kf-toggle[data-variant="outline"]:hover {
-    background: var(--color-accent, rgba(148, 163, 184, 0.16));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.16));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-toggle[data-variant="default"]:hover {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 80%, transparent);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.66));
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 80%, transparent);
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
   }
 
   .kf-toggle[data-variant="default"][data-state="on"],
   .kf-toggle[data-variant="outline"][data-state="on"] {
-    background: color-mix(in srgb, var(--color-accent-foreground, #0f172a) 20%, transparent);
-    color: var(--color-accent-foreground, #0f172a);
+    background: color-mix(in srgb, var(--kf-color-gray-900, #0f172a) 20%, transparent);
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-toggle[data-size="default"] {
@@ -83,17 +83,17 @@ const ToggleGlobalStyles = createGlobalStyle`
 
   .kf-toggle:focus-visible {
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 60%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 60%, transparent);
   }
 
   .kf-toggle[aria-invalid="true"] {
-    border-color: var(--color-destructive, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-toggle[aria-invalid="true"]:focus-visible {
     box-shadow:
-      0 0 0 2px color-mix(in srgb, var(--color-destructive, #b91c1c) 25%, transparent);
+      0 0 0 2px color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 25%, transparent);
   }
 
   .kf-toggle[disabled] {

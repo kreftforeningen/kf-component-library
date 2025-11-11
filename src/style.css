@@ -1,5 +1,14 @@
 @import "@kreftforeningen/web-css";
 
+body {
+  background-color: var(--kf-color-gray-50, #ffffff);
+  color: var(--kf-color-gray-950, #0f172a);
+  .dark & {
+    background-color: var(--kf-color-gray-950, #0f172a);
+    color: var(--kf-color-gray-50, #f3f4f6);
+  }
+}
+
 .app-main-section {
   width: 100%;
   max-width: clamp(20rem, 66vw, var(--kf-container-5xl, 64rem));
@@ -45,7 +54,7 @@
 
 .app-avatar-stack > [data-slot="avatar"] {
   box-shadow: 0 0 0 calc(var(--kf-spacing, 0.25rem) * 2)
-    var(--color-background, #ffffff);
+    var(--kf-color-gray-50, #ffffff);
   filter: grayscale(100%);
   border-radius: inherit;
 }
@@ -121,7 +130,7 @@
 }
 
 .app-muted-text-sm {
-  color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+  color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   font-size: var(--kf-text-sm, 0.875rem);
   line-height: var(--kf-text-sm--line-height, 1.4285714286);
 }
@@ -166,7 +175,7 @@
 .app-code-chip {
   border-radius: var(--kf-radius-md, 0.375rem);
   border: var(--kf-border-1, 1px) solid
-    var(--color-border, rgba(15, 23, 42, 0.12));
+    var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   padding: calc(var(--kf-spacing, 0.25rem) * 2)
     calc(var(--kf-spacing, 0.25rem) * 4);
   font-family: var(--kf-font-mono, ui-monospace);
@@ -238,7 +247,7 @@
 }
 
 .app-muted-text-xs {
-  color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+  color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   font-size: var(--kf-text-xs, 0.75rem);
   line-height: var(--kf-text-xs--line-height, 1.3333333333);
 }
@@ -257,8 +266,8 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--kf-radius-full, 9999px);
-  background: var(--color-primary, #1d4ed8);
-  color: var(--color-primary-foreground, #ffffff);
+  background: var(--kf-color-blue-600, #1d4ed8);
+  color: var(--kf-color-blue-50, #ffffff);
 }
 
 .app-feature-list {
@@ -287,7 +296,7 @@
 }
 
 .app-muted-text {
-  color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+  color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
 }
 
 .app-centered-column-lg {

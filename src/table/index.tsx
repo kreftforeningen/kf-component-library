@@ -23,7 +23,7 @@ const TableGlobalStyles = createGlobalStyle`
   }
 
   .kf-table__header tr {
-    border-bottom: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-bottom: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-table__body tr:last-child {
@@ -31,8 +31,8 @@ const TableGlobalStyles = createGlobalStyle`
   }
 
   .kf-table__footer {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 50%, transparent);
-    border-top: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 50%, transparent);
+    border-top: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     font-weight: 500;
   }
 
@@ -41,16 +41,16 @@ const TableGlobalStyles = createGlobalStyle`
   }
 
   .kf-table__row {
-    border-bottom: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-bottom: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     transition: background 120ms var(--kf-ease-in-out, ease);
   }
 
   .kf-table__row[data-state="selected"] {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 80%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 80%, transparent);
   }
 
   .kf-table__row:hover {
-    background: color-mix(in srgb, var(--color-muted, rgba(148, 163, 184, 0.16)) 60%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.16)) 60%, transparent);
   }
 
   .kf-table__head {
@@ -58,7 +58,7 @@ const TableGlobalStyles = createGlobalStyle`
     height: calc(var(--kf-spacing, 0.25rem) * 10);
     text-align: left;
     font-weight: 600;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     vertical-align: middle;
     white-space: nowrap;
   }
@@ -88,7 +88,7 @@ const TableGlobalStyles = createGlobalStyle`
   .kf-table__caption {
     margin-top: calc(var(--kf-spacing, 0.25rem) * 4);
     font-size: var(--kf-text-sm, 0.875rem);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.66));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
   }
 `;
 

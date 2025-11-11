@@ -21,8 +21,8 @@ const CommandGlobalStyles = createGlobalStyle`
     height: 100%;
     overflow: hidden;
     border-radius: var(--kf-radius-md, 0.375rem);
-    background: var(--color-popover, #ffffff);
-    color: var(--color-popover-foreground, #0f172a);
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-command-dialog__content {
@@ -47,7 +47,7 @@ const CommandGlobalStyles = createGlobalStyle`
     align-items: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
     height: calc(var(--kf-spacing, 0.25rem) * 12);
-    border-bottom: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border-bottom: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     padding-inline: calc(var(--kf-spacing, 0.25rem) * 3);
   }
 
@@ -66,7 +66,7 @@ const CommandGlobalStyles = createGlobalStyle`
   }
 
   .kf-command__input::placeholder {
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-command__input:disabled {
@@ -92,13 +92,13 @@ const CommandGlobalStyles = createGlobalStyle`
     padding-block: calc(var(--kf-spacing, 0.25rem) * 6);
     text-align: center;
     font-size: var(--kf-text-base, 1rem);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-command__group {
     padding: calc(var(--kf-spacing, 0.25rem) * 1);
     overflow: hidden;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-command__group [cmdk-group-heading] {
@@ -108,7 +108,7 @@ const CommandGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
     font-weight: 500;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-command__group [cmdk-group]:not([hidden]) + [cmdk-group] {
@@ -118,7 +118,7 @@ const CommandGlobalStyles = createGlobalStyle`
   .kf-command__separator {
     height: 1px;
     margin-inline: calc(var(--kf-spacing, 0.25rem) * -1);
-    background: var(--color-border, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-command__item {
@@ -144,12 +144,12 @@ const CommandGlobalStyles = createGlobalStyle`
   }
 
   .kf-command__item svg:not([class*="text-"]) {
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-command__item[data-selected="true"] {
-    background: var(--color-accent, rgba(148, 163, 184, 0.16));
-    color: var(--color-accent-foreground, #0f172a);
+    background: var(--kf-color-gray-200, rgba(148, 163, 184, 0.16));
+    color: var(--kf-color-gray-900, #0f172a);
   }
 
   .kf-command__item[data-disabled="true"] {
@@ -162,7 +162,7 @@ const CommandGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-xs, 0.75rem);
     line-height: var(--kf-text-xs--line-height, 1.3333333333);
     letter-spacing: 0.08em;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 `;
 

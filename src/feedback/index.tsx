@@ -70,12 +70,12 @@ const FeedbackGlobalStyles = createGlobalStyle`
     align-items: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
     background: transparent;
-    outline: 1px solid var(--color-border, rgba(15, 23, 42, 0.12));
+    outline: 1px solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-feedback__choice[data-active="true"] {
-    background: var(--color-blue-700, #1d4ed8);
-    color: var(--color-white, #ffffff);
+    background: var(--kf-color-blue-700, #1d4ed8);
+    color: var(--kf-color-white, #ffffff);
     outline-color: transparent;
   }
 

@@ -12,7 +12,7 @@ const SkeletonGlobalStyles = createGlobalStyle`
   .kf-skeleton {
     font-family: var(--kf-font-sans);
     border-radius: var(--kf-radius-md, 0.375rem);
-    background: color-mix(in srgb, var(--color-accent, rgba(148, 163, 184, 0.3)) 100%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-200, rgba(148, 163, 184, 0.3)) 100%, transparent);
     animation: kf-skeleton-pulse 1.5s ease-in-out infinite;
   }
 `;

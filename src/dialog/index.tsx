@@ -31,10 +31,10 @@ const DialogGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 4);
     width: min(32rem, calc(100% - calc(var(--kf-spacing, 0.25rem) * 8)));
     transform: translate(-50%, -50%);
-    background: var(--color-background, #ffffff);
-    color: var(--color-foreground, #0f172a);
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
     border-radius: var(--kf-radius-lg, 0.5rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     padding: calc(var(--kf-spacing, 0.25rem) * 6);
     box-shadow: var(--kf-shadow-xl, 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04));
     background-clip: padding-box;
@@ -89,7 +89,7 @@ const DialogGlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.64));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.64));
   }
 
   .kf-dialog__close {
@@ -114,8 +114,8 @@ const DialogGlobalStyles = createGlobalStyle`
 
   .kf-dialog__close:focus-visible {
     outline: none;
-    --kf-ring-color: var(--color-ring, rgba(59, 130, 246, 0.6));
-    --kf-ring-offset-color: var(--color-background, #ffffff);
+    --kf-ring-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
+    --kf-ring-offset-color: var(--kf-color-gray-50, #ffffff);
     --kf-ring-width: 2px;
     --kf-ring-offset-width: 2px;
     box-shadow:

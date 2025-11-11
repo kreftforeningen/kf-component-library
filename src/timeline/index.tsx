@@ -49,13 +49,13 @@ const TimelineGlobalStyles = createGlobalStyle`
     border-radius: 9999px;
     align-items: center;
     justify-content: center;
-    background: var(--color-red-600, #dc2626);
+    background: var(--kf-color-red-600, #dc2626);
   }
 
   .kf-timeline__connector {
     width: 2px;
     height: calc(var(--kf-spacing, 0.25rem) * 14);
-    background: var(--color-red-600, #dc2626);
+    background: var(--kf-color-red-600, #dc2626);
   }
 
   .kf-timeline__content {
@@ -74,7 +74,7 @@ const TimelineGlobalStyles = createGlobalStyle`
   .kf-timeline__description {
     margin: 0;
     font-size: var(--kf-text-sm, 0.875rem);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.7));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.7));
   }
 `;
 

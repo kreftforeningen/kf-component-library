@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const SeparatorGlobalStyles = createGlobalStyle`
   .kf-separator {
     font-family: var(--kf-font-sans);
-    background: var(--color-border, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     flex-shrink: 0;
   }
 

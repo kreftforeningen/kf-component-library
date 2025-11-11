@@ -57,7 +57,7 @@ const FieldGlobalStyles = createGlobalStyle`
   }
 
   .kf-field[data-invalid="true"] {
-    color: var(--color-destructive, #b91c1c);
+    color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-field--vertical {
@@ -132,7 +132,7 @@ const FieldGlobalStyles = createGlobalStyle`
     width: 100%;
     flex-direction: column;
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
   }
 
   .kf-field-label:has(> [data-slot="field"]) > [data-slot="field"] {
@@ -140,8 +140,8 @@ const FieldGlobalStyles = createGlobalStyle`
   }
 
   .kf-field-label:has([data-state="checked"]) {
-    border-color: var(--color-primary, #0f172a);
-    background: color-mix(in srgb, var(--color-primary, #0f172a) 10%, transparent);
+    border-color: var(--kf-color-blue-600, #0f172a);
+    background: color-mix(in srgb, var(--kf-color-blue-600, #0f172a) 10%, transparent);
   }
 
   .kf-field-title {
@@ -156,7 +156,7 @@ const FieldGlobalStyles = createGlobalStyle`
   .kf-field-description {
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-field-description a {
@@ -165,7 +165,7 @@ const FieldGlobalStyles = createGlobalStyle`
   }
 
   .kf-field-description a:hover {
-    color: var(--color-primary, #0f172a);
+    color: var(--kf-color-blue-600, #0f172a);
   }
 
   .kf-field-legend[data-variant="legend"] + .kf-field-description {
@@ -189,13 +189,13 @@ const FieldGlobalStyles = createGlobalStyle`
     position: relative;
     margin-inline: auto;
     padding-inline: calc(var(--kf-spacing, 0.25rem) * 2);
-    background: var(--color-background, #ffffff);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-field-error {
     font-size: var(--kf-text-sm, 0.875rem);
-    color: var(--color-destructive, #b91c1c);
+    color: var(--kf-color-red-700, #b91c1c);
     font-weight: 400;
   }
 

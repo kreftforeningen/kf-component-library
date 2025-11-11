@@ -16,19 +16,19 @@ const DownloadGlobalStyles = createGlobalStyle`
     margin-block: calc(var(--kf-spacing, 0.25rem) * 4);
     border-radius: var(--kf-radius-2xl, 1rem);
     overflow: hidden;
-    background: color-mix(in srgb, var(--color-gray-100, #f1f5f9) 90%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-100, #f1f5f9) 90%, transparent);
   }
 
   .dark .kf-download {
-    background: color-mix(in srgb, var(--color-gray-800, #1f2937) 95%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-800, #1f2937) 95%, transparent);
   }
 
   .kf-download--destructive {
-    background: color-mix(in srgb, var(--color-red-100, #fee2e2) 85%, transparent);
+    background: color-mix(in srgb, var(--kf-color-red-100, #fee2e2) 85%, transparent);
   }
 
   .dark .kf-download--destructive {
-    background: color-mix(in srgb, var(--color-red-900, #7f1d1d) 85%, transparent);
+    background: color-mix(in srgb, var(--kf-color-red-900, #7f1d1d) 85%, transparent);
   }
 
   @container download (min-width: 40rem) {
@@ -73,22 +73,22 @@ const DownloadGlobalStyles = createGlobalStyle`
     font-size: var(--kf-text-lg, 1.125rem);
     line-height: var(--kf-text-lg--line-height, 1.5555555556);
     font-weight: 600;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .dark .kf-download__title {
-    color: var(--color-card-foreground, #f8fafc);
+    color: var(--kf-color-gray-950, #f8fafc);
   }
 
   .kf-download__description {
     margin: 0;
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.66));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
   }
 
   .dark .kf-download__description {
-    color: color-mix(in srgb, var(--color-muted-foreground, rgba(248, 250, 252, 0.8)) 90%, transparent);
+    color: color-mix(in srgb, var(--kf-color-gray-500, rgba(248, 250, 252, 0.8)) 90%, transparent);
   }
 
   .kf-download__footer {
@@ -138,8 +138,8 @@ const DownloadGlobalStyles = createGlobalStyle`
 
   .kf-download__link:focus-visible {
     outline: none;
-    --kf-ring-color: var(--color-ring, rgba(59, 130, 246, 0.6));
-    --kf-ring-offset-color: var(--color-white, #ffffff);
+    --kf-ring-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
     --kf-ring-width: 3px;
     --kf-ring-offset-width: 2px;
     box-shadow:
@@ -148,23 +148,23 @@ const DownloadGlobalStyles = createGlobalStyle`
   }
 
   .kf-download__download-link {
-    background: var(--color-gray-300, #d1d5db);
-    color: var(--color-gray-900, #111827);
+    background: var(--kf-color-gray-300, #d1d5db);
+    color: var(--kf-color-gray-900, #111827);
   }
 
   .dark .kf-download__download-link {
-    background: var(--color-gray-700, #374151);
-    color: var(--color-gray-100, #f3f4f6);
+    background: var(--kf-color-gray-700, #374151);
+    color: var(--kf-color-gray-100, #f3f4f6);
   }
 
   .kf-download__order-link {
-    background: var(--color-gray-200, #e5e7eb);
-    color: var(--color-gray-900, #111827);
+    background: var(--kf-color-gray-200, #e5e7eb);
+    color: var(--kf-color-gray-900, #111827);
   }
 
   .dark .kf-download__order-link {
-    background: var(--color-gray-600, #4b5563);
-    color: var(--color-gray-100, #f3f4f6);
+    background: var(--kf-color-gray-600, #4b5563);
+    color: var(--kf-color-gray-100, #f3f4f6);
   }
 `;
 

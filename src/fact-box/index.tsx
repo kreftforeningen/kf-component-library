@@ -12,12 +12,12 @@ const FactBoxGlobalStyles = createGlobalStyle`
     flex-direction: column;
     gap: calc(var(--kf-spacing, 0.25rem) * 6);
     border-radius: var(--kf-radius-2xl, 1rem);
-    background: var(--color-blue-100, #dbeafe);
-    color: var(--color-foreground, #0f172a);
+    background: var(--kf-color-blue-100, #dbeafe);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .dark .kf-fact-box {
-    background: var(--color-blue-950, #172554);
+    background: var(--kf-color-blue-950, #172554);
   }
 
   .kf-fact-box__content {
@@ -42,7 +42,7 @@ const FactBoxGlobalStyles = createGlobalStyle`
     position: relative;
     font-size: var(--kf-text-base, 1rem);
     line-height: var(--kf-text-base--line-height, 1.5);
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
   }
 
   .kf-fact-box__description[data-expanded="false"] {

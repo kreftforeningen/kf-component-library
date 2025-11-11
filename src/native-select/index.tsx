@@ -22,9 +22,9 @@ const NativeSelectGlobalStyles = createGlobalStyle`
     padding: calc(var(--kf-spacing, 0.25rem) * 3) calc(var(--kf-spacing, 0.25rem) * 3);
     padding-right: calc(var(--kf-spacing, 0.25rem) * 9);
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
     background: transparent;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     font-size: var(--kf-text-md, 1.125rem);
     outline: none;
     appearance: none;
@@ -32,31 +32,31 @@ const NativeSelectGlobalStyles = createGlobalStyle`
   }
 
   .kf-native-select__control::placeholder {
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.5));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.5));
   }
 
   .kf-native-select__control::selection {
-    background: var(--color-primary, #0f172a);
-    color: var(--color-primary-foreground, #f8fafc);
+    background: var(--kf-color-blue-600, #0f172a);
+    color: var(--kf-color-blue-50, #f8fafc);
   }
 
   .kf-native-select__control:focus-visible {
-    --kf-ring-color: var(--color-ring, rgba(59, 130, 246, 0.6));
-    --kf-ring-offset-color: var(--color-background, #ffffff);
+    --kf-ring-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
+    --kf-ring-offset-color: var(--kf-color-gray-50, #ffffff);
     --kf-ring-width: 3px;
     --kf-ring-offset-width: 2px;
-    border-color: var(--color-ring, rgba(59, 130, 246, 0.6));
+    border-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
     box-shadow:
       0 0 0 var(--kf-ring-offset-width) var(--kf-ring-offset-color),
       0 0 0 calc(var(--kf-ring-offset-width) + var(--kf-ring-width)) var(--kf-ring-color);
   }
 
   .kf-native-select__control[aria-invalid="true"] {
-    border-color: var(--color-destructive, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-native-select__control[aria-invalid="true"]:focus-visible {
-    --kf-ring-color: color-mix(in srgb, var(--color-destructive, #b91c1c) 40%, transparent);
+    --kf-ring-color: color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 40%, transparent);
   }
 
   .kf-native-select__control:disabled {
@@ -65,7 +65,7 @@ const NativeSelectGlobalStyles = createGlobalStyle`
   }
 
   .dark .kf-native-select__control {
-    background: color-mix(in srgb, var(--color-input, rgba(148, 163, 184, 0.3)) 90%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.3)) 90%, transparent);
   }
 
   .kf-native-select__icon {
@@ -75,7 +75,7 @@ const NativeSelectGlobalStyles = createGlobalStyle`
     transform: translateY(-50%);
     width: 1rem;
     height: 1rem;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.5));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.5));
     pointer-events: none;
     opacity: 0.5;
   }

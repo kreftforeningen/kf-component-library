@@ -42,23 +42,23 @@ const LinkListGlobalStyles = createGlobalStyle`
     display: inline-flex;
     align-items: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
-    color: var(--color-blue-800, #1d4ed8);
+    color: var(--kf-color-blue-800, #1d4ed8);
     cursor: pointer;
     text-decoration: none;
     font-weight: 600;
   }
 
   .kf-link-list__title:hover {
-    color: var(--color-blue-900, #1e3a8a);
+    color: var(--kf-color-blue-900, #1e3a8a);
     text-decoration: underline;
   }
 
   .dark .kf-link-list__title {
-    color: var(--color-blue-200, #bfdbfe);
+    color: var(--kf-color-blue-200, #bfdbfe);
   }
 
   .dark .kf-link-list__title:hover {
-    color: var(--color-blue-300, #93c5fd);
+    color: var(--kf-color-blue-300, #93c5fd);
   }
 
   .kf-link-list__title h3 {
@@ -75,7 +75,7 @@ const LinkListGlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: var(--kf-text-sm, 0.875rem);
     line-height: var(--kf-text-sm--line-height, 1.4285714286);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.66));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.66));
   }
 `;
 

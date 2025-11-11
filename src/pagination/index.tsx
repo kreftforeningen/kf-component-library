@@ -38,7 +38,7 @@ const PaginationGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 1);
     border-radius: var(--kf-radius-md, 0.375rem);
     border: var(--kf-border-1, 1px) solid transparent;
-    color: var(--color-foreground, #0f172a);
+    color: var(--kf-color-gray-950, #0f172a);
     background: transparent;
     text-decoration: none;
     cursor: pointer;
@@ -62,19 +62,19 @@ const PaginationGlobalStyles = createGlobalStyle`
   }
 
   .kf-pagination__link[data-active="true"] {
-    border-color: var(--color-ring, rgba(59, 130, 246, 0.6));
-    background: color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 20%, transparent);
+    border-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
+    background: color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 20%, transparent);
   }
 
   .kf-pagination__link:hover {
-    background: color-mix(in srgb, var(--color-accent, rgba(148, 163, 184, 0.16)) 60%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-200, rgba(148, 163, 184, 0.16)) 60%, transparent);
   }
 
   .kf-pagination__link:focus-visible {
-    border-color: var(--color-ring, rgba(59, 130, 246, 0.6));
+    border-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 65%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 65%, transparent);
   }
 
   .kf-pagination__link[aria-disabled="true"] {
@@ -104,7 +104,7 @@ const PaginationGlobalStyles = createGlobalStyle`
     height: calc(var(--kf-spacing, 0.25rem) * 9);
     align-items: center;
     justify-content: center;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-pagination__ellipsis-icon {

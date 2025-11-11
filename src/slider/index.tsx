@@ -31,7 +31,7 @@ const SliderGlobalStyles = createGlobalStyle`
     flex-grow: 1;
     border-radius: var(--kf-radius-full, 9999px);
     overflow: hidden;
-    background: color-mix(in srgb, var(--color-accent, rgba(148, 163, 184, 0.3)) 100%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-200, rgba(148, 163, 184, 0.3)) 100%, transparent);
   }
 
   .kf-slider[data-orientation="horizontal"] .kf-slider__track {
@@ -46,7 +46,7 @@ const SliderGlobalStyles = createGlobalStyle`
 
   .kf-slider__range {
     position: absolute;
-    background: var(--color-primary, #1d4ed8);
+    background: var(--kf-color-blue-600, #1d4ed8);
   }
 
   .kf-slider[data-orientation="horizontal"] .kf-slider__range {
@@ -58,7 +58,7 @@ const SliderGlobalStyles = createGlobalStyle`
   }
 
   .dark .kf-slider__range {
-    background: var(--color-blue-200, #bfdbfe);
+    background: var(--kf-color-blue-200, #bfdbfe);
   }
 
   .kf-slider__thumb {
@@ -66,8 +66,8 @@ const SliderGlobalStyles = createGlobalStyle`
     width: calc(var(--kf-spacing, 0.25rem) * 4);
     height: calc(var(--kf-spacing, 0.25rem) * 4);
     border-radius: 9999px;
-    border: var(--kf-border-2, 2px) solid var(--color-primary, #1d4ed8);
-    background: var(--color-background, #ffffff);
+    border: var(--kf-border-2, 2px) solid var(--kf-color-blue-600, #1d4ed8);
+    background: var(--kf-color-gray-50, #ffffff);
     box-shadow: var(--kf-shadow-sm, 0 1px 2px 0 rgb(15 23 42 / 0.05));
     transition:
       box-shadow 120ms var(--kf-ease-in-out, ease),
@@ -81,7 +81,7 @@ const SliderGlobalStyles = createGlobalStyle`
   .kf-slider__thumb:focus-visible {
     outline: none;
     box-shadow:
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 60%, transparent);
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 60%, transparent);
   }
 
   .kf-slider__thumb:disabled {

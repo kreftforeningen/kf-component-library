@@ -14,13 +14,15 @@ const AccordionGlobalStyles = createGlobalStyle`
   }
 
   .kf-accordion-header {
+    
     display: flex;
+    margin: 0;
   }
 
   .kf-accordion-item {
     border-bottom-width: var(--kf-border-1, 1px);
     border-bottom-style: solid;
-    border-bottom-color: var(--color-border, var(--border, rgba(15, 23, 42, 0.12)));
+    border-bottom-color: var(--kf-color-gray-200, var(--border, rgba(15, 23, 42, 0.12)));
   }
 
   .kf-accordion-item:last-of-type {
@@ -28,6 +30,7 @@ const AccordionGlobalStyles = createGlobalStyle`
   }
 
   .kf-accordion-trigger {
+    font-family: var(--kf-font-sans);
     display: flex;
     flex: 1;
     align-items: flex-start;
@@ -54,8 +57,8 @@ const AccordionGlobalStyles = createGlobalStyle`
   }
 
   .kf-accordion-trigger:focus-visible {
-    --kf-ring-color: var(--color-blue-500, #3b82f6);
-    --kf-ring-offset-color: var(--color-white, #ffffff);
+    --kf-ring-color: var(--kf-color-blue-500, #3b82f6);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
     --kf-ring-width: 3px;
     --kf-ring-offset-width: 2px;
     box-shadow:
@@ -64,7 +67,7 @@ const AccordionGlobalStyles = createGlobalStyle`
   }
 
   .dark .kf-accordion-trigger:focus-visible {
-    --kf-ring-offset-color: var(--color-gray-950, #0b0f19);
+    --kf-ring-offset-color: var(--kf-color-gray-950, #0b0f19);
   }
 
   .kf-accordion-trigger:disabled {
@@ -80,11 +83,11 @@ const AccordionGlobalStyles = createGlobalStyle`
     transform: translateY(0.125rem) rotate(0deg);
     transition: transform 200ms var(--kf-ease-in-out, ease), color 150ms var(--kf-ease-in-out, ease);
     pointer-events: none;
-    color: var(--color-blue-700, #1d4ed8);
+    color: var(--kf-color-blue-700, #1d4ed8);
   }
 
   .dark .kf-accordion-trigger__icon {
-    color: var(--color-blue-200, #bfdbfe);
+    color: var(--kf-color-blue-200, #bfdbfe);
   }
 
   .kf-accordion-trigger[data-state="open"] .kf-accordion-trigger__icon {

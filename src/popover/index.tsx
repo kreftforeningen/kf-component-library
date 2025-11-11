@@ -10,9 +10,9 @@ const PopoverGlobalStyles = createGlobalStyle`
     width: min(18rem, 100vw);
     padding: calc(var(--kf-spacing, 0.25rem) * 4);
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: var(--color-popover, #ffffff);
-    color: var(--color-popover-foreground, #0f172a);
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, #ffffff);
+    color: var(--kf-color-gray-950, #0f172a);
     box-shadow: var(--kf-shadow-md, 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.08));
     outline: none;
     z-index: 50;

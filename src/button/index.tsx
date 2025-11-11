@@ -20,14 +20,14 @@ const ButtonGlobalStyles = createGlobalStyle`
     cursor: pointer;
     padding: 0 var(--kf-btn-px-md, 1rem);
     height: var(--kf-btn-height-md, 44px);
-    color: var(--kf-btn-text, var(--color-gray-950, #0b1220));
+    color: var(--kf-btn-text, var(--kf-color-gray-950, #0b1220));
     background: transparent;
     border-color: transparent;
     outline: none;
     -webkit-tap-highlight-color: transparent;
     /* Ring defaults (overridden per-variant) */
-    --kf-ring-color: var(--color-blue-400, #60a5fa);
-    --kf-ring-offset-color: var(--color-white, #ffffff);
+    --kf-ring-color: var(--kf-color-blue-400, #60a5fa);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
     --kf-ring-width: 2px;
     --kf-ring-offset-width: 2px;
     transition: background-color 120ms var(--kf-ease-in-out, ease), border-color 120ms var(--kf-ease-in-out, ease), color 120ms var(--kf-ease-in-out, ease), box-shadow 120ms var(--kf-ease-in-out, ease);
@@ -57,95 +57,95 @@ const ButtonGlobalStyles = createGlobalStyle`
       0 0 0 calc(var(--kf-ring-offset-width) + var(--kf-ring-width)) var(--kf-ring-color);
   }
   .kf-btn[aria-invalid="true"] {
-    border-color: var(--color-red-700, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
   }
   .kf-btn[aria-invalid="true"]:focus-visible {
-    --kf-ring-color: var(--color-red-700, #b91c1c);
+    --kf-ring-color: var(--kf-color-red-700, #b91c1c);
   }
 
   .kf-btn--default {
-    background: var(--color-blue-600, #4b5563);
-    color: var(--color-blue-50, #ffffff);
-    border-color: var(--color-blue-600, #4b5563);
-    --kf-ring-color: var(--color-blue-600, #4b5563);
+    background: var(--kf-color-blue-600, #4b5563);
+    color: var(--kf-color-blue-50, #ffffff);
+    border-color: var(--kf-color-blue-600, #4b5563);
+    --kf-ring-color: var(--kf-color-blue-600, #4b5563);
   }
   .kf-btn--default:hover {
-    background: var(--color-blue-600, #4b5563);
-    border-color: var(--color-blue-600, #4b5563);
+    background: var(--kf-color-blue-600, #4b5563);
+    border-color: var(--kf-color-blue-600, #4b5563);
   }
   .kf-btn--default:focus,
   .kf-btn--default:focus-visible {
-    border-color: var(--color-blue-600, #4b5563);
+    border-color: var(--kf-color-blue-600, #4b5563);
   }
 
   .kf-btn--secondary {
-    background: var(--color-pink-700, #be185d);
-    color: var(--color-pink-50, #fff1f2);
-    border-color: var(--color-pink-700, #be185d);
-    --kf-ring-color: var(--color-pink-700, #be185d);
+    background: var(--kf-color-pink-700, #be185d);
+    color: var(--kf-color-pink-50, #fff1f2);
+    border-color: var(--kf-color-pink-700, #be185d);
+    --kf-ring-color: var(--kf-color-pink-700, #be185d);
   }
   .kf-btn--secondary:hover {
-    background: var(--color-pink-700, #be185d);
-    border-color: var(--color-pink-700, #be185d);
+    background: var(--kf-color-pink-700, #be185d);
+    border-color: var(--kf-color-pink-700, #be185d);
   }
   .kf-btn--secondary:focus,
   .kf-btn--secondary:focus-visible {
-    border-color: var(--color-pink-700, #be185d);
+    border-color: var(--kf-color-pink-700, #be185d);
   }
 
   .kf-btn--destructive {
-    background: var(--color-red-800, #991b1b);
-    color: var(--color-red-50, #fee2e2);
-    border-color: var(--color-red-800, #991b1b);
-    --kf-ring-color: var(--color-red-800, #991b1b);
+    background: var(--kf-color-red-800, #991b1b);
+    color: var(--kf-color-red-50, #fee2e2);
+    border-color: var(--kf-color-red-800, #991b1b);
+    --kf-ring-color: var(--kf-color-red-800, #991b1b);
   }
   .kf-btn--destructive:hover {
-    background: var(--color-red-800, #991b1b);
-    border-color: var(--color-red-800, #991b1b);
+    background: var(--kf-color-red-800, #991b1b);
+    border-color: var(--kf-color-red-800, #991b1b);
   }
   .kf-btn--destructive:focus,
   .kf-btn--destructive:focus-visible {
-    border-color: var(--color-red-800, #991b1b);
+    border-color: var(--kf-color-red-800, #991b1b);
   }
 
   .kf-btn--outline {
-    background: var(--color-white, #ffffff);
-    color: var(--color-blue-700, #1e40af);
-    border-color: var(--color-blue-700, #1e40af);
-    --kf-ring-color: var(--color-blue-700, #1e40af);
+    background: var(--kf-color-white, #ffffff);
+    color: var(--kf-color-blue-700, #1e40af);
+    border-color: var(--kf-color-blue-700, #1e40af);
+    --kf-ring-color: var(--kf-color-blue-700, #1e40af);
   }
   .kf-btn--outline:hover,
   .kf-btn--outline:focus {
-    background: var(--color-blue-700, #1e40af);
-    color: var(--color-blue-50, #eff6ff);
+    background: var(--kf-color-blue-700, #1e40af);
+    color: var(--kf-color-blue-50, #eff6ff);
   }
   .kf-btn--outline:focus,
   .kf-btn--outline:focus-visible {
-    border-color: var(--color-blue-700, #1e40af);
+    border-color: var(--kf-color-blue-700, #1e40af);
   }
 
   .kf-btn--ghost {
     background: transparent;
-    color: var(--color-gray-950, #0b1220);
+    color: var(--kf-color-gray-950, #0b1220);
     border-color: transparent;
-    --kf-ring-color: var(--color-gray-300, #d1d5db);
+    --kf-ring-color: var(--kf-color-gray-300, #d1d5db);
   }
   .kf-btn--ghost:hover,
   .kf-btn--ghost:focus {
-    background: var(--color-gray-300, var(--muted, #d1d5db));
+    background: var(--kf-color-gray-300, var(--muted, #d1d5db));
   }
   .kf-btn--ghost:focus,
   .kf-btn--ghost:focus-visible {
-    border-color: var(--color-gray-300, #d1d5db);
+    border-color: var(--kf-color-gray-300, #d1d5db);
   }
 
   .kf-btn--link {
     background: transparent;
     border-color: transparent;
-    color: var(--color-blue-600, #0ea5e9);
+    color: var(--kf-color-blue-600, #0ea5e9);
     text-decoration: underline transparent;
     text-underline-offset: 4px;
-    --kf-ring-color: var(--color-blue-600, #0ea5e9);
+    --kf-ring-color: var(--kf-color-blue-600, #0ea5e9);
   }
   .kf-btn--link:hover,
   .kf-btn--link:focus {
@@ -159,22 +159,22 @@ const ButtonGlobalStyles = createGlobalStyle`
 
   /* Dark mode ring offset alignment with previous behavior */
   .dark .kf-btn {
-    --kf-ring-offset-color: var(--color-gray-950, #0b0b0b);
+    --kf-ring-offset-color: var(--kf-color-gray-950, #0b0b0b);
   }
   .dark .kf-btn--default {
-    --kf-ring-offset-color: var(--color-blue-950, #0b1a33);
+    --kf-ring-offset-color: var(--kf-color-blue-950, #0b1a33);
   }
   .dark .kf-btn--secondary {
-    --kf-ring-offset-color: var(--color-pink-950, #2a0a16);
+    --kf-ring-offset-color: var(--kf-color-pink-950, #2a0a16);
   }
   .dark .kf-btn--destructive {
-    --kf-ring-offset-color: var(--color-red-950, #2a0a0a);
+    --kf-ring-offset-color: var(--kf-color-red-950, #2a0a0a);
   }
   .dark .kf-btn--outline {
-    --kf-ring-offset-color: var(--color-blue-950, #0b1a33);
+    --kf-ring-offset-color: var(--kf-color-blue-950, #0b1a33);
   }
   .dark .kf-btn--ghost {
-    --kf-ring-offset-color: var(--color-gray-950, #0b0b0b);
+    --kf-ring-offset-color: var(--kf-color-gray-950, #0b0b0b);
   }
 
   .kf-btn--size-default {

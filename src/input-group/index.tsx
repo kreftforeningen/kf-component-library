@@ -23,13 +23,13 @@ const InputGroupGlobalStyles = createGlobalStyle`
     min-width: 0;
     align-items: center;
     border-radius: var(--kf-radius-md, 0.375rem);
-    border: var(--kf-border-1, 1px) solid var(--color-border, rgba(15, 23, 42, 0.12));
-    background: var(--color-input, rgba(15, 23, 42, 0.08));
+    border: var(--kf-border-1, 1px) solid var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
+    background: var(--kf-color-gray-50, rgba(15, 23, 42, 0.08));
     transition: box-shadow 120ms var(--kf-ease-in-out, ease);
   }
 
   .dark .kf-input-group {
-    background: color-mix(in srgb, var(--color-input, rgba(148, 163, 184, 0.1)) 90%, transparent);
+    background: color-mix(in srgb, var(--kf-color-gray-50, rgba(148, 163, 184, 0.1)) 90%, transparent);
   }
 
   .kf-input-group[data-disabled="true"] {
@@ -37,16 +37,16 @@ const InputGroupGlobalStyles = createGlobalStyle`
   }
 
   .kf-input-group:has([data-slot="input-group-control"]:focus-visible) {
-    border-color: var(--color-ring, rgba(59, 130, 246, 0.6));
+    border-color: var(--kf-color-blue-400, rgba(59, 130, 246, 0.6));
     box-shadow:
-      0 0 0 2px var(--color-ring, rgba(59, 130, 246, 0.2)),
-      0 0 0 4px color-mix(in srgb, var(--color-ring, rgba(59, 130, 246, 0.2)) 65%, transparent);
+      0 0 0 2px var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)),
+      0 0 0 4px color-mix(in srgb, var(--kf-color-blue-400, rgba(59, 130, 246, 0.2)) 65%, transparent);
   }
 
   .kf-input-group[data-invalid="true"] {
-    border-color: var(--color-destructive, #b91c1c);
+    border-color: var(--kf-color-red-700, #b91c1c);
     box-shadow:
-      0 0 0 2px color-mix(in srgb, var(--color-destructive, #b91c1c) 20%, transparent);
+      0 0 0 2px color-mix(in srgb, var(--kf-color-red-700, #b91c1c) 20%, transparent);
   }
 
   .kf-input-group--inline-start input {
@@ -84,7 +84,7 @@ const InputGroupGlobalStyles = createGlobalStyle`
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
     font-size: var(--kf-text-sm, 0.875rem);
     font-weight: 500;
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
     padding-block: calc(var(--kf-spacing, 0.25rem) * 1.5);
     cursor: text;
     user-select: none;
@@ -190,7 +190,7 @@ const InputGroupGlobalStyles = createGlobalStyle`
     align-items: center;
     gap: calc(var(--kf-spacing, 0.25rem) * 2);
     font-size: var(--kf-text-sm, 0.875rem);
-    color: var(--color-muted-foreground, rgba(15, 23, 42, 0.6));
+    color: var(--kf-color-gray-500, rgba(15, 23, 42, 0.6));
   }
 
   .kf-input-group-text svg {
