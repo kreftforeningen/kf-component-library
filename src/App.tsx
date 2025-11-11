@@ -17,6 +17,7 @@ import {
 import { Spinner } from "./lib/main";
 
 const HomeDemo = lazy(() => import("@/demo/home"));
+
 const AccentuatedLinkDemo = lazy(() => import("@/demo/accentuated-link"));
 const AccordionDemo = lazy(() => import("@/demo/accordion"));
 const AlertDemo = lazy(() => import("@/demo/alert"));
@@ -82,13 +83,279 @@ const TimelineDemo = lazy(() => import("@/demo/timeline"));
 const ToggleDemo = lazy(() => import("@/demo/toggle"));
 const ToggleGroupDemo = lazy(() => import("@/demo/toggle-group"));
 const TooltipDemo = lazy(() => import("@/demo/tooltip"));
-const HomeTempDemo = lazy(() => import("@/demo/home-temp"));
 
 import { ThemeProvider } from "./theme-provider";
 
 function RootLayout() {
   return <Outlet />;
 }
+
+const navigationItems = [
+  {
+    label: "Home",
+    to: "/",
+  },
+  {
+    label: "Accentuated Link",
+    to: "/accentuated-link",
+  },
+  {
+    label: "Accordion",
+    to: "/accordion",
+  },
+  {
+    label: "Alert",
+    to: "/alert",
+  },
+  {
+    label: "Alert Dialog",
+    to: "/alert-dialog",
+  },
+  {
+    label: "Aspect Ratio",
+    to: "/aspect-ratio",
+  },
+  {
+    label: "Avatar",
+    to: "/avatar",
+  },
+  {
+    label: "Badge",
+    to: "/badge",
+  },
+  {
+    label: "Banner",
+    to: "/banner",
+  },
+  {
+    label: "Breadcrumb",
+    to: "/breadcrumb",
+  },
+  {
+    label: "Button",
+    to: "/button",
+  },
+  {
+    label: "Button Group",
+    to: "/button-group",
+  },
+  {
+    label: "Calendar",
+    to: "/calendar",
+  },
+  {
+    label: "Card",
+    to: "/card",
+  },
+  {
+    label: "Carousel",
+    to: "/carousel",
+  },
+  {
+    label: "Chart",
+    to: "/chart",
+  },
+  {
+    label: "Checkbox",
+    to: "/checkbox",
+  },
+  {
+    label: "Collapsible",
+    to: "/collapsible",
+  },
+  {
+    label: "Command",
+    to: "/command",
+  },
+  {
+    label: "Context Menu",
+    to: "/context-menu",
+  },
+  {
+    label: "Dialog",
+    to: "/dialog",
+  },
+  {
+    label: "Download",
+    to: "/download",
+  },
+  {
+    label: "Drawer",
+    to: "/drawer",
+  },
+  {
+    label: "Dropdown Menu",
+    to: "/dropdown-menu",
+  },
+  {
+    label: "Empty",
+    to: "/empty",
+  },
+  {
+    label: "Fact Box",
+    to: "/fact-box",
+  },
+  {
+    label: "Feedback",
+    to: "/feedback",
+  },
+  {
+    label: "Field",
+    to: "/field",
+  },
+  {
+    label: "Footer",
+    to: "/footer",
+  },
+  {
+    label: "Header",
+    to: "/header",
+  },
+  {
+    label: "Hover Card",
+    to: "/hover-card",
+  },
+  {
+    label: "Infographic",
+    to: "/infographic",
+  },
+  {
+    label: "Input",
+    to: "/input",
+  },
+  {
+    label: "Input Group",
+    to: "/input-group",
+  },
+  {
+    label: "Input OTP",
+    to: "/input-otp",
+  },
+  {
+    label: "Item",
+    to: "/item",
+  },
+  {
+    label: "Kbd",
+    to: "/kbd",
+  },
+  {
+    label: "Label",
+    to: "/label",
+  },
+  {
+    label: "Link List",
+    to: "/link-list",
+  },
+  {
+    label: "Menubar",
+    to: "/menubar",
+  },
+  {
+    label: "Mode Toggle",
+    to: "/mode-toggle",
+  },
+  {
+    label: "Native Select",
+    to: "/native-select",
+  },
+  {
+    label: "Navigation Menu",
+    to: "/navigation-menu",
+  },
+  {
+    label: "Pagination",
+    to: "/pagination",
+  },
+  {
+    label: "Person",
+    to: "/person",
+  },
+  {
+    label: "Popover",
+    to: "/popover",
+  },
+  {
+    label: "Progress",
+    to: "/progress",
+  },
+  {
+    label: "Radio Group",
+    to: "/radio-group",
+  },
+  {
+    label: "Resizable",
+    to: "/resizable",
+  },
+  {
+    label: "Scroll Area",
+    to: "/scroll-area",
+  },
+  {
+    label: "Select",
+    to: "/select",
+  },
+  {
+    label: "Separator",
+    to: "/separator",
+  },
+  {
+    label: "Sheet",
+    to: "/sheet",
+  },
+  {
+    label: "Sidebar",
+    to: "/sidebar",
+  },
+  {
+    label: "Skeleton",
+    to: "/skeleton",
+  },
+  {
+    label: "Slider",
+    to: "/slider",
+  },
+  {
+    label: "Sonner",
+    to: "/sonner",
+  },
+  {
+    label: "Spinner",
+    to: "/spinner",
+  },
+  {
+    label: "Switch",
+    to: "/switch",
+  },
+  {
+    label: "Table",
+    to: "/table",
+  },
+  {
+    label: "Tabs",
+    to: "/tabs",
+  },
+  {
+    label: "Textarea",
+    to: "/textarea",
+  },
+  {
+    label: "Timeline",
+    to: "/timeline",
+  },
+  {
+    label: "Toggle",
+    to: "/toggle",
+  },
+  {
+    label: "Toggle Group",
+    to: "/toggle-group",
+  },
+  {
+    label: "Tooltip",
+    to: "/tooltip",
+  },
+];
 
 const router = createBrowserRouter([
   {
@@ -113,204 +380,11 @@ const router = createBrowserRouter([
                 gap: "0.5rem",
               }}
             >
-              <DropdownMenuItem>
-                <Link to="/">Home</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/accentuated-link">Accentuated Link</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/accordion">Accordion</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/alert">Alert</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/alert-dialog">Alert Dialog</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/aspect-ratio">Aspect Ratio</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/avatar">Avatar</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/badge">Badge</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/banner">Banner</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/breadcrumb">Breadcrumb</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/button">Button</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/button-group">Button Group</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/calendar">Calendar</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/card">Card</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/carousel">Carousel</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/chart">Chart</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/checkbox">Checkbox</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/collapsible">Collapsible</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/command">Command</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/context-menu">Context Menu</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/dialog">Dialog</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/download">Download</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/drawer">Drawer</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/dropdown-menu">Dropdown Menu</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/empty">Empty</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/fact-box">Fact Box</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/feedback">Feedback</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/field">Field</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/footer">Footer</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/header">Header</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/hover-card">Hover Card</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/infographic">Infographic</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/input">Input</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/input-group">Input Group</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/input-otp">Input OTP</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/item">Item</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/kbd">Kbd</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/label">Label</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/link-list">Link List</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/menubar">Menubar</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/mode-toggle">Mode Toggle</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/native-select">Native Select</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/navigation-menu">Navigation Menu</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/pagination">Pagination</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/person">Person</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/popover">Popover</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/progress">Progress</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/radio-group">Radio Group</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/resizable">Resizable</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/scroll-area">Scroll Area</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/select">Select</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/separator">Separator</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/sheet">Sheet</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/sidebar">Sidebar</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/skeleton">Skeleton</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/slider">Slider</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/sonner">Sonner</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/spinner">Spinner</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/switch">Switch</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/table">Table</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/tabs">Tabs</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/textarea">Textarea</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/timeline">Timeline</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/toggle">Toggle</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/toggle-group">Toggle Group</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link to="/tooltip">Tooltip</Link>
-              </DropdownMenuItem>
+              {navigationItems.map((item) => (
+                <DropdownMenuItem key={item.to}>
+                  <Link to={item.to}>{item.label}</Link>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
         </nav>
@@ -322,14 +396,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <Suspense fallback={<Spinner />}>
-            <HomeTempDemo />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/home",
         element: (
           <Suspense fallback={<Spinner />}>
             <HomeDemo />
