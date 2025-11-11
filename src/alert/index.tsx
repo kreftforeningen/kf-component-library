@@ -12,13 +12,13 @@ const AlertGlobalStyles = createGlobalStyle`
     display: grid;
     grid-template-columns: 0 1fr;
     align-items: flex-start;
-    gap: calc(var(--kf-spacing, 0.25rem) * 2) calc(var(--kf-spacing, 0.25rem) * 3);
+    gap: calc(var(--kf-spacing, 0.25rem) * 1) calc(var(--kf-spacing, 0.25rem) * 3);
     width: 100%;
     border-radius: var(--kf-radius-lg, 0.5rem);
     border-width: var(--kf-border-2, 2px);
     border-style: dashed;
     border-color: var(--kf-color-gray-300, rgba(15, 23, 42, 0.12));
-    padding: calc(var(--kf-spacing, 0.25rem) * 4);
+    padding: calc(var(--kf-spacing, 0.25rem) * 3);
     font-size: var(--kf-text-base, 1rem);
     line-height: var(--kf-text-base--line-height, 1.5);
     color: var(--kf-color-gray-950, #0f172a);
