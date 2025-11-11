@@ -63,49 +63,100 @@ const ButtonGlobalStyles = createGlobalStyle`
     --kf-ring-color: var(--kf-color-red-700, #b91c1c);
   }
 
+  .dark .kf-btn {
+    --kf-ring-offset-color: var(--kf-color-gray-950, #0b0b0b);
+  }
+
   .kf-btn--default {
-    background: var(--kf-color-blue-600, #4b5563);
-    color: var(--kf-color-blue-50, #ffffff);
-    border-color: var(--kf-color-blue-600, #4b5563);
-    --kf-ring-color: var(--kf-color-blue-600, #4b5563);
+    background: var(--kf-color-blue-700, #1d4ed8);
+    color: var(--kf-color-blue-50, #eff6ff);
+    border-color: var(--kf-color-blue-700, #1d4ed8);
+    --kf-ring-color: var(--kf-color-blue-700, #1d4ed8);
+    --kf-ring-offset-color: var(--kf-color-blue-950, #172554);
   }
+
   .kf-btn--default:hover {
-    background: var(--kf-color-blue-600, #4b5563);
-    border-color: var(--kf-color-blue-600, #4b5563);
+    background: var(--kf-color-blue-800, #1e3a8a);
+    border-color: var(--kf-color-blue-800, #1e3a8a);
   }
+
   .kf-btn--default:focus,
   .kf-btn--default:focus-visible {
-    border-color: var(--kf-color-blue-600, #4b5563);
+    border-color: var(--kf-color-blue-700, #1d4ed8);
+  }
+
+  .dark .kf-btn--default {
+    background: var(--kf-color-blue-700, #1d4ed8);
+    color: var(--kf-color-blue-50, #eff6ff);
+    border-color: var(--kf-color-blue-700, #1d4ed8);
+    --kf-ring-color: var(--kf-color-blue-700, #1d4ed8);
+  }
+    
+  .dark .kf-btn--default:hover,
+  .dark .kf-btn--default:focus,
+  .dark .kf-btn--default:focus-visible {
+    background: var(--kf-color-blue-800, #1e3a8a);
+    border-color: var(--kf-color-blue-800, #1e3a8a);
+    --kf-ring-color: var(--kf-color-blue-800, #1e3a8a);
   }
 
   .kf-btn--secondary {
-    background: var(--kf-color-pink-700, #be185d);
-    color: var(--kf-color-pink-50, #fff1f2);
-    border-color: var(--kf-color-pink-700, #be185d);
-    --kf-ring-color: var(--kf-color-pink-700, #be185d);
+    background: var(--kf-color-pink-700, #9f1239);
+    color: var(--kf-color-pink-50, #eff6ff);
+    border-color: var(--kf-color-pink-700, #9f1239);
+    --kf-ring-color: var(--kf-color-pink-700, #9f1239);
+    --kf-ring-offset-color: var(--kf-color-pink-950, #450a0a);
   }
+
   .kf-btn--secondary:hover {
-    background: var(--kf-color-pink-700, #be185d);
-    border-color: var(--kf-color-pink-700, #be185d);
+    background: var(--kf-color-pink-800, #881337);
+    border-color: var(--kf-color-pink-800, #881337);
   }
+
   .kf-btn--secondary:focus,
   .kf-btn--secondary:focus-visible {
-    border-color: var(--kf-color-pink-700, #be185d);
+    border-color: var(--kf-color-pink-700, #9f1239);
+  }
+
+  .dark .kf-btn--secondary {
+    background: var(--kf-color-pink-700, #9f1239);
+    color: var(--kf-color-pink-50, #faf4f5);
+    border-color: var(--kf-color-pink-700, #9f1239);
+    --kf-ring-color: var(--kf-color-pink-700, #9f1239);
+  }
+    
+  .dark .kf-btn--secondary:hover,
+  .dark .kf-btn--secondary:focus,
+  .dark .kf-btn--secondary:focus-visible {
+    background: var(--kf-color-pink-800, #881337);
+    border-color: var(--kf-color-pink-800, #881337);
+    --kf-ring-color: var(--kf-color-pink-800, #881337);
   }
 
   .kf-btn--destructive {
-    background: var(--kf-color-red-800, #991b1b);
-    color: var(--kf-color-red-50, #fee2e2);
-    border-color: var(--kf-color-red-800, #991b1b);
-    --kf-ring-color: var(--kf-color-red-800, #991b1b);
+    background: var(--kf-color-red-700, #b91c1c);
+    color: var(--kf-color-red-50, #fef2f2);
+    border-color: var(--kf-color-red-700, #b91c1c);
+    --kf-ring-color: var(--kf-color-red-700, #b91c1c);
+    --kf-ring-offset-color: var(--kf-color-red-950, #172554);
   }
+
   .kf-btn--destructive:hover {
     background: var(--kf-color-red-800, #991b1b);
     border-color: var(--kf-color-red-800, #991b1b);
   }
+    
   .kf-btn--destructive:focus,
   .kf-btn--destructive:focus-visible {
+    border-color: var(--kf-color-red-700, #b91c1c);
+  }
+
+  .dark .kf-btn--destructive:hover,
+  .dark .kf-btn--destructive:focus,
+  .dark .kf-btn--destructive:focus-visible {
+    background: var(--kf-color-red-800, #991b1b);
     border-color: var(--kf-color-red-800, #991b1b);
+    --kf-ring-color: var(--kf-color-red-800, #991b1b);
   }
 
   .kf-btn--outline {
@@ -113,6 +164,7 @@ const ButtonGlobalStyles = createGlobalStyle`
     color: var(--kf-color-blue-700, #1e40af);
     border-color: var(--kf-color-blue-700, #1e40af);
     --kf-ring-color: var(--kf-color-blue-700, #1e40af);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
   }
   .kf-btn--outline:hover,
   .kf-btn--outline:focus {
@@ -124,57 +176,71 @@ const ButtonGlobalStyles = createGlobalStyle`
     border-color: var(--kf-color-blue-700, #1e40af);
   }
 
+  .dark .kf-btn--outline {
+    background: transparent;
+    color: var(--kf-color-blue-200, #bfdbfe);
+    border-color: var(--kf-color-blue-200, #bfdbfe);
+    --kf-ring-color: var(--kf-color-blue-200, #bfdbfe);
+    --kf-ring-offset-color: var(--kf-color-blue-950, #0b1a33);
+  }
+  .dark .kf-btn--outline:hover,
+  .dark .kf-btn--outline:focus,
+  .dark .kf-btn--outline:focus-visible {
+    background: var(--kf-color-blue-200, #bfdbfe);
+    color: var(--kf-color-blue-950, #0b1a33);
+    border-color: var(--kf-color-blue-200, #bfdbfe);
+  }
+
   .kf-btn--ghost {
     background: transparent;
     color: var(--kf-color-gray-950, #0b1220);
     border-color: transparent;
-    --kf-ring-color: var(--kf-color-gray-300, #d1d5db);
+    --kf-ring-color: var(--kf-color-gray-200, #e5e7eb);
+    --kf-ring-offset-color: var(--kf-color-white, #ffffff);
   }
   .kf-btn--ghost:hover,
   .kf-btn--ghost:focus {
-    background: var(--kf-color-gray-300, var(--muted, #d1d5db));
+    background: var(--kf-color-gray-200, #e5e7eb);
+    color: var(--kf-color-gray-950, #0b1220);
   }
   .kf-btn--ghost:focus,
   .kf-btn--ghost:focus-visible {
-    border-color: var(--kf-color-gray-300, #d1d5db);
+    border-color: transparent;
+  }
+
+  .dark .kf-btn--ghost {
+    --kf-ring-offset-color: var(--kf-color-gray-950, #0b0b0b);
+    color: var(--kf-color-gray-50, #f9fafb);
+  }
+  .dark .kf-btn--ghost:hover,
+  .dark .kf-btn--ghost:focus,
+  .dark .kf-btn--ghost:focus-visible {
+    background: var(--kf-color-gray-700, #374151);
+    color: var(--kf-color-gray-50, #f9fafb);
+    --kf-ring-color: var(--kf-color-gray-700, #374151);
   }
 
   .kf-btn--link {
     background: transparent;
     border-color: transparent;
-    color: var(--kf-color-blue-600, #0ea5e9);
-    text-decoration: underline transparent;
+    color: var(--kf-color-blue-700, #1d4ed8);
+    text-decoration: none;
     text-underline-offset: 4px;
-    --kf-ring-color: var(--kf-color-blue-600, #0ea5e9);
+    --kf-ring-color: transparent;
+    --kf-ring-offset-color: transparent;
   }
   .kf-btn--link:hover,
   .kf-btn--link:focus {
-    text-decoration-color: currentColor;
+    text-decoration: underline;
   }
-  /* Link variant should not show visible ring or offset */
+
   .kf-btn--link {
     --kf-ring-color: transparent;
     --kf-ring-offset-color: transparent;
   }
 
-  /* Dark mode ring offset alignment with previous behavior */
-  .dark .kf-btn {
-    --kf-ring-offset-color: var(--kf-color-gray-950, #0b0b0b);
-  }
-  .dark .kf-btn--default {
-    --kf-ring-offset-color: var(--kf-color-blue-950, #0b1a33);
-  }
-  .dark .kf-btn--secondary {
-    --kf-ring-offset-color: var(--kf-color-pink-950, #2a0a16);
-  }
-  .dark .kf-btn--destructive {
-    --kf-ring-offset-color: var(--kf-color-red-950, #2a0a0a);
-  }
-  .dark .kf-btn--outline {
-    --kf-ring-offset-color: var(--kf-color-blue-950, #0b1a33);
-  }
-  .dark .kf-btn--ghost {
-    --kf-ring-offset-color: var(--kf-color-gray-950, #0b0b0b);
+  .dark .kf-btn--link {
+    color: var(--kf-color-blue-200, #bfdbfe);
   }
 
   .kf-btn--size-default {
